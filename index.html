@@ -302,6 +302,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -320,15 +351,16 @@
       
         
           
-            <h2 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h2><hr>
-<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p>continue语句不是必须的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ：</span><br><span class="line">    语句一</span><br><span class="line">    <span class="keyword">if</span> 条件：</span><br><span class="line">        语句二</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    语句三</span><br><span class="line"><span class="comment"># 转化后</span></span><br><span class="line"><span class="keyword">for</span> ：</span><br><span class="line">    语句一</span><br><span class="line">    <span class="keyword">if</span> 条件：</span><br><span class="line">        语句二</span><br><span class="line">    <span class="keyword">else</span>：</span><br><span class="line">        语句三</span><br></pre></td></tr></table></figure></p>
-<p>有 <code>continue</code>或者<code>break</code>的<code>if</code>语句后的<code>else</code> 语句不是必要的。所以上例中没有加入<code>else</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ：</span><br><span class="line">    语句一</span><br><span class="line">    <span class="keyword">if</span> 条件：</span><br><span class="line">        语句二</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>：</span><br><span class="line">        语句三</span><br><span class="line">    语句四</span><br><span class="line"><span class="comment"># 转化后</span></span><br><span class="line"><span class="keyword">for</span> ：</span><br><span class="line">    语句一</span><br><span class="line">    <span class="keyword">if</span> 条件：</span><br><span class="line">        语句二</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    语句三</span><br><span class="line">    语句四</span><br></pre></td></tr></table></figure>
-<h3 id="else与break"><a href="#else与break" class="headerlink" title="else与break"></a>else与break</h3><p><code>else</code>是用于中断检测的，只有没有<code>break</code>时才执行。就是当你迭代的元素都满足条件时你希望做的事情。听起来有点奇怪，满足条件了然后执行<code>else</code>。为什么不是有<code>break</code>时，就执行<code>else</code>呢。假如是这样的话，你完全可以把语句四放到语句二的后面，这样就失去了<code>else</code>存在的意义，而且此时当没有break时要执行的语句就没法直接执行，你必须要加个变量作为判断的标志。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> :</span><br><span class="line">    语句一</span><br><span class="line">    <span class="keyword">if</span> 条件：</span><br><span class="line">        语句二</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    语句三</span><br><span class="line"><span class="keyword">else</span>：</span><br><span class="line">    语句四</span><br></pre></td></tr></table></figure>
-<p>只有当有<code>break</code>时，才考虑用<code>else</code>。假如没有break，else就没有存在的意义了。因为无论如何<code>else</code>总会执行一次，完全可以把<code>else</code>里的语句放到整个<code>for</code> 语句之后</p>
-
-          
+          for 循环
+continuecontinue语句不是必须的12345678910111213for ：    语句一    if 条件：        语句二        continue    语句三# 转化后for ：    语句一    if 条件：        语句二    else：
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/06/python的控制流程/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -428,6 +460,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -446,28 +509,16 @@
       
         
           
-            <h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><hr>
-<h3 id="左右移动"><a href="#左右移动" class="headerlink" title="左右移动"></a>左右移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot; 绝对移动</span><br><span class="line">0 -- 到行头</span><br><span class="line">^ -- 到本行的第一个非blank字符</span><br><span class="line">$ -- 到行尾</span><br><span class="line">g_ -- 到本行最后一个不是blank字符的位置</span><br><span class="line">f/F&#123;char&#125; -- 到下一个&#123;char&#125;字符的位置 </span><br><span class="line">t/T&#123;char&#125; -- 到下一个&#123;char&#125;字符前的位置</span><br><span class="line"></span><br><span class="line">&quot; 相对移动</span><br><span class="line">h -- 向左移动</span><br><span class="line">l -- 向右移动</span><br></pre></td></tr></table></figure>
-<h3 id="上下移动"><a href="#上下移动" class="headerlink" title="上下移动"></a>上下移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&quot; 绝对移动</span><br><span class="line">NG/Ngg -- 移到第N行</span><br><span class="line">gg -- 移到第一行</span><br><span class="line">G -- 移到最后一行</span><br><span class="line"></span><br><span class="line">&quot; 相对移动</span><br><span class="line">j -- 向下移动</span><br><span class="line">k -- 向上移动</span><br></pre></td></tr></table></figure>
-<h3 id="其他移动"><a href="#其他移动" class="headerlink" title="其他移动"></a>其他移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% -- 可对括号进行匹配移动</span><br></pre></td></tr></table></figure>
-<h3 id="滚屏"><a href="#滚屏" class="headerlink" title="滚屏"></a>滚屏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ctrl+f: 下翻一屏。</span><br><span class="line">ctrl+b: 上翻一屏。</span><br><span class="line">ctrl+d: 下翻半屏。</span><br><span class="line">ctrl+u: 上翻半屏。</span><br><span class="line">ctrl+e: 向下滚动一行。</span><br><span class="line">ctrl+y: 向上滚动一行。</span><br><span class="line">n%: 到文件n%的位置。</span><br><span class="line">zz: 将当前行移动到屏幕中央。</span><br><span class="line">zt: 将当前行移动到屏幕顶端。</span><br><span class="line">zb: 将当前行移动到屏幕底端。</span><br></pre></td></tr></table></figure>
-<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><hr>
-<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d&#123;motion&#125; -- 删除移动过的范围 </span><br><span class="line">&#123;visual&#125;d -- 删除可视化的范围</span><br><span class="line">dd -- 删除一行</span><br><span class="line">D -- 删除到行尾</span><br><span class="line">x -- 删除一个字母</span><br><span class="line">X -- 往前删除一个字母</span><br></pre></td></tr></table></figure>
-<h3 id="删除-插入"><a href="#删除-插入" class="headerlink" title="删除+插入"></a>删除+插入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c&#123;motion&#125; -- 删除移动过的范围并插入 </span><br><span class="line">&#123;visual&#125;c -- 删除可视化的范围并插入</span><br><span class="line">cc -- 删除一行并插入</span><br><span class="line">C -- 删除到行尾并插入</span><br><span class="line">s -- 删除一个字母并插入</span><br><span class="line">S -- 删除一行并插入</span><br></pre></td></tr></table></figure>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r&#123;char&#125; -- 修改掉一个字母</span><br><span class="line">R -- 进入修改模式</span><br></pre></td></tr></table></figure>
-<h3 id="区域选择"><a href="#区域选择" class="headerlink" title="区域选择"></a>区域选择</h3><p>区域选择的格式为：<code>{action}N(i/a){object}</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;action&#125; -- 可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)</span><br><span class="line">N -- 表示匹配object的次数</span><br><span class="line">i/a -- i表示不包括最外层边界，a表示包括最外层边界</span><br><span class="line">&#123;object&#125; -- 表示你选择的范围</span><br><span class="line"></span><br><span class="line">&#123;object&#125;有如下：</span><br><span class="line">w/W -- 一个单词</span><br><span class="line">s/S -- 一个句子</span><br><span class="line">p/P -- 一篇段落</span><br><span class="line">&apos; -- 单引号字符串</span><br><span class="line">&quot; -- 双引号字符串</span><br><span class="line">` -- 反向引用字符串</span><br><span class="line">b/(/) -- (块)</span><br><span class="line">B/&#123;/&#125;-- &#123;块&#125;</span><br><span class="line">[/] -- [块]</span><br><span class="line">&lt;/&gt; -- &lt;块&gt;</span><br><span class="line">t -- &lt;&gt;块&lt;&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="查找与替换"><a href="#查找与替换" class="headerlink" title="查找与替换"></a>查找与替换</h2><hr>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://harttle.land/2016/08/08/vim-search-in-file.html" target="_blank" rel="noopener">在 Vim 中优雅地查找和替换 | Harttle Land</a></p>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>更快捷的方式为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* -- 向下查找光标所在的单词</span><br><span class="line"># -- 向上查找光标所在的单词</span><br><span class="line">依旧可以用 n/N 选择下一个或上一个</span><br></pre></td></tr></table></figure></p>
-<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p>替换的格式为：<code>:{作用范围}s/{目标}/{替换}/{替换标志}</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot; 作用范围</span><br><span class="line">默认是当前行</span><br><span class="line">visual模式选中的范围</span><br><span class="line">% -- 全局 </span><br><span class="line">2,11 -- 2到11行</span><br><span class="line"></span><br><span class="line">&quot; 目标与替换</span><br><span class="line">字符串，支持正则</span><br><span class="line"></span><br><span class="line">&quot; 替换标志</span><br><span class="line">g -- 全局</span><br><span class="line">i -- 不区分大小写 </span><br><span class="line">c -- 需要确|CTRL-E</span><br></pre></td></tr></table></figure>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><hr>
-<h3 id="折叠"><a href="#折叠" class="headerlink" title="折叠"></a>折叠</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&quot; 基础</span><br><span class="line">zf -- 创建折叠的命令，可以在一个可视区域上使用该命令；</span><br><span class="line">za -- 打开/关闭当前折叠；</span><br><span class="line">zd -- 删除当前行的折叠；</span><br><span class="line">zi -- enable/disable fold;</span><br><span class="line"></span><br><span class="line">zj -- 跳到下一个折叠处；</span><br><span class="line">zk -- 跳到上一个折叠处；</span><br><span class="line"></span><br><span class="line">&quot; 全局折叠</span><br><span class="line">zr -- 打开嵌套的折行；</span><br><span class="line">zm -- 收起嵌套的折行；</span><br><span class="line">zR -- 打开所有折行；</span><br><span class="line">zM -- 收起所有折行；</span><br><span class="line"></span><br><span class="line">&quot; 所在行的折叠</span><br><span class="line">zo -- 打开折叠的文本；</span><br><span class="line">zc -- 收起折叠；</span><br><span class="line">zO -- 打开所有折行；</span><br><span class="line">zC -- 收起所有折行；</span><br></pre></td></tr></table></figure>
-<h3 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctrl+a -- 光标所在的数字+1</span><br><span class="line">ga -- 查看字符ascii码</span><br><span class="line">g8 -- 查看字符utf-8编码</span><br></pre></td></tr></table></figure>
-
-          
+          移动
+左右移动1234567891011&quot; 绝对移动0 -- 到行头^ -- 到本行的第一个非blank字符$ -- 到行尾g_ -- 到本行最后一个不是blank字符的位置f/F&#123;char&#125; -- 到下一个&#123;char&#125;字符的位置 t/T&#123;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/06/normal模式下快捷键/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -607,6 +658,15 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Mariana</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
   
 </div>
 
