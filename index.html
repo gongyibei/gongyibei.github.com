@@ -249,6 +249,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2018/08/07/生成器与协程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mariana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mariana是歌名啊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/07/生成器与协程/" itemprop="url">生成器与协程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T03:32:53+08:00">
+                2018-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/08/07/生成器与协程/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::https://gongyibei.github.io/2018/08/07/生成器与协程/" class="cy_cmt_count" data-xid="2018/08/07/生成器与协程/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  636字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="可用于迭代的类型"><a href="#可用于迭代的类型" class="headerlink" title="可用于迭代的类型"></a>可用于迭代的类型</h2><hr>
+<ul>
+<li>iterable<ul>
+<li>集合类</li>
+<li>iterator<ul>
+<li>generator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><hr>
+<h3 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h3><p>通过类似列表生成式的方式生成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>L = [x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g</span><br><span class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x1022ef630</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>调用含有<code>yield</code>语句的函数也可以得到<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = fib(<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f</span><br><span class="line">&lt;generator object fib at <span class="number">0x104feaaa0</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="生成器对象的方法"><a href="#生成器对象的方法" class="headerlink" title="生成器对象的方法"></a>生成器对象的方法</h3><p><code>next()</code>：从生成器中获取一个值。类似于<code>send(None)</code><br><code>send()</code>：从生气器中获取一个值。并可以传入一个值作为<code>yield</code>语句的返回值</p>
+<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><hr>
+<h3 id="创建方法-1"><a href="#创建方法-1" class="headerlink" title="创建方法"></a>创建方法</h3><p>使用<a href="mailto:`@asyncio.coroutine" target="_blank" rel="noopener">`@asyncio.coroutine</a><code>和</code>yield from`<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="meta">@asyncio.coroutine</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"Hello world!"</span>)</span><br><span class="line">    r = <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"Hello again!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>3.5版本的新语法<code>async</code>和<code>await</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"Hello world!"</span>)</span><br><span class="line">    r = <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"Hello again!"</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="yield-from语句分析"><a href="#yield-from语句分析" class="headerlink" title="yield from语句分析"></a><code>yield from</code>语句分析</h3><p>python不是通过<a href="mailto:`@asyncio.coroutine" target="_blank" rel="noopener">`@asyncio.coroutine</a><code>定义协程的，而是看定义的函数里有没有</code>yield<code>语句</code>@asyncio.coroutine`的作用（《流畅的Python》18.1）</p>
+<ol>
+<li>后面接可迭代对象，代替<code>for</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]:</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="async和await分析"><a href="#async和await分析" class="headerlink" title="async和await分析"></a><code>async</code>和<code>await</code>分析</h3><p>首先要理解其使用范围，要么在asyncio中使用，要么自己实现even loops。yield from 并没有完全被替代</p>
+<blockquote>
+<p>async and await are specifically designed for asynchronous programming with event loops<br><a href="https://stackoverflow.com/questions/34469060/python-native-coroutines-and-send" target="_blank" rel="noopener">async await - Python native coroutines and send() - Stack Overflow</a></p>
+</blockquote>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><hr>
+<p>通过<code>yield</code>实现的生产者-消费者模型<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span><span class="params">()</span>:</span></span><br><span class="line">    r = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        n = <span class="keyword">yield</span> r</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> n:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        print(<span class="string">'[CONSUMER] Consuming %s...'</span> % n)</span><br><span class="line">        r = <span class="string">'200 OK'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">produce</span><span class="params">(c)</span>:</span></span><br><span class="line">    c.send(<span class="keyword">None</span>)</span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; <span class="number">5</span>:</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">        print(<span class="string">'[PRODUCER] Producing %s...'</span> % n)</span><br><span class="line">        r = c.send(n)</span><br><span class="line">        print(<span class="string">'[PRODUCER] Consumer return: %s'</span> % r)</span><br><span class="line">    c.close()</span><br><span class="line"></span><br><span class="line">c = consumer()</span><br><span class="line">produce(c)</span><br></pre></td></tr></table></figure></p>
+<p>调用<code>generator</code>时，通过<code>return</code>拿不到<code>generator</code>的<code>return</code>语句的返回值。如果想要拿到返回值，必须捕获<code>StopIteration</code>错误，返回值包含在<code>StopIteration</code>的<code>value</code>中：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g = fib(<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>        x = next(g)</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">'g:'</span>, x)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">'Generator return value:'</span>, e.value)</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line">...</span><br><span class="line">g: <span class="number">1</span></span><br><span class="line">g: <span class="number">1</span></span><br><span class="line">g: <span class="number">2</span></span><br><span class="line">g: <span class="number">3</span></span><br><span class="line">g: <span class="number">5</span></span><br><span class="line">g: <span class="number">8</span></span><br><span class="line">Generator <span class="keyword">return</span> value: done</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<p><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰Python教程</a><br><a href="https://zhuanlan.zhihu.com/p/25228075" target="_blank" rel="noopener">从0到1，Python异步编程的演进之路</a><br><a href="https://zhuanlan.zhihu.com/p/27258289" target="_blank" rel="noopener">Python Async/Await入门指南</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2018/08/07/最少通过几个音可以确定一个调/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -394,16 +609,16 @@
 <blockquote>
 <p>有N个非空集合。对于每一个集合，其中的每一个元素，在其他N-1个集合中至少存在一个集合包含这个元素。求每个集合的(不是其他N-1个集合中的任何一个集合的子集的)最小长度的子集  </p>
 </blockquote>
-<p>代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> combinations</span><br><span class="line"></span><br><span class="line">DIATONIC_SCALE = (<span class="string">'C'</span>, <span class="string">'bD'</span>, <span class="string">'D'</span>, <span class="string">'bE'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'bG'</span>, <span class="string">'G'</span>, <span class="string">'bA'</span>, <span class="string">'A'</span>, <span class="string">'bB'</span>,<span class="string">'B'</span>)</span><br><span class="line">INTVAL = (<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">special</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""special"""</span></span><br><span class="line">    major_scales = []</span><br><span class="line">    <span class="keyword">for</span> ind, main <span class="keyword">in</span> enumerate(DIATONIC_SCALE):</span><br><span class="line">        scale = DIATONIC_SCALE[ind:] + DIATONIC_SCALE[:ind]</span><br><span class="line">        major_scale = []</span><br><span class="line">        major_scales.append(major_scale)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        major_scale.append(scale[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> itv <span class="keyword">in</span> INTVAL:</span><br><span class="line">            i += itv</span><br><span class="line">            major_scale.append(scale[i])</span><br><span class="line">    <span class="keyword">for</span> scale <span class="keyword">in</span> major_scales:</span><br><span class="line">        s = scale[<span class="number">0</span>]</span><br><span class="line">        main = [s + <span class="string">' '</span>, s][len(s) == <span class="number">2</span>]</span><br><span class="line">        <span class="comment"># print(main + ' 调: ' + '  '.join([s + ' ', s][len(s) == 2] for s in scale))</span></span><br><span class="line">    out = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">7</span>): </span><br><span class="line">        <span class="keyword">for</span> subset <span class="keyword">in</span> combinations(major_scales[<span class="number">0</span>], i):</span><br><span class="line">            <span class="keyword">for</span> superset <span class="keyword">in</span> major_scales[<span class="number">1</span>:]:</span><br><span class="line">                subset = set(subset)</span><br><span class="line">                <span class="keyword">if</span> subset.issubset(set(superset)):</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                out.append(subset)</span><br><span class="line">    out = [sorted(s,key = <span class="keyword">lambda</span> i:DIATONIC_SCALE.index(i)) <span class="keyword">for</span> s <span class="keyword">in</span> out]</span><br><span class="line">    <span class="keyword">return</span> out </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    out = special()</span><br><span class="line">    pprint.pprint(out)</span><br></pre></td></tr></table></figure></p>
+<p>代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> combinations</span><br><span class="line"></span><br><span class="line">DIATONIC_SCALE = (<span class="string">'C'</span>, <span class="string">'bD'</span>, <span class="string">'D'</span>, <span class="string">'bE'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'bG'</span>, <span class="string">'G'</span>, <span class="string">'bA'</span>, <span class="string">'A'</span>, <span class="string">'bB'</span>,<span class="string">'B'</span>)</span><br><span class="line">INTERVAL = (<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">special</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""special"""</span></span><br><span class="line">    major_scales = []</span><br><span class="line">    <span class="keyword">for</span> ind, main <span class="keyword">in</span> enumerate(DIATONIC_SCALE):</span><br><span class="line">        scale = DIATONIC_SCALE[ind:] + DIATONIC_SCALE[:ind]</span><br><span class="line">        major_scale = []</span><br><span class="line">        major_scales.append(major_scale)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        major_scale.append(scale[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> itv <span class="keyword">in</span> INTERVAL:</span><br><span class="line">            i += itv</span><br><span class="line">            major_scale.append(scale[i])</span><br><span class="line">    <span class="keyword">for</span> scale <span class="keyword">in</span> major_scales:</span><br><span class="line">        s = scale[<span class="number">0</span>]</span><br><span class="line">        main = [s + <span class="string">' '</span>, s][len(s) == <span class="number">2</span>]</span><br><span class="line">        <span class="comment"># print(main + ' 调: ' + '  '.join([s + ' ', s][len(s) == 2] for s in scale))</span></span><br><span class="line">    out = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">7</span>): </span><br><span class="line">        <span class="keyword">for</span> subset <span class="keyword">in</span> combinations(major_scales[<span class="number">0</span>], i):</span><br><span class="line">            <span class="keyword">for</span> superset <span class="keyword">in</span> major_scales[<span class="number">1</span>:]:</span><br><span class="line">                subset = set(subset)</span><br><span class="line">                <span class="keyword">if</span> subset.issubset(set(superset)):</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                out.append(subset)</span><br><span class="line">    out = [sorted(s,key = <span class="keyword">lambda</span> i:DIATONIC_SCALE.index(i)) <span class="keyword">for</span> s <span class="keyword">in</span> out]</span><br><span class="line">    <span class="keyword">return</span> out </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    out = special()</span><br><span class="line">    pprint.pprint(out)</span><br></pre></td></tr></table></figure></p>
 <p>输出的结果为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="string">'C'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'C'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line"> [<span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>]]</span><br></pre></td></tr></table></figure></p>
 <h2 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h2><hr>
 <p>输出结果中的每一行表示一种可能，也就是说我们<strong>最少需要找出3个音就可以确定一个调</strong>了。</p>
-<p>仔细观察结果还可以发现，每一种可能中都含有<code>F</code>和<code>B</code>，找出<code>F</code>和<code>B</code>后至少再从剩下的5个音中随便找出1个就可了。也就是说假如你没有同时找出<code>F</code>和<code>B</code>，就算你找到了6个音也不能确定是什么调。这里有两个极端的例子</p>
+<p>仔细观察结果还可以发现，每一种可能中都含有<code>F</code>和<code>B</code>，找出<code>F</code>和<code>B</code>后至少再从剩下的5个音中随便找出1个就可了。也就是说假如你没有同时找出<code>F</code>和<code>B</code>，就算你找到了6个音也不能确定是什么调。这里有两个极端的例子。</p>
 <ul>
-<li>当你找出<code>F</code>和<code>B</code>，其他11个调中同时含有这两个音的还有bG调，而且C调的另外5个音与bG调的另外5个音都不相同，所以再找一个音就可以确定是什么调了</li>
-<li>比如C调与G调就只有<code>F</code>和<code>bG</code>不一样，就算你找出了初<code>F</code>之外的6个音也不能确定是C调</li>
+<li>当你找出<code>F</code>和<code>B</code>，其他11个调中同时含有这两个音的还有bG调，而且C调的另外5个音与bG调的另外5个音都不相同，所以再找一个音就可以确定是什么调了。</li>
+<li>比如C调与G调就只有<code>F</code>和<code>bG</code>不一样，就算你找出了除<code>F</code>之外的6个音也不能确定是C调。</li>
 </ul>
-<p>然后还有个规律就是<code>F</code>到<code>B</code> ，<code>B</code>到<code>F</code>都是相隔6个半音<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C<span class="string">', '</span>bD<span class="string">', '</span>D<span class="string">', '</span>bE<span class="string">', '</span>E<span class="string">', '</span>F<span class="string">', '</span>bG<span class="string">', '</span>G<span class="string">', '</span>bA<span class="string">', '</span>A<span class="string">', '</span>bB<span class="string">','</span>B</span><br></pre></td></tr></table></figure></p>
+<p>然后还有个规律就是<code>F</code>到<code>B</code> ，<code>B</code>到<code>F</code>都是相隔6个半音。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C<span class="string">', '</span>bD<span class="string">', '</span>D<span class="string">', '</span>bE<span class="string">', '</span>E<span class="string">', '</span>F<span class="string">', '</span>bG<span class="string">', '</span>G<span class="string">', '</span>bA<span class="string">', '</span>A<span class="string">', '</span>bB<span class="string">','</span>B</span><br></pre></td></tr></table></figure></p>
 <p><strong>结论：找出一个调的4级音和7级音，再至少找出一个音就可以确定调了</strong></p>
 <p>emmmmmmmm说了这么多，那么这个结论对找调有什么帮助呢。说实话一点luan用都没有，纯属没事找乐子：）</p>
 
@@ -840,7 +1055,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -851,7 +1066,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -862,7 +1077,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -913,7 +1128,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.4k</span>
+    <span title="Site words total count">3.1k</span>
   
 </div>
 
