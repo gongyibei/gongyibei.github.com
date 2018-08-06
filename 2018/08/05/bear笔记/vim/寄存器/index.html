@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://gongyibei.github.io">
-  <title>Archives: 2018/7 | 永永的博客</title>
+  <title>永永的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="寄存器分类  匿名寄存器 ”” 编号寄存器 ”0 到 ”9 小删除寄存器 ”- 26个命名寄存器 ”a 到 ”z 3个只读寄存器 ”:, ”., ”% Buffer交替文件寄存器 ”# 表达式寄存器 ”= 选区和拖放寄存器 &amp;quot;*, ”+, &amp;quot;~ 黑洞寄存器 &amp;quot;_ 搜索模式寄存器 ”/  使用 插入模式下在插入模式下：ctrl+r+寄存器名，在当前位置输入寄存器的内容">
+<meta property="og:type" content="article">
 <meta property="og:title" content="永永的博客">
-<meta property="og:url" content="https://gongyibei.github.io/archives/2018/07/index.html">
+<meta property="og:url" content="https://gongyibei.github.io/2018/08/05/bear笔记/vim/寄存器/index.html">
 <meta property="og:site_name" content="永永的博客">
+<meta property="og:description" content="寄存器分类  匿名寄存器 ”” 编号寄存器 ”0 到 ”9 小删除寄存器 ”- 26个命名寄存器 ”a 到 ”z 3个只读寄存器 ”:, ”., ”% Buffer交替文件寄存器 ”# 表达式寄存器 ”= 选区和拖放寄存器 &amp;quot;*, ”+, &amp;quot;~ 黑洞寄存器 &amp;quot;_ 搜索模式寄存器 ”/  使用 插入模式下在插入模式下：ctrl+r+寄存器名，在当前位置输入寄存器的内容">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-05T09:28:23.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="永永的博客">
+<meta name="twitter:description" content="寄存器分类  匿名寄存器 ”” 编号寄存器 ”0 到 ”9 小删除寄存器 ”- 26个命名寄存器 ”a 到 ”z 3个只读寄存器 ”:, ”., ”% Buffer交替文件寄存器 ”# 表达式寄存器 ”= 选区和拖放寄存器 &amp;quot;*, ”+, &amp;quot;~ 黑洞寄存器 &amp;quot;_ 搜索模式寄存器 ”/  使用 插入模式下在插入模式下：ctrl+r+寄存器名，在当前位置输入寄存器的内容">
   
     <link rel="alternative" href="/atom.xml" title="永永的博客" type="application/atom+xml">
   
@@ -148,70 +152,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-bear笔记/vim/寄存器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><hr>
+<ul>
+<li>匿名寄存器 <code>””</code></li>
+<li>编号寄存器 <code>”0</code> 到 <code>”9</code></li>
+<li>小删除寄存器 <code>”-</code></li>
+<li>26个命名寄存器 <code>”a</code> 到 <code>”z</code></li>
+<li>3个只读寄存器 <code>”:</code>, <code>”.</code>, <code>”%</code></li>
+<li>Buffer交替文件寄存器 <code>”#</code></li>
+<li>表达式寄存器 <code>”=</code></li>
+<li>选区和拖放寄存器 <code>&quot;*</code>, <code>”+</code>, <code>&quot;~</code></li>
+<li>黑洞寄存器 <code>&quot;_</code></li>
+<li>搜索模式寄存器 <code>”/</code></li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><hr>
+<h3 id="插入模式下"><a href="#插入模式下" class="headerlink" title="插入模式下"></a>插入模式下</h3><p>在插入模式下：<code>ctrl+r+寄存器名</code>，在当前位置输入寄存器的内容</p>
+<h2 id="匿名寄存器"><a href="#匿名寄存器" class="headerlink" title="匿名寄存器"></a>匿名寄存器</h2><hr>
+<p><code>””</code>：保存上一次删除复制的内容</p>
+<h2 id="编号寄存器"><a href="#编号寄存器" class="headerlink" title="编号寄存器"></a>编号寄存器</h2><hr>
+<p><code>&quot;0</code>：y指令拷贝的内容默认保存的位置，<br><code>”1</code>到<code>&quot;9</code>：保存着删除掉的字符串</p>
+<h2 id="命名寄存器"><a href="#命名寄存器" class="headerlink" title="命名寄存器"></a>命名寄存器</h2><hr>
+<p><code>”a</code>到<code>“z</code>：自己用的。可以用来存放宏</p>
+<h2 id="选择和拖放寄存器"><a href="#选择和拖放寄存器" class="headerlink" title="选择和拖放寄存器"></a>选择和拖放寄存器</h2><hr>
+<p><code>”*</code>：指X11中的PRIMARY选区，即鼠标选中区域。在桌面系统中可按鼠标中键粘贴。<br><code>”+</code>：指X11中的CLIPBOARD选区，即系统剪切板。在桌面系统中可按Ctrl+V粘贴。</p>
+<p>在使用时，这两个寄存器的值总相等。在vim中，用鼠标选中时，寄存器的值就会改变。在vim外需要复制才能改变</p>
+<ul>
+<li>p命令默认粘贴的是这两个寄存器里的内容</li>
+<li>vim中：选中，删除复制都会改变</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<p><a href="https://harttle.land/2016/07/25/vim-registers.html#header-1" target="_blank" rel="noopener">使用 Vim 寄存器 | Harttle Land</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/29/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-29T02:07:06.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/29/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://gongyibei.github.io/2018/08/05/bear笔记/vim/寄存器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/29/bear笔记/vim/normal模式下快捷键/" class="archive-article-date">
-  	<time datetime="2018-07-28T16:48:31.880Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+    <a href="/2018/08/06/bear笔记/vim/insert模式下快捷键/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/04/bear笔记/vim/VimScript/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -234,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

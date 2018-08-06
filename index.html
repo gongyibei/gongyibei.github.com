@@ -150,6 +150,246 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-bear笔记/vim/insert模式下快捷键" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="insert模式下快捷键"><a href="#insert模式下快捷键" class="headerlink" title="insert模式下快捷键"></a>insert模式下快捷键</h1><p>insert模式下快捷键比较少，安心的输入就行啦</p>
+<h2 id="Ctrl类"><a href="#Ctrl类" class="headerlink" title="Ctrl类"></a>Ctrl类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+r -- 选用寄存器</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/06/bear笔记/vim/insert模式下快捷键/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bear笔记/vim/寄存器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><hr>
+<ul>
+<li>匿名寄存器 <code>””</code></li>
+<li>编号寄存器 <code>”0</code> 到 <code>”9</code></li>
+<li>小删除寄存器 <code>”-</code></li>
+<li>26个命名寄存器 <code>”a</code> 到 <code>”z</code></li>
+<li>3个只读寄存器 <code>”:</code>, <code>”.</code>, <code>”%</code></li>
+<li>Buffer交替文件寄存器 <code>”#</code></li>
+<li>表达式寄存器 <code>”=</code></li>
+<li>选区和拖放寄存器 <code>&quot;*</code>, <code>”+</code>, <code>&quot;~</code></li>
+<li>黑洞寄存器 <code>&quot;_</code></li>
+<li>搜索模式寄存器 <code>”/</code></li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><hr>
+<h3 id="插入模式下"><a href="#插入模式下" class="headerlink" title="插入模式下"></a>插入模式下</h3><p>在插入模式下：<code>ctrl+r+寄存器名</code>，在当前位置输入寄存器的内容</p>
+<h2 id="匿名寄存器"><a href="#匿名寄存器" class="headerlink" title="匿名寄存器"></a>匿名寄存器</h2><hr>
+<p><code>””</code>：保存上一次删除复制的内容</p>
+<h2 id="编号寄存器"><a href="#编号寄存器" class="headerlink" title="编号寄存器"></a>编号寄存器</h2><hr>
+<p><code>&quot;0</code>：y指令拷贝的内容默认保存的位置，<br><code>”1</code>到<code>&quot;9</code>：保存着删除掉的字符串</p>
+<h2 id="命名寄存器"><a href="#命名寄存器" class="headerlink" title="命名寄存器"></a>命名寄存器</h2><hr>
+<p><code>”a</code>到<code>“z</code>：自己用的。可以用来存放宏</p>
+<h2 id="选择和拖放寄存器"><a href="#选择和拖放寄存器" class="headerlink" title="选择和拖放寄存器"></a>选择和拖放寄存器</h2><hr>
+<p><code>”*</code>：指X11中的PRIMARY选区，即鼠标选中区域。在桌面系统中可按鼠标中键粘贴。<br><code>”+</code>：指X11中的CLIPBOARD选区，即系统剪切板。在桌面系统中可按Ctrl+V粘贴。</p>
+<p>在使用时，这两个寄存器的值总相等。在vim中，用鼠标选中时，寄存器的值就会改变。在vim外需要复制才能改变</p>
+<ul>
+<li>p命令默认粘贴的是这两个寄存器里的内容</li>
+<li>vim中：选中，删除复制都会改变</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<p><a href="https://harttle.land/2016/07/25/vim-registers.html#header-1" target="_blank" rel="noopener">使用 Vim 寄存器 | Harttle Land</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/05/bear笔记/vim/寄存器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bear笔记/vim/VimScript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="VimScript"><a href="#VimScript" class="headerlink" title="VimScript"></a>VimScript</h1><h2 id="设置选项"><a href="#设置选项" class="headerlink" title="设置选项"></a>设置选项</h2><hr>
+<h3 id="行号设置"><a href="#行号设置" class="headerlink" title="行号设置"></a>行号设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:set number(nu)</span><br><span class="line">:set nonumber(nonu)</span><br><span class="line">:set relativenumber(rnu)</span><br><span class="line">:set norelagivenumber(nornu)</span><br></pre></td></tr></table></figure>
+<h2 id="键映射"><a href="#键映射" class="headerlink" title="键映射"></a>键映射</h2><hr>
+<p><img src="VimScript/E0A379BD-BBBF-482D-BEBC-14E5648D5CB4.png" alt=""></p>
+<h3 id="基本映射"><a href="#基本映射" class="headerlink" title="基本映射"></a>基本映射</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">" 映射到全局</span><br><span class="line">:map</span><br></pre></td></tr></table></figure>
+<h3 id="模式映射"><a href="#模式映射" class="headerlink" title="模式映射"></a>模式映射</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot; 映射到normal模式</span><br><span class="line">:nmap</span><br><span class="line">&quot; 映射到view模式</span><br><span class="line">:vmap</span><br><span class="line">&quot; 映射到insert模式</span><br><span class="line">:imap</span><br></pre></td></tr></table></figure>
+<h3 id="非递归映射"><a href="#非递归映射" class="headerlink" title="非递归映射"></a>非递归映射</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:noremap</span><br><span class="line">:nnoremap</span><br><span class="line">:vnoremap</span><br><span class="line">:inoremap</span><br></pre></td></tr></table></figure>
+<h3 id="设置leader"><a href="#设置leader" class="headerlink" title="设置leader"></a>设置leader</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:let mapleader = &quot;-&quot;</span><br><span class="line">:nnoremap &lt;leader&gt;d dd</span><br><span class="line">:let maplocalleader = &quot;\\&quot;</span><br></pre></td></tr></table></figure>
+<p>localleader 可以针对某类文件设置映射</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/04/bear笔记/vim/VimScript/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bear笔记/vim/NVIM配置文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NVIM配置文件"><a href="#NVIM配置文件" class="headerlink" title="NVIM配置文件"></a>NVIM配置文件</h1><h2 id="主题配色"><a href="#主题配色" class="headerlink" title="主题配色"></a>主题配色</h2><hr>
+<h2 id="增强界面"><a href="#增强界面" class="headerlink" title="增强界面"></a>增强界面</h2><hr>
+<h2 id="简化操作"><a href="#简化操作" class="headerlink" title="简化操作"></a>简化操作</h2><hr>
+<h2 id="语法工具"><a href="#语法工具" class="headerlink" title="语法工具"></a>语法工具</h2><hr>
+<h3 id="w0rp-ale"><a href="#w0rp-ale" class="headerlink" title="w0rp/ale"></a>w0rp/ale</h3><p>用于语法检测</p>
+<p>## </p>
+<h2 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h2><hr>
+<h3 id="kien-ctrlp"><a href="#kien-ctrlp" class="headerlink" title="kien/ctrlp"></a>kien/ctrlp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ctrl+d -- 切换查找方式</span><br><span class="line">ctrl+f -- 改变查找目录</span><br><span class="line"></span><br><span class="line">ctrl+j -- 向下移动</span><br><span class="line">ctrl+k -- 向上移动</span><br><span class="line">ctrl+z -- 选择一个文件</span><br><span class="line"></span><br><span class="line">ctrl+t -- 标签的方式打开</span><br><span class="line">ctrl+o -- 分屏打开</span><br><span class="line">ctrl+y -- 创建文件</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="http://zuyunfei.com/2013/08/26/vim-plugin-ctrlp/" target="_blank" rel="noopener">vim中的杀手级插件：CtrlP | Cloud’s Blog</a></p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><hr>
+<h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><hr>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="Python-1"><a href="#Python-1" class="headerlink" title="Python"></a>Python</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line">&quot; ========================================插件管理========================================</span><br><span class="line">call plug#beginn(&apos;~/.vim/plugged&apos;)</span><br><span class="line"></span><br><span class="line">&quot; ====================主题配色====================</span><br><span class="line">Plug &apos;joshdick/onedark.vim&apos;</span><br><span class="line">Plug &apos;icymind/NeoSolarized&apos;</span><br><span class="line">Plug &apos;tomasr/molokai&apos;</span><br><span class="line">Plug &apos;spf13/vim-colors&apos;</span><br><span class="line">Plug &apos;flazz/vim-colorschemes&apos;</span><br><span class="line">Plug &apos;morhetz/gruvbox&apos;</span><br><span class="line">Plug &apos;powerline/fonts&apos;</span><br><span class="line">&quot;Plug &apos;kien/rainbow_parentheses.vim&apos;</span><br><span class="line"></span><br><span class="line">&quot; ====================增强界面====================</span><br><span class="line">Plug &apos;scrooloose/nerdtree&apos;, &#123; &apos;on&apos;:  &apos;NERDTreeToggle&apos; &#125;</span><br><span class="line">Plug &apos;majutsushi/tagbar&apos;</span><br><span class="line">Plug &apos;vim-airline/vim-airline&apos;</span><br><span class="line">Plug &apos;vim-airline/vim-airline-themes&apos;</span><br><span class="line"></span><br><span class="line">&quot; ====================自动补全====================</span><br><span class="line">&quot; 语法检测</span><br><span class="line">Plug &apos;w0rp/ale&apos;</span><br><span class="line">Plug &apos;Shougo/deoplete.nvim&apos;, &#123; &apos;do&apos;: &apos;:UpdateRemotePlugins&apos; &#125;</span><br><span class="line">Plug &apos;jiangmiao/auto-pairs&apos;</span><br><span class="line"></span><br><span class="line">&quot; ====================简化操作====================</span><br><span class="line">Plug &apos;easymotion/vim-easymotion&apos;</span><br><span class="line"></span><br><span class="line">&quot; ====================其他插件====================</span><br><span class="line">Plug &apos;benmills/vimux&apos;</span><br><span class="line">Plug &apos;kien/ctrlp.vim&apos;</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br><span class="line"></span><br><span class="line">if (empty($TMUX))</span><br><span class="line">  if (has(&quot;nvim&quot;))</span><br><span class="line">    let $NVIM_TUI_ENABLE_TRUE_COLOR=1</span><br><span class="line">  endif</span><br><span class="line">  if (has(&quot;termguicolors&quot;))</span><br><span class="line">    set termguicolors</span><br><span class="line">  endif</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; ========================================基础配置========================================</span><br><span class="line">&quot; Genneral &#123;&#123;&#123;</span><br><span class="line">    syntax on</span><br><span class="line">    set clipboard=unnamed</span><br><span class="line"></span><br><span class="line">    set number</span><br><span class="line">    set relativenumber</span><br><span class="line"></span><br><span class="line">    set background=dark</span><br><span class="line">    set t_Co=256</span><br><span class="line">    &quot;set termguicolors</span><br><span class="line">    &quot;colorscheme molokai</span><br><span class="line">    &quot;colorscheme NeoSolarized</span><br><span class="line">    &quot;colorscheme onedark</span><br><span class="line">    &quot;colorscheme ir_black</span><br><span class="line">    colorscheme gruvbox</span><br><span class="line"></span><br><span class="line">    &quot; 突出显示当前行</span><br><span class="line">    set cursorline</span><br><span class="line"></span><br><span class="line">    &quot; 检测文件类型</span><br><span class="line">    filetype on</span><br><span class="line">    &quot; 针对不同的文件类型采用不同的缩进格式</span><br><span class="line">    filetype indent on</span><br><span class="line">    &quot; 允许插件</span><br><span class="line">    filetype plugin on</span><br><span class="line">    &quot; 启动自动补全</span><br><span class="line">    filetype plugin indent on</span><br><span class="line"></span><br><span class="line">    &quot; 缩进配置</span><br><span class="line">    &quot; Smart indent</span><br><span class="line">    set smartindent</span><br><span class="line">    &quot; 打开自动缩进</span><br><span class="line">    &quot; never add copyindent, case error   &quot; copy the previous indentation on autoindenting</span><br><span class="line">    set autoindent</span><br><span class="line"></span><br><span class="line">    &quot; tab相关变更</span><br><span class="line">    &quot; 设置Tab键的宽度        [等同的空格个数]</span><br><span class="line">    set tabstop=4</span><br><span class="line">    &quot; 每一次缩进对应的空格数</span><br><span class="line">    set shiftwidth=4</span><br><span class="line">    &quot; 按退格键时可以一次删掉 4 个空格</span><br><span class="line">    set softtabstop=4</span><br><span class="line">    &quot; insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格</span><br><span class="line">    set smarttab</span><br><span class="line">    &quot; 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]</span><br><span class="line">    set expandtab</span><br><span class="line">    &quot; 缩进时，取整 use multiple of shiftwidth when indenting with &apos;&lt;&apos; and &apos;&gt;&apos;</span><br><span class="line">    set shiftround</span><br><span class="line"></span><br><span class="line">    &quot; 分屏窗口移动, Smart way to move between windows</span><br><span class="line">    map &lt;C-j&gt; &lt;C-W&gt;j</span><br><span class="line">    map &lt;C-k&gt; &lt;C-W&gt;k</span><br><span class="line">    map &lt;C-h&gt; &lt;C-W&gt;h</span><br><span class="line">    map &lt;C-l&gt; &lt;C-W&gt;l</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&quot;一键执行</span><br><span class="line">map &lt;F5&gt; :call CompileRun()&lt;CR&gt;</span><br><span class="line">func! CompileRun()</span><br><span class="line">    exec &quot;w&quot; </span><br><span class="line">    if &amp;filetype == &apos;python&apos;</span><br><span class="line">        exec &apos;!time python3 %&apos;</span><br><span class="line">   &quot; elseif &amp;filetype == &apos;c&apos; </span><br><span class="line">   &quot;     exec &apos;!g++ % -o %&lt;&apos;</span><br><span class="line">   &quot;     exec &apos;!time ./%&lt;&apos;</span><br><span class="line">   &quot; elseif &amp;filetype == &apos;cpp&apos;</span><br><span class="line">   &quot;     exec &apos;!g++ % -o %&lt;&apos;</span><br><span class="line">   &quot;     exec &apos;!time ./%&lt;&apos;</span><br><span class="line">    elseif &amp;filetype == &apos;sh&apos;</span><br><span class="line">        :!time bash %</span><br><span class="line">    endif                                                                              </span><br><span class="line">endfunc </span><br><span class="line"></span><br><span class="line">&quot; 定义函数AutoSetFileHead，自动插入文件头</span><br><span class="line">autocmd BufNewFile *.sh,*.py exec &quot;:call AutoSetFileHead()&quot;</span><br><span class="line">function! AutoSetFileHead()</span><br><span class="line">    &quot;如果文件类型为.sh文件</span><br><span class="line">    if &amp;filetype == &apos;sh&apos;</span><br><span class="line">        call setline(1, &quot;\#!/bin/bash&quot;)</span><br><span class="line">    endif</span><br><span class="line"></span><br><span class="line">    &quot;如果文件类型为python</span><br><span class="line">    if &amp;filetype == &apos;python&apos;</span><br><span class="line">        &quot; call setline(1, &quot;\#!/usr/bin/env python&quot;)</span><br><span class="line">        &quot; call append(1, &quot;\# encoding: utf-8&quot;)</span><br><span class="line">        call setline(1, &quot;\# -*- coding: utf-8 -*-&quot;)</span><br><span class="line">    endif</span><br><span class="line"></span><br><span class="line">    normal G</span><br><span class="line">    normal o</span><br><span class="line">    normal o</span><br><span class="line">endfunc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; ========================================插件设置========================================</span><br><span class="line"></span><br><span class="line">&quot; ====================增强界面====================</span><br><span class="line">&quot; nerdtree &#123;&#123;&#123;</span><br><span class="line">    map &lt;F7&gt; :NERDTreeToggle&lt;CR&gt;</span><br><span class="line">    let NERDTreeHighlightCursorline=1</span><br><span class="line">    let NERDTreeIgnore=[ &apos;\.pyc$&apos;, &apos;\.pyo$&apos;, &apos;\.obj$&apos;, &apos;\.o$&apos;, &apos;\.so$&apos;, &apos;\.egg$&apos;, &apos;^\.git$&apos;, &apos;^\.svn$&apos;, &apos;^\.hg$&apos; ]</span><br><span class="line">    autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTree&quot;) &amp;&amp; b:NERDTree.isTabTree()) | q | endif</span><br><span class="line">    let g:NERDTreeMapOpenSplit = &apos;s&apos;</span><br><span class="line">    let g:NERDTreeMapOpenVSplit = &apos;v&apos;</span><br><span class="line">    let g:nerdtree_tabs_open_on_console_startup=0</span><br><span class="line">    let g:nerdtree_tabs_open_on_gui_startup=0</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&quot; tagbar &#123;&#123;&#123;</span><br><span class="line">    nmap &lt;F9&gt; :TagbarToggle&lt;CR&gt;</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&quot; airline &#123;&#123;&#123;</span><br><span class="line">    if !exists(&apos;g:airline_symbols&apos;)</span><br><span class="line">        let g:airline_symbols = &#123;&#125;</span><br><span class="line">    endif</span><br><span class="line">    let g:airline_left_sep = &apos;▶ &apos;</span><br><span class="line">    let g:airline_left_alt_sep = &apos;❯&apos;</span><br><span class="line">    let g:airline_right_sep = &apos;◀&apos;</span><br><span class="line">    let g:airline_right_alt_sep = &apos;❮&apos;</span><br><span class="line">    let g:airline_symbols.linenr = &apos;¶&apos;</span><br><span class="line">    let g:airline_symbols.branch = &apos;⎇&apos;</span><br><span class="line">    let g:airline_theme = &apos;bubblegum&apos;</span><br><span class="line">    &quot; 是否打开tabline</span><br><span class="line">    &quot; let g:airline#extensions#tabline#enabled = 1</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&quot; ====================自动补全====================</span><br><span class="line">&quot; deoplete &#123;&#123;&#123;</span><br><span class="line">    let g:deoplete#enable_at_startup = 1</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&quot; ====================简化操作====================</span><br><span class="line">&quot; easymotion &#123;&#123;&#123;</span><br><span class="line">    map f &lt;Plug&gt;(easymotion-prefix)   </span><br><span class="line">    map ff &lt;Plug&gt;(easymotion-s)</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&quot; ====================其他插件====================</span><br><span class="line">&quot; ctrlp &#123;&#123;&#123;</span><br><span class="line">    let g:ctrlp_map = &apos;&lt;c-p&gt;&apos;</span><br><span class="line">    let g:ctrlp_cmd = &apos;CtrlP&apos;</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap &lt;buffer&gt; &lt;M-&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Golang-1"><a href="#Golang-1" class="headerlink" title="Golang"></a>Golang</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plug &apos;fatih/vim-go&apos;, &#123; &apos;tag&apos;: &apos;*&apos; &#125;</span><br><span class="line">&quot;Plug &apos;zchee/deoplete-go&apos;, &#123; &apos;do&apos;: &apos;make&apos;&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/04/bear笔记/vim/NVIM配置文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -192,6 +432,79 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/29/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bear笔记/vim/normal模式下快捷键" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="normal模式下快捷键"><a href="#normal模式下快捷键" class="headerlink" title="normal模式下快捷键"></a>normal模式下快捷键</h1><h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><hr>
+<h3 id="左右移动"><a href="#左右移动" class="headerlink" title="左右移动"></a>左右移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot; 绝对移动</span><br><span class="line">0 -- 到行头</span><br><span class="line">^ -- 到本行的第一个非blank字符</span><br><span class="line">$ -- 到行尾</span><br><span class="line">g_ -- 到本行最后一个不是blank字符的位置</span><br><span class="line">f/F&#123;char&#125; -- 到下一个&#123;char&#125;字符的位置 </span><br><span class="line">t/T&#123;char&#125; -- 到下一个&#123;char&#125;字符前的位置</span><br><span class="line"></span><br><span class="line">&quot; 相对移动</span><br><span class="line">h -- 向左移动</span><br><span class="line">l -- 向右移动</span><br></pre></td></tr></table></figure>
+<h3 id="上下移动"><a href="#上下移动" class="headerlink" title="上下移动"></a>上下移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&quot; 绝对移动</span><br><span class="line">NG/Ngg -- 移到第N行</span><br><span class="line">gg -- 移到第一行</span><br><span class="line">G -- 移到最后一行</span><br><span class="line"></span><br><span class="line">&quot; 相对移动</span><br><span class="line">j -- 向下移动</span><br><span class="line">k -- 向上移动</span><br></pre></td></tr></table></figure>
+<h3 id="其他移动"><a href="#其他移动" class="headerlink" title="其他移动"></a>其他移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% -- 可对括号进行匹配移动</span><br></pre></td></tr></table></figure>
+<h3 id="滚屏"><a href="#滚屏" class="headerlink" title="滚屏"></a>滚屏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ctrl+f: 下翻一屏。</span><br><span class="line">ctrl+b: 上翻一屏。</span><br><span class="line">ctrl+d: 下翻半屏。</span><br><span class="line">ctrl+u: 上翻半屏。</span><br><span class="line">ctrl+e: 向下滚动一行。</span><br><span class="line">ctrl+y: 向上滚动一行。</span><br><span class="line">n%: 到文件n%的位置。</span><br><span class="line">zz: 将当前行移动到屏幕中央。</span><br><span class="line">zt: 将当前行移动到屏幕顶端。</span><br><span class="line">zb: 将当前行移动到屏幕底端。</span><br></pre></td></tr></table></figure>
+<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><hr>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d&#123;motion&#125; -- 删除移动过的范围 </span><br><span class="line">&#123;visual&#125;d -- 删除可视化的范围</span><br><span class="line">dd -- 删除一行</span><br><span class="line">D -- 删除到行尾</span><br><span class="line">x -- 删除一个字母</span><br><span class="line">X -- 往前删除一个字母</span><br></pre></td></tr></table></figure>
+<h3 id="删除-插入"><a href="#删除-插入" class="headerlink" title="删除+插入"></a>删除+插入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c&#123;motion&#125; -- 删除移动过的范围并插入 </span><br><span class="line">&#123;visual&#125;c -- 删除可视化的范围并插入</span><br><span class="line">cc -- 删除一行并插入</span><br><span class="line">C -- 删除到行尾并插入</span><br><span class="line">s -- 删除一个字母并插入</span><br><span class="line">S -- 删除一行并插入</span><br></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r&#123;char&#125; -- 修改掉一个字母</span><br><span class="line">R -- 进入修改模式</span><br></pre></td></tr></table></figure>
+<h3 id="区域选择"><a href="#区域选择" class="headerlink" title="区域选择"></a>区域选择</h3><p>区域选择的格式为：<code>{action}N(i/a){object}</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;action&#125; -- 可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)</span><br><span class="line">N -- 表示匹配object的次数</span><br><span class="line">i/a -- i表示不包括最外层边界，a表示包括最外层边界</span><br><span class="line">&#123;object&#125; -- 表示你选择的范围</span><br><span class="line"></span><br><span class="line">&#123;object&#125;有如下：</span><br><span class="line">w/W -- 一个单词</span><br><span class="line">s/S -- 一个句子</span><br><span class="line">p/P -- 一篇段落</span><br><span class="line">&apos; -- 单引号字符串</span><br><span class="line">&quot; -- 双引号字符串</span><br><span class="line">` -- 反向引用字符串</span><br><span class="line">b/(/) -- (块)</span><br><span class="line">B/&#123;/&#125;-- &#123;块&#125;</span><br><span class="line">[/] -- [块]</span><br><span class="line">&lt;/&gt; -- &lt;块&gt;</span><br><span class="line">t -- &lt;&gt;块&lt;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="查找与替换"><a href="#查找与替换" class="headerlink" title="查找与替换"></a>查找与替换</h2><hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://harttle.land/2016/08/08/vim-search-in-file.html" target="_blank" rel="noopener">在 Vim 中优雅地查找和替换 | Harttle Land</a></p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">更快捷的方式为</span><br></pre></td></tr></table></figure>
+<ul>
+<li>– 向下查找光标所在的单词<h1 id="–-向上查找光标所在的单词"><a href="#–-向上查找光标所在的单词" class="headerlink" title="– 向上查找光标所在的单词"></a>– 向上查找光标所在的单词</h1>依旧可以用 n/N 选择下一个或上一个<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 替换</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">替换的格式为：`:&#123;作用范围&#125;s/&#123;目标&#125;/&#123;替换&#125;/&#123;替换标志&#125;`</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>“ 作用范围<br>默认是当前行<br>visual模式选中的范围<br>% – 全局<br>2,11 – 2到11行</p>
+<p>“ 目标与替换<br>字符串，支持正则</p>
+<p>“ 替换标志<br>g – 全局<br>i – 不区分大小写<br>c – 需要确|CTRL-E<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 其他</span><br><span class="line">- - - -</span><br><span class="line">### 折叠</span><br></pre></td></tr></table></figure></p>
+<p>“ 基础<br>zf – 创建折叠的命令，可以在一个可视区域上使用该命令；<br>za – 打开/关闭当前折叠；<br>zd – 删除当前行的折叠；<br>zi – enable/disable fold;</p>
+<p>zj – 跳到下一个折叠处；<br>zk – 跳到上一个折叠处；</p>
+<p>“ 全局折叠<br>zr – 打开嵌套的折行；<br>zm – 收起嵌套的折行；<br>zR – 打开所有折行；<br>zM – 收起所有折行；</p>
+<p>“ 所在行的折叠<br>zo – 打开折叠的文本；<br>zc – 收起折叠；<br>zO – 打开所有折行；<br>zC – 收起所有折行；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 杂七杂八</span><br></pre></td></tr></table></figure></p>
+<p>ctrl+a – 光标所在的数字+1<br>ga – 查看字符ascii码<br>g8 – 查看字符utf-8编码<br><code>`</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/29/bear笔记/vim/normal模式下快捷键/">展开全文 >></a>
         </p>
       
 
