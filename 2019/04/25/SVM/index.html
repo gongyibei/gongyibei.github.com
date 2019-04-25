@@ -1,0 +1,366 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>SVM [ Mariana是歌名啊 ]</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/mariana.css">
+    
+  
+</head>
+<body>
+我就是无处不在的layout，
+
+<div id="menu-outer">
+  <div id="menu-inner">
+    
+      <a href="/">Home</a>
+    
+      <a href="/about">About</a>
+    
+      <a href="/categories">Category</a>
+    
+      <a href="/archives">Archives</a>
+    
+      <a href="/tags">Tag</a>
+    
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <h1>SVM</h1>
+  <h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><hr>
+<h3 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h3><p><strong>模型</strong></p>
+<p>$$<br>h_\theta(x)=\theta^Tx<br>$$</p>
+<p><strong>优化目标</strong></p>
+<p>$$<br>J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2<br>$$</p>
+<p><strong>优化算法</strong></p>
+<ul>
+<li><p>梯度下降</p>
+</li>
+<li><p>正规方程</p>
+</li>
+</ul>
+<h3 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h3><p>$$<br>\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)\qquad(j=0,…,n)<br>$$</p>
+<h3 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h3><p>根据最小二乘法推倒出，可以直接从训练样本计算出$\theta$，可证明计算出的$\theta$是最优值:</p>
+<p>$$<br>\theta=(X^TX)^{-1}X^Ty<br>$$</p>
+<p>Octove中可如下求解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pinv(X):伪逆</span><br><span class="line">inv(X):可逆</span><br><span class="line">pinv(X&apos;*X)*X&apos;*y</span><br></pre></td></tr></table></figure>
+<p>一般来说$X^TX$是可逆的。如果不可逆，可能是由于包含了多余的特征</p>
+<p><strong>梯度下降与正规方程比较</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">梯度下降</th>
+<th style="text-align:center">正规方程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">需要选择学习率</td>
+<td style="text-align:center">不需要</td>
+</tr>
+<tr>
+<td style="text-align:center">需要多次迭代</td>
+<td style="text-align:center">一次运算得出</td>
+</tr>
+<tr>
+<td style="text-align:center">当特征数量n大时也能较好适用$o(kn^2)$</td>
+<td style="text-align:center">需要计算$(X^TX)^{-1}$如果特征数量n较大则运算代价大，因为矩阵逆的计算时间复杂度为$o(n^3)$，通常来说当n小于10000 时还是可以接受的</td>
+</tr>
+<tr>
+<td style="text-align:center">适用于各种类型的模型</td>
+<td style="text-align:center">只适用于线性模型，不适合逻辑回归模型等其他模型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="避免过拟合"><a href="#避免过拟合" class="headerlink" title="避免过拟合"></a>避免过拟合</h3><ul>
+<li><p><strong>删选特征</strong></p>
+</li>
+<li><p><strong>正则化</strong></p>
+<ul>
+<li>在代价函数中加入正则项，使参数$w$变小</li>
+</ul>
+</li>
+<li><p><strong>特征缩放 feature scaling</strong></p>
+<ul>
+<li>章节5 课时30</li>
+</ul>
+</li>
+<li><p><strong>归一化、标准化</strong></p>
+</li>
+</ul>
+<h3 id="代价函数推导"><a href="#代价函数推导" class="headerlink" title="代价函数推导"></a>代价函数推导</h3><ul>
+<li><p><strong>MAP 估计</strong></p>
+</li>
+<li><p><strong>ML 估计</strong></p>
+</li>
+<li><p><strong>最小二乘估计</strong></p>
+<ul>
+<li>与ML估计是等价的，推导过程不一样</li>
+</ul>
+</li>
+<li><p><strong>正则最小二乘估计</strong></p>
+</li>
+</ul>
+<p>$$<br>J(\theta)=\frac1m\sum_{i-1}^{m}\frac12\left[(h_\theta(x^{(i)})-y^{(i)})^2+\lambda\sum_{j=1}^n\theta_j^2\right]<br>$$</p>
+<h3 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h3><p>增加x^2项，可以看做是增加了一个x^2的特征</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>损失函数</th>
+<th>优化方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性回归</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>岭回归（L2正则化）</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Lasso回归（L1正则化）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="logistic-回归"><a href="#logistic-回归" class="headerlink" title="logistic 回归"></a>logistic 回归</h2><hr>
+<h3 id="模型总览-1"><a href="#模型总览-1" class="headerlink" title="模型总览"></a>模型总览</h3><p><strong>模型</strong></p>
+<p>$$<br>h_\theta(x)=sigmoid(\theta^TX)<br>$$</p>
+<p><strong>优化目标</strong></p>
+<p><strong>优化算法</strong></p>
+<ul>
+<li>梯度下降</li>
+</ul>
+<h3 id="梯度下降-1"><a href="#梯度下降-1" class="headerlink" title="梯度下降"></a>梯度下降</h3><h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><hr>
+<h3 id="模型总览："><a href="#模型总览：" class="headerlink" title="模型总览："></a>模型总览：</h3><p><strong>模型</strong></p>
+<p><strong>优化目标</strong></p>
+<p>$$<br>J(\theta)=\text{cost}(h_\theta(x),y)=-y\text{log}(h_\theta(x))-(1-y)\text{log}(1-h_\theta(x))<br>$$</p>
+<p>$$<br>J(\theta)=\frac1m\sum_{i-1}^{m}\left[-y\text{log}(h_\theta(x))-(1-y)\text{log}(1-h_\theta(x))\right]<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set terminal svg</span><br><span class="line">set title &quot;cost plots&quot; font &quot;,20&quot;</span><br><span class="line">set key left box</span><br><span class="line">set samples 100</span><br><span class="line">set style data points</span><br><span class="line"></span><br><span class="line">plot [0:2] [0:4] -log(x),-log(1-x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set terminal svg</span><br><span class="line">set title &quot;cost plots&quot; font &quot;,20&quot;</span><br><span class="line">set key left box</span><br><span class="line">set samples 100</span><br><span class="line">set style data points</span><br><span class="line"></span><br><span class="line">plot [0:1] (0.3**x)*(0.3**(1-x))</span><br></pre></td></tr></table></figure>
+<p><strong>优化算法</strong></p>
+<p>用梯度下降法，对$\theta$进行更新</p>
+<p>$$<br>\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}j(\theta)<br>$$</p>
+<p>求导后可得</p>
+<p>$$<br>\theta_j:=\theta_j-\alpha\sum_{i=1}^{m}(h_\theta(x^{(i)}-y^{(i)})x_j^{(i)}<br>$$</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>## </p>
+<h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><hr>
+<h3 id="模型总览-2"><a href="#模型总览-2" class="headerlink" title="模型总览"></a>模型总览</h3><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:center">区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">线性可分支持向量机</td>
+<td style="text-align:center">硬间隔最大化</td>
+</tr>
+<tr>
+<td style="text-align:left">线性支持向量机</td>
+<td style="text-align:center">软间隔最大化</td>
+</tr>
+<tr>
+<td style="text-align:left">非线性支持向量机</td>
+<td style="text-align:center">使用核函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="理解最大间隔"><a href="#理解最大间隔" class="headerlink" title="理解最大间隔"></a>理解最大间隔</h3><p>函数间隔：</p>
+<p>$$<br>\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|<br>$$</p>
+<p>最小函数间隔：</p>
+<p>$$<br>\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i<br>$$</p>
+<p>几何间隔：</p>
+<p>$$<br>\gamma_i = y_i(\frac{w}{|w|}\cdot x_i+\frac{b}{|w|})=|\frac{w}{|w|}\cdot x_i+\frac{b}{|w|}|<br>$$</p>
+<p>最小几何间隔：</p>
+<p>$$<br>\gamma=\min_{i=1,\cdots,N}\gamma_i<br>$$</p>
+<h3 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h3><p>线性可分下的原问题</p>
+<p>$$<br>\min_{w,b}\quad \frac12|x|^2\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0</p>
+<p>$$</p>
+<p>线性不可分下的原问题：</p>
+<p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\<br>\xi_i\ge0,\quad i=1,2,\cdots,N</p>
+<p>$$</p>
+<p>对应的决策函数为：</p>
+<p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)<br>$$</p>
+<h3 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h3><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
+<p>用对偶问题求一个原问题的下界估计</p>
+<p><img src="./img/KTT.jpg" alt="KTT"></p>
+<p><strong>强对偶</strong></p>
+<p>原始问题是凸优化问题的情况下，一般都满足强对偶</p>
+<p><strong>Slater条件</strong></p>
+<p>原问题为凸问题</p>
+<p>首先要看我们的模型本身是否满足强对偶，Slater条件是满足强对偶的一种情况。</p>
+<p>$$<br>满足Slater条件\quad\to\quad强对偶<br>$$</p>
+<p><strong>KTT</strong></p>
+<p>而强对偶下的最优解一定是满足KTT条件的，所以我们可以通过KTT条件去筛选最优解，</p>
+<p>而当原问题是凸问题的时候，满足KTT条件的点一定是最优解。</p>
+<p>即弱对偶下KTT为必要条件，强对偶下KTT为充分条件</p>
+<p>在强对偶下KTT为必要条件，如果原问题为凸问题，则变为充要条件</p>
+<p>不清楚是否为凸优化：</p>
+<p>$$<br>(x^<em>,\alpha^</em>,\beta^<em>)是最优解\quad\to\quad(x^</em>,\alpha^<em>,\beta^</em>)满足KKT条件<br>$$</p>
+<p>原问题为凸优化问题：</p>
+<p>$$<br>(x^<em>,\alpha^</em>,\beta^<em>)是最优解\quad\leftrightarrow\quad(x^</em>,\alpha^<em>,\beta^</em>)满足KKT条件<br>$$</p>
+<p><a href="https://www.cnblogs.com/harvey888/p/7100815.html" target="_blank" rel="noopener">https://www.cnblogs.com/harvey888/p/7100815.html</a><a href="https://www.jianshu.com/p/96db9a1d16e9" target="_blank" rel="noopener">https://www.jianshu.com/p/96db9a1d16e9</a></p>
+<p><a href="http://blog.pluskid.org/?p=702" target="_blank" rel="noopener">http://blog.pluskid.org/?p=702</a></p>
+<p><a href="https://www.hrwhisper.me/" target="_blank" rel="noopener">https://www.hrwhisper.me/</a></p>
+<h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><p>将原问题转换为对偶问题用到了拉格朗日对偶</p>
+<p>线性可分的原问题可转化为对偶问题：</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \</p>
+<p>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>\alpha_i\ge0\ ,\quad i=1,2,\cdots,N</p>
+<p>$$</p>
+<p>线性不可分原问题可转化为对偶问题：</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<h3 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h3><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<p>定义函数$K(x_i,x_j)$：</p>
+<p>$$<br>K(x_i,x_j)=\varphi(x_i)\cdot\varphi(x_j)<br>$$</p>
+<p>问题可转化为：</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<p>判别函数为:</p>
+<p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}K(x^{(i)},x)+b)<br>$$</p>
+<p>一个简单形式的核函数对应的$\varphi(x)$就可能很复杂。因此只需要寻找一个合适的核函数$K(x_i,x_j)$，就可以把数据映射到足够高维。避免了直接去计算$\varphi(x)$，大大减少了数据映射时的运算量。</p>
+<p>常用的核函数有（$K(x,z)$表示核函数，$f(x)$表示对应的判别函数）：</p>
+<ul>
+<li><p>多项式核函数：</p>
+<ul>
+<li><p>$K(x,z)=(x\cdot z+1)^p$</p>
+</li>
+<li><p>$f(x)=\text{sign}\lgroup\sum_{i=1}^{N_s}a_i^<em>y_i(x_i\cdot x+1)^p+b^</em>\rgroup$</p>
+</li>
+</ul>
+</li>
+<li><p>高斯核函数：</p>
+<ul>
+<li>$K(x,z)=\exp(-\frac{|x-z|^2}{2\sigma^2})$</li>
+</ul>
+</li>
+<li><p>字符串核函数：</p>
+</li>
+</ul>
+<h3 id="SMO算法"><a href="#SMO算法" class="headerlink" title="SMO算法"></a>SMO算法</h3><h3 id="其他形式-1"><a href="#其他形式-1" class="headerlink" title="其他形式"></a>其他形式</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>原问题</th>
+<th>对偶问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1正则化L2-loss SVC</td>
+<td>坐标下降法</td>
+<td>-</td>
+</tr>
+<tr>
+<td>L2正则化L1-loss SVC （经典）</td>
+<td>-</td>
+<td>坐标下降法</td>
+</tr>
+<tr>
+<td>L2正则化L2-loss SVC</td>
+<td>可信域牛顿法</td>
+<td>坐标下降法</td>
+</tr>
+<tr>
+<td>L1-loss SVR</td>
+<td>-</td>
+<td>坐标下降法</td>
+</tr>
+<tr>
+<td>L2-loss SVR</td>
+<td>可信域牛顿法</td>
+<td>坐标下降法</td>
+</tr>
+</tbody>
+</table>
+<p>## </p>
+<p>并不一定要用拉格朗日对偶。</p>
+<p>要注意用拉格朗日对偶并没有改变最优解，而是<strong>改变了算法复杂度</strong>：<br>在原问题下，求解算法的复杂度与样本维度（等于权值w的维度）有关；<br>而在对偶问题下，求解算法的复杂度与样本数量（等于拉格朗日算子a的数量）有关。</p>
+<p>因此，如果你是做线性分类，且样本维度低于样本数量的话，在原问题下求解就好了，Liblinear之类的线性SVM默认都是这样做的；<br>但如果你是做非线性分类，那就会涉及到升维（比如使用高斯核做核函数，其实是将样本升到无穷维），升维后的样本维度往往会远大于样本数量，此时显然在对偶问题下求解会更好。</p>
+<p>作者：一氧化二氢货<br>链接：<a href="https://www.zhihu.com/question/36694952/answer/69737932" target="_blank" rel="noopener">https://www.zhihu.com/question/36694952/answer/69737932</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h2 id="线性分类器比较"><a href="#线性分类器比较" class="headerlink" title="线性分类器比较"></a>线性分类器比较</h2><hr>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>激活函数</th>
+<th>损失函数</th>
+<th>优化方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性回归</td>
+<td>-</td>
+<td>$(y-w^Tx)^2$</td>
+<td>最小二乘、梯度下降</td>
+</tr>
+<tr>
+<td>Logistic回归</td>
+<td>$\sigma(w^Tx)$</td>
+<td>$y\log\sigma(w^Tx)$</td>
+<td>梯度下降</td>
+</tr>
+<tr>
+<td>Softmax回归</td>
+<td>$\text{softmax(}W^Tx)$</td>
+<td>$y \text{log softmax}(W^Tx)$</td>
+<td>梯度下降</td>
+</tr>
+<tr>
+<td>感知器</td>
+<td>$\text{sgn}(w^Tx)$</td>
+<td>$\max(0,-yw^Tx)$</td>
+<td>随机梯度下降</td>
+</tr>
+<tr>
+<td>支持向量机</td>
+<td>$\text{sgn}(w^Tx)$</td>
+<td>$\max(0,1-yw^Tx)$</td>
+<td>二次规划、SMO</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.cnblogs.com/peyton-li/p/7620081.html" target="_blank" rel="noopener">svm与lr（逻辑回归）的区别</a><br><a href="https://blog.csdn.net/m0_37786651/article/details/61614865" target="_blank" rel="noopener">感知器、logistic与svm 区别与联系 - m0_37786651的博客 - CSDN博客</a><br><a href="https://blog.csdn.net/xiaoding133/article/details/9079103" target="_blank" rel="noopener">MLP、RBF、SVM网络比较及其应用前景 - xiaoding133的专栏【Stay hungry,Stay foolish】 - CSDN博客</a><br><a href="https://blog.csdn.net/power0405hf/article/details/53456162" target="_blank" rel="noopener">标准化、归一化、正则化</a></p>
+
+</article>
+
+
+
+  </div>
+</div>
+
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    Site by Mariana using
+    <a href="http://hexo.io">hexo blog framework</a>.
+    <br>
+    <a href="/">Home</a>
+  </div>
+</div>
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/mariana.js"></script>
+  
+
+
+</body>
+</html>
