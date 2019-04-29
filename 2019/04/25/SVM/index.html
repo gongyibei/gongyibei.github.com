@@ -410,9 +410,9 @@
 <p>$$<br>\gamma=\min_{i=1,\cdots,N}\gamma_i<br>$$</p>
 <h2 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h2><hr>
 <p>线性可分下的原问题</p>
-<p>$$<br>\min_{w,b}\quad \frac12|x|^2\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0<br>$$</p>
+<p>$$<br>\min_{w,b}\quad \frac12|x|^2\\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0<br>$$</p>
 <p>线性不可分下的原问题：</p>
-<p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\<br>\xi_i\ge0,\quad i=1,2,\cdots,N<br>$$</p>
+<p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\\<br>\xi_i\ge0,\quad i=1,2,\cdots,N<br>$$</p>
 <p>对应的决策函数为：</p>
 <p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)<br>$$</p>
 <h2 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h2><hr>
@@ -440,16 +440,16 @@
 <h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><hr>
 <p>将原问题转换为对偶问题用到了拉格朗日对偶</p>
 <p>线性可分的原问题可转化为对偶问题：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>\alpha_i\ge0\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>\alpha_i\ge0 ,\quad i=1,2,\cdots,N<br>$$</p>
 <p>线性不可分原问题可转化为对偶问题：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
 <h2 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h2><hr>
 <p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
 <p>定义函数$K(x_i,x_j)$：</p>
 <p>$$<br>K(x_i,x_j)=\varphi(x_i)\cdot\varphi(x_j)<br>$$</p>
 <p>问题可转化为：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
 <p>判别函数为:</p>
 <p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}K(x^{(i)},x)+b)<br>$$</p>
 <p>一个简单形式的核函数对应的$\varphi(x)$就可能很复杂。因此只需要寻找一个合适的核函数$K(x_i,x_j)$，就可以把数据映射到足够高维。避免了直接去计算$\varphi(x)$，大大减少了数据映射时的运算量。</p>
