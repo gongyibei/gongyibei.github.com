@@ -304,17 +304,6 @@
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2019/04/29/learning-theory/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2019/04/29/learning-theory/" class="cy_cmt_count" data-xid="2019/04/29/learning-theory/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -494,17 +483,6 @@
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2019/04/29/Hexo渲染引擎修改/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2019/04/29/Hexo渲染引擎修改/" class="cy_cmt_count" data-xid="2019/04/29/Hexo渲染引擎修改/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -573,7 +551,12 @@ hexo-renderer-pandoc
 
 
 markdown-it
-123cd hexo-blog.github.io/ #
+123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it --save # 安装 markdown-it
+**参考**
+markdown-it-plus
+Pandoc
+安装pandoc
+12cabal updatecabal insta
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -695,17 +678,6 @@ markdown-it
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2019/04/29/hexo踩坑记录/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2019/04/29/hexo踩坑记录/" class="cy_cmt_count" data-xid="2019/04/29/hexo踩坑记录/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -773,7 +745,11 @@ hexo-renderer-markdown-it-plus
 hexo-renderer-pandoc
 
 
-123cd hexo-blog.github.io/ # 首先进入你的 hex
+123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it --save # 安装 markdown-it
+安装pandoc
+12cabal updatecabal install pandoc
+修改渲染引擎
+12npm uninstall hexo-rend
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -873,17 +849,6 @@ hexo-renderer-pandoc
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2019/04/25/logistic/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2019/04/25/logistic/" class="cy_cmt_count" data-xid="2019/04/25/logistic/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -954,7 +919,10 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2优化算法
 
 
 梯度下降
-\theta_j:=\theta_j
+\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)\qquad(j=0,...,n)正规方程根据最小二乘法推倒出，可以直接从训练样本计算出$\theta$，可证明计算出的$\theta$是最优值:
+
+\theta=(X^TX)^{-1}X^TyOctove中可如下求解
+123pinv(X):伪逆inv(X):可逆pinv(X&apos;*X)*X
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1076,17 +1044,6 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2优化算法
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2019/04/25/SVM/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2019/04/25/SVM/" class="cy_cmt_count" data-xid="2019/04/25/SVM/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -1172,7 +1129,13 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2优化算法
 
 \hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|最小函数间隔：
 
-\hat\gamma
+\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i几何间隔：
+
+\gamma_i = y_i(\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|})=|\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|}|最小几何间隔：
+
+\gamma=\min_{i=1,\cdots,N}\gamma_i原问题线性可分下的原问题
+
+\min_
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1272,17 +1235,6 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2优化算法
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/08/16/scheme基础/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2018/08/16/scheme基础/" class="cy_cmt_count" data-xid="2018/08/16/scheme基础/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -1342,7 +1294,11 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2优化算法
           
           基本结构
 用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值
-特殊形式函数调用宏形式特殊形式（Specia
+特殊形式函数调用宏形式特殊形式（Special Form）
+直接与编译器打交道，告诉编译器怎么做。
+definelambdacons基础数据结构
+Scheme中的简单数据类型包含 booleans (布尔类型) , number(数字类型), characters(字符类型) 和 symbols(标识符类型)。基础数据结构都是自解释的
+booleans (布尔类型)number(数字类型)characters(字符类型)symbols(标识
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1464,17 +1420,6 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2优化算法
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/08/07/生成器与协程/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2018/08/07/生成器与协程/" class="cy_cmt_count" data-xid="2018/08/07/生成器与协程/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -1543,7 +1488,9 @@ generator
 
 
 生成器创建方法通过类似列表生成式的方式生成
-123456&gt;&gt;&gt; L = [x * x for x in range(10)]&gt;&gt;&gt; L[0, 1, 4, 9, 16, 25
+123456&gt;&gt;&gt; L = [x * x for x in range(10)]&gt;&gt;&gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&gt;&gt;&gt; g = (x * x for x in range(10))&gt;&gt;&gt; g&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;
+调用含有yield语句的函数也可以得到
+12345678910def fib(max):    n, a, b = 0, 0, 1    w
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1665,17 +1612,6 @@ generator
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/08/07/最少通过几个音可以确定一个调/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2018/08/07/最少通过几个音可以确定一个调/" class="cy_cmt_count" data-xid="2018/08/07/最少通过几个音可以确定一个调/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -1735,7 +1671,9 @@ generator
           
           注：本文的讨论仅限于自然调式
 平时在练习扒谱的时候有注意到：当你在指板上找出相邻的两个音时，就可以把调的范围从12个缩小到2个。比如：当你找出2弦空弦与2弦1品是这个调的音时，这两个音要么是这个调的Mi-Fa，要么是这个调的Si-Do，当是Mi-Fa时这个调就是G调，当时Si-Do时就是C调。
-可以
+可以猜想：不必找出这个调的所有音就可以确定这个调。那么最少找出几个音可以确定一个调呢？要找出哪几个音呢？
+自然大调中的12的调的组成音如下:
+123456789101112C  调: C   D   E   F   G   A   BbD 调: bD  bE  F   bG  bA  bB  CD  调: D   E   bG  G   A   B   bDbE 调: bE  F   G   bA  
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1835,17 +1773,6 @@ generator
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/08/06/python的控制流程/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2018/08/06/python的控制流程/" class="cy_cmt_count" data-xid="2018/08/06/python的控制流程/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -1904,7 +1831,9 @@ generator
         
           
           for 循环
-continuecontinue语句不是必须的12345678910111213for ：    语句一    if 条件：        语句二        continue    语句三# 转化后for ：    语句一    if 条件：        语句二    else：
+continuecontinue语句不是必须的12345678910111213for ：    语句一    if 条件：        语句二        continue    语句三# 转化后for ：    语句一    if 条件：        语句二    else：        语句三
+有 continue或者break的if语句后的else 语句不是必要的。所以上例中没有加入else
+12345678910111213141516for ：    语句一    if 条件：        语句二        continue    else：        语句三    语句四# 转化后for ：    语句一    if 条件：        语句二
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2004,17 +1933,6 @@ continuecontinue语句不是必须的12345678910111213for ：    语句一    if
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/08/06/normal模式下快捷键/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://gongyibei.github.io/2018/08/06/normal模式下快捷键/" class="cy_cmt_count" data-xid="2018/08/06/normal模式下快捷键/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -2073,7 +1991,10 @@ continuecontinue语句不是必须的12345678910111213for ：    语句一    if
         
           
            移动
-左右移动1234567891011&quot; 绝对移动0 -- 到行头^ -- 到本行的第一个非blank字符$ -- 到行尾g_ -- 到本行最后一个不是blank字符的位置f/F&#123;char&#125; -- 到下一个&#123;char&#125;字符的位置 t/T&#123
+左右移动1234567891011&quot; 绝对移动0 -- 到行头^ -- 到本行的第一个非blank字符$ -- 到行尾g_ -- 到本行最后一个不是blank字符的位置f/F&#123;char&#125; -- 到下一个&#123;char&#125;字符的位置 t/T&#123;char&#125; -- 到下一个&#123;char&#125;字符前的位置&quot; 相对移动h -- 向左移动l -- 向右移动
+上下移动12345678&quot; 绝对移动NG/Ngg -- 移到第N行gg -- 移到第一行G -- 移到最后一行&quot; 相对移动j -- 向下移动k -- 向上移动
+其他移动1% -- 可对括号进行匹配移动
+滚屏12345678910ctrl+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2391,10 +2312,6 @@ continuecontinue语句不是必须的12345678910111213for ：    语句一    if
 
 
 
-
-  
-    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt42w6wd"></script>
-  
 
 
 
