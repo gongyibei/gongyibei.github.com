@@ -1178,6 +1178,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1249,9 +1271,7 @@
       
         
           
-            <p>## </p>
-<h2 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h2><hr>
-<table>
+            <h1 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h1><table>
 <thead>
 <tr>
 <th style="text-align:left"></th>
@@ -1273,9 +1293,7 @@
 </tr>
 </tbody>
 </table>
-<p>### </p>
-<h2 id="理解最大间隔"><a href="#理解最大间隔" class="headerlink" title="理解最大间隔"></a>理解最大间隔</h2><hr>
-<p>函数间隔：</p>
+<h1 id="理解最大间隔"><a href="#理解最大间隔" class="headerlink" title="理解最大间隔"></a>理解最大间隔</h1><p>函数间隔：</p>
 <p>$$<br>\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|<br>$$</p>
 <p>最小函数间隔：</p>
 <p>$$<br>\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i<br>$$</p>
@@ -1283,17 +1301,15 @@
 <p>$$<br>\gamma_i = y_i(\frac{w}{|w|}\cdot x_i+\frac{b}{|w|})=|\frac{w}{|w|}\cdot x_i+\frac{b}{|w|}|<br>$$</p>
 <p>最小几何间隔：</p>
 <p>$$<br>\gamma=\min_{i=1,\cdots,N}\gamma_i<br>$$</p>
-<h2 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h2><hr>
-<p>线性可分下的原问题</p>
+<h1 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h1><p>线性可分下的原问题</p>
 <p>$$<br>\min_{w,b}\quad \frac12|x|^2\\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0<br>$$</p>
 <p>线性不可分下的原问题：</p>
 <p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\\<br>\xi_i\ge0,\quad i=1,2,\cdots,N<br>$$</p>
 <p>对应的决策函数为：</p>
-<p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)<br>$$</p>
-<h2 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h2><hr>
-<p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
+<p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)<br>$$</p>
+<h1 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h1><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
 <p>用对偶问题求一个原问题的下界估计</p>
-<p><img src="/asset/img/KTT.jpg" alt="KTT"></p>
+<img src="/2019/04/25/SVM/KTT.jpg">
 <p><strong>强对偶</strong></p>
 <p>原始问题是凸优化问题的情况下，一般都满足强对偶</p>
 <p><strong>Slater条件</strong></p>
@@ -1312,14 +1328,12 @@
 <p><a href="https://www.cnblogs.com/harvey888/p/7100815.html" target="_blank" rel="noopener">https://www.cnblogs.com/harvey888/p/7100815.html</a><a href="https://www.jianshu.com/p/96db9a1d16e9" target="_blank" rel="noopener">https://www.jianshu.com/p/96db9a1d16e9</a></p>
 <p><a href="http://blog.pluskid.org/?p=702" target="_blank" rel="noopener">http://blog.pluskid.org/?p=702</a></p>
 <p><a href="https://www.hrwhisper.me/" target="_blank" rel="noopener">https://www.hrwhisper.me/</a></p>
-<h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><hr>
-<p>将原问题转换为对偶问题用到了拉格朗日对偶</p>
+<h1 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h1><p>将原问题转换为对偶问题用到了拉格朗日对偶</p>
 <p>线性可分的原问题可转化为对偶问题：</p>
 <p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>\alpha_i\ge0 ,\quad i=1,2,\cdots,N<br>$$</p>
 <p>线性不可分原问题可转化为对偶问题：</p>
 <p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
-<h2 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h2><hr>
-<p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
+<h1 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h1><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
 <p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
 <p>定义函数$K(x_i,x_j)$：</p>
 <p>$$<br>K(x_i,x_j)=\varphi(x_i)\cdot\varphi(x_j)<br>$$</p>
@@ -1346,9 +1360,7 @@
 <li><p>字符串核函数：</p>
 </li>
 </ul>
-<h2 id="SMO算法"><a href="#SMO算法" class="headerlink" title="SMO算法"></a>SMO算法</h2><hr>
-<h2 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h2><hr>
-<table>
+<h1 id="SMO算法"><a href="#SMO算法" class="headerlink" title="SMO算法"></a>SMO算法</h1><h1 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h1><table>
 <thead>
 <tr>
 <th></th>
@@ -2479,7 +2491,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
