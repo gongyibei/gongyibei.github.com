@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="模型总览    区别     线性可分支持向量机 硬间隔最大化   线性支持向量机 软间隔最大化   非线性支持向量机 使用核函数    理解最大间隔函数间隔： $$\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|$$ 最小函数间隔： $$\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i$$ 几何间隔： $$\gam">
+<meta name="description" content="模型总览     区别     线性可分支持向量机 硬间隔最大化   线性支持向量机 软间隔最大化   非线性支持向量机 使用核函数     理解最大间隔函数间隔：  \hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|最小函数间隔：  \hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i几何间隔：  \gamma_i =">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVM">
 <meta property="og:url" content="https://gongyibei.github.io/2019/04/25/SVM/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
-<meta property="og:description" content="模型总览    区别     线性可分支持向量机 硬间隔最大化   线性支持向量机 软间隔最大化   非线性支持向量机 使用核函数    理解最大间隔函数间隔： $$\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|$$ 最小函数间隔： $$\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i$$ 几何间隔： $$\gam">
+<meta property="og:description" content="模型总览     区别     线性可分支持向量机 硬间隔最大化   线性支持向量机 软间隔最大化   非线性支持向量机 使用核函数     理解最大间隔函数间隔：  \hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|最小函数间隔：  \hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i几何间隔：  \gamma_i =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gongyibei.github.io/2019/04/25/SVM/KTT.jpg">
 <meta property="og:updated_time" content="2019-04-29T13:27:22.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVM">
-<meta name="twitter:description" content="模型总览    区别     线性可分支持向量机 硬间隔最大化   线性支持向量机 软间隔最大化   非线性支持向量机 使用核函数    理解最大间隔函数间隔： $$\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|$$ 最小函数间隔： $$\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i$$ 几何间隔： $$\gam">
+<meta name="twitter:description" content="模型总览     区别     线性可分支持向量机 硬间隔最大化   线性支持向量机 软间隔最大化   非线性支持向量机 使用核函数     理解最大间隔函数间隔：  \hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|最小函数间隔：  \hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i几何间隔：  \gamma_i =">
 <meta name="twitter:image" content="https://gongyibei.github.io/2019/04/25/SVM/KTT.jpg">
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,527字
+                  1,158字
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7min
+                  4min
                 </span>
               
             </div>
@@ -396,7 +396,8 @@
       
 
       
-        <h1 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h1><table>
+        <h1 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th style="text-align:left"></th>
@@ -418,21 +419,25 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h1 id="理解最大间隔"><a href="#理解最大间隔" class="headerlink" title="理解最大间隔"></a>理解最大间隔</h1><p>函数间隔：</p>
-<p>$$<br>\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|<br>$$</p>
-<p>最小函数间隔：</p>
-<p>$$<br>\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i<br>$$</p>
-<p>几何间隔：</p>
-<p>$$<br>\gamma_i = y_i(\frac{w}{|w|}\cdot x_i+\frac{b}{|w|})=|\frac{w}{|w|}\cdot x_i+\frac{b}{|w|}|<br>$$</p>
-<p>最小几何间隔：</p>
-<p>$$<br>\gamma=\min_{i=1,\cdots,N}\gamma_i<br>$$</p>
-<h1 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h1><p>线性可分下的原问题</p>
-<p>$$<br>\min_{w,b}\quad \frac12|x|^2\\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0<br>$$</p>
-<p>线性不可分下的原问题：</p>
-<p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\\<br>\xi_i\ge0,\quad i=1,2,\cdots,N<br>$$</p>
-<p>对应的决策函数为：</p>
-<p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)<br>$$</p>
-<h1 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h1><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
+<script type="math/tex; mode=display">
+\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b|</script><p>最小函数间隔：</p>
+<script type="math/tex; mode=display">
+\hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i</script><p>几何间隔：</p>
+<script type="math/tex; mode=display">
+\gamma_i = y_i(\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|})=|\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|}|</script><p>最小几何间隔：</p>
+<script type="math/tex; mode=display">
+\gamma=\min_{i=1,\cdots,N}\gamma_i</script><h1 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h1><p>线性可分下的原问题</p>
+<script type="math/tex; mode=display">
+\min_{w,b}\quad \frac12\|x\|^2\\
+\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0</script><p>线性不可分下的原问题：</p>
+<script type="math/tex; mode=display">
+\min_{w,b}\quad \frac12\|x\|^2+C\sum_{i=1}^N\xi_i\\
+\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\\
+\xi_i\ge0,\quad i=1,2,\cdots,N</script><p>对应的决策函数为：</p>
+<script type="math/tex; mode=display">
+f(x)=\text{sign}(w^*\cdot x+b^*)=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)</script><h1 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h1><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
 <p>用对偶问题求一个原问题的下界估计</p>
 <img src="/2019/04/25/SVM/KTT.jpg">
 <p><strong>强对偶</strong></p>
@@ -440,33 +445,42 @@
 <p><strong>Slater条件</strong></p>
 <p>原问题为凸问题</p>
 <p>首先要看我们的模型本身是否满足强对偶，Slater条件是满足强对偶的一种情况。</p>
-<p>$$<br>满足Slater条件\quad\to\quad强对偶<br>$$</p>
-<p><strong>KTT</strong></p>
+<script type="math/tex; mode=display">
+满足Slater条件\quad\to\quad强对偶</script><p><strong>KTT</strong></p>
 <p>而强对偶下的最优解一定是满足KTT条件的，所以我们可以通过KTT条件去筛选最优解，</p>
 <p>而当原问题是凸问题的时候，满足KTT条件的点一定是最优解。</p>
 <p>即弱对偶下KTT为必要条件，强对偶下KTT为充分条件</p>
 <p>在强对偶下KTT为必要条件，如果原问题为凸问题，则变为充要条件</p>
 <p>不清楚是否为凸优化：</p>
-<p>$$<br>(x^<em>,\alpha^</em>,\beta^<em>)是最优解\quad\to\quad(x^</em>,\alpha^<em>,\beta^</em>)满足KKT条件<br>$$</p>
-<p>原问题为凸优化问题：</p>
-<p>$$<br>(x^<em>,\alpha^</em>,\beta^<em>)是最优解\quad\leftrightarrow\quad(x^</em>,\alpha^<em>,\beta^</em>)满足KKT条件<br>$$</p>
-<p><a href="https://www.cnblogs.com/harvey888/p/7100815.html" target="_blank" rel="noopener">https://www.cnblogs.com/harvey888/p/7100815.html</a><a href="https://www.jianshu.com/p/96db9a1d16e9" target="_blank" rel="noopener">https://www.jianshu.com/p/96db9a1d16e9</a></p>
+<script type="math/tex; mode=display">
+(x^*,\alpha^*,\beta^*)是最优解\quad\to\quad(x^*,\alpha^*,\beta^*)满足KKT条件</script><p>原问题为凸优化问题：</p>
+<script type="math/tex; mode=display">
+(x^*,\alpha^*,\beta^*)是最优解\quad\leftrightarrow\quad(x^*,\alpha^*,\beta^*)满足KKT条件</script><p><a href="https://www.cnblogs.com/harvey888/p/7100815.html" target="_blank" rel="noopener">https://www.cnblogs.com/harvey888/p/7100815.html</a><a href="https://www.jianshu.com/p/96db9a1d16e9" target="_blank" rel="noopener">https://www.jianshu.com/p/96db9a1d16e9</a></p>
 <p><a href="http://blog.pluskid.org/?p=702" target="_blank" rel="noopener">http://blog.pluskid.org/?p=702</a></p>
 <p><a href="https://www.hrwhisper.me/" target="_blank" rel="noopener">https://www.hrwhisper.me/</a></p>
 <h1 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h1><p>将原问题转换为对偶问题用到了拉格朗日对偶</p>
 <p>线性可分的原问题可转化为对偶问题：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>\alpha_i\ge0 ,\quad i=1,2,\cdots,N<br>$$</p>
-<p>线性不可分原问题可转化为对偶问题：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
-<h1 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h1><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
-<p>定义函数$K(x_i,x_j)$：</p>
-<p>$$<br>K(x_i,x_j)=\varphi(x_i)\cdot\varphi(x_j)<br>$$</p>
-<p>问题可转化为：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum_{i=1}^{N}\alpha_i \\<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\<br>0\le\alpha_i\le C ,\quad i=1,2,\cdots,N<br>$$</p>
-<p>判别函数为:</p>
-<p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}K(x^{(i)},x)+b)<br>$$</p>
-<p>一个简单形式的核函数对应的$\varphi(x)$就可能很复杂。因此只需要寻找一个合适的核函数$K(x_i,x_j)$，就可以把数据映射到足够高维。避免了直接去计算$\varphi(x)$，大大减少了数据映射时的运算量。</p>
+<script type="math/tex; mode=display">
+\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\
+\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\
+\alpha_i\ge0\ ,\quad i=1,2,\cdots,N</script><p>线性不可分原问题可转化为对偶问题：</p>
+<script type="math/tex; mode=display">
+\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\
+\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\
+0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N</script><h1 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h1><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
+<script type="math/tex; mode=display">
+\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \\
+\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\
+0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N</script><p>定义函数$K(x_i,x_j)$：</p>
+<script type="math/tex; mode=display">
+K(x_i,x_j)=\varphi(x_i)\cdot\varphi(x_j)</script><p>问题可转化为：</p>
+<script type="math/tex; mode=display">
+\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_jK(x_i,x_j)-\sum_{i=1}^{N}\alpha_i \\
+\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\\
+0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N</script><p>判别函数为:</p>
+<script type="math/tex; mode=display">
+f(x)=\text{sign}(w^*\cdot x+b^*)
+= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}K(x^{(i)},x)+b)</script><p>一个简单形式的核函数对应的$\varphi(x)$就可能很复杂。因此只需要寻找一个合适的核函数$K(x_i,x_j)$，就可以把数据映射到足够高维。避免了直接去计算$\varphi(x)$，大大减少了数据映射时的运算量。</p>
 <p>常用的核函数有（$K(x,z)$表示核函数，$f(x)$表示对应的判别函数）：</p>
 <ul>
 <li><p>多项式核函数：</p>
@@ -485,7 +499,8 @@
 <li><p>字符串核函数：</p>
 </li>
 </ul>
-<h1 id="SMO算法"><a href="#SMO算法" class="headerlink" title="SMO算法"></a>SMO算法</h1><h1 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h1><table>
+<h1 id="SMO算法"><a href="#SMO算法" class="headerlink" title="SMO算法"></a>SMO算法</h1><h1 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -521,12 +536,13 @@
 </tr>
 </tbody>
 </table>
-<p>## </p>
-<p>并不一定要用拉格朗日对偶。</p>
+</div>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><p>并不一定要用拉格朗日对偶。</p>
 <p>要注意用拉格朗日对偶并没有改变最优解，而是<strong>改变了算法复杂度</strong>：<br>在原问题下，求解算法的复杂度与样本维度（等于权值w的维度）有关；<br>而在对偶问题下，求解算法的复杂度与样本数量（等于拉格朗日算子a的数量）有关。</p>
 <p>因此，如果你是做线性分类，且样本维度低于样本数量的话，在原问题下求解就好了，Liblinear之类的线性SVM默认都是这样做的；<br>但如果你是做非线性分类，那就会涉及到升维（比如使用高斯核做核函数，其实是将样本升到无穷维），升维后的样本维度往往会远大于样本数量，此时显然在对偶问题下求解会更好。</p>
 <p>作者：一氧化二氢货<br>链接：<a href="https://www.zhihu.com/question/36694952/answer/69737932" target="_blank" rel="noopener">https://www.zhihu.com/question/36694952/answer/69737932</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <h2 id="线性分类器比较"><a href="#线性分类器比较" class="headerlink" title="线性分类器比较"></a>线性分类器比较</h2><hr>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -569,6 +585,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><a href="https://www.cnblogs.com/peyton-li/p/7620081.html" target="_blank" rel="noopener">svm与lr（逻辑回归）的区别</a><br><a href="https://blog.csdn.net/m0_37786651/article/details/61614865" target="_blank" rel="noopener">感知器、logistic与svm 区别与联系 - m0_37786651的博客 - CSDN博客</a><br><a href="https://blog.csdn.net/xiaoding133/article/details/9079103" target="_blank" rel="noopener">MLP、RBF、SVM网络比较及其应用前景 - xiaoding133的专栏【Stay hungry,Stay foolish】 - CSDN博客</a><br><a href="https://blog.csdn.net/power0405hf/article/details/53456162" target="_blank" rel="noopener">标准化、归一化、正则化</a></p>
 
       
@@ -753,7 +770,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型总览"><span class="nav-number">1.</span> <span class="nav-text">模型总览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解最大间隔"><span class="nav-number">2.</span> <span class="nav-text">理解最大间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原问题"><span class="nav-number">3.</span> <span class="nav-text">原问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日对偶"><span class="nav-number">4.</span> <span class="nav-text">拉格朗日对偶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">5.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核技巧"><span class="nav-number">6.</span> <span class="nav-text">核技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SMO算法"><span class="nav-number">7.</span> <span class="nav-text">SMO算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他形式"><span class="nav-number">8.</span> <span class="nav-text">其他形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性分类器比较"><span class="nav-number">8.1.</span> <span class="nav-text">线性分类器比较</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型总览"><span class="nav-number">1.</span> <span class="nav-text">模型总览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解最大间隔"><span class="nav-number">2.</span> <span class="nav-text">理解最大间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原问题"><span class="nav-number">3.</span> <span class="nav-text">原问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日对偶"><span class="nav-number">4.</span> <span class="nav-text">拉格朗日对偶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">5.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核技巧"><span class="nav-number">6.</span> <span class="nav-text">核技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SMO算法"><span class="nav-number">7.</span> <span class="nav-text">SMO算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他形式"><span class="nav-number">8.</span> <span class="nav-text">其他形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">8.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性分类器比较"><span class="nav-number">8.2.</span> <span class="nav-text">线性分类器比较</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -787,7 +804,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.4k</span>
+    <span title="Site words total count">5.9k</span>
   
 </div>
 
