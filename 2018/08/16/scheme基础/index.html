@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="基本结构  用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值 特殊形式 函数调用 宏形式 特殊形式（Special Form）  直接与编译器打交道，告诉编译器怎么做。 define lambda con">
+<meta name="description" content="基本结构  用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值  特殊形式  函数调用  宏形式  特殊形式（Special Form）  直接与编译器打交道，告诉编译器怎么做。  define  lam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="scheme基础">
 <meta property="og:url" content="https://gongyibei.github.io/2018/08/16/scheme基础/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
-<meta property="og:description" content="基本结构  用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值 特殊形式 函数调用 宏形式 特殊形式（Special Form）  直接与编译器打交道，告诉编译器怎么做。 define lambda con">
+<meta property="og:description" content="基本结构  用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值  特殊形式  函数调用  宏形式  特殊形式（Special Form）  直接与编译器打交道，告诉编译器怎么做。  define  lam">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-08-15T18:47:40.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scheme基础">
-<meta name="twitter:description" content="基本结构  用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值 特殊形式 函数调用 宏形式 特殊形式（Special Form）  直接与编译器打交道，告诉编译器怎么做。 define lambda con">
+<meta name="twitter:description" content="基本结构  用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值  特殊形式  函数调用  宏形式  特殊形式（Special Form）  直接与编译器打交道，告诉编译器怎么做。  define  lam">
 
 
 
@@ -371,45 +371,45 @@
       
 
       
-        <h2>基本结构</h2>
+        <h2 id="基本结构"><a class="markdownIt-Anchor" href="#基本结构"></a> 基本结构</h2>
 <hr>
 <p>用户的lisp程序的结构就是一个巨大的S表达式有三种最基本的形式：特殊形式（special form）、函数调用形式 （function call form）和宏形式（macro form）。lisp解释器会对这个巨大的表达式进行计算得到一个值</p>
-<h3>特殊形式</h3>
-<h3>函数调用</h3>
-<h3>宏形式</h3>
-<h2>特殊形式（Special Form）</h2>
+<h3 id="特殊形式"><a class="markdownIt-Anchor" href="#特殊形式"></a> 特殊形式</h3>
+<h3 id="函数调用"><a class="markdownIt-Anchor" href="#函数调用"></a> 函数调用</h3>
+<h3 id="宏形式"><a class="markdownIt-Anchor" href="#宏形式"></a> 宏形式</h3>
+<h2 id="特殊形式special-form"><a class="markdownIt-Anchor" href="#特殊形式special-form"></a> 特殊形式（Special Form）</h2>
 <hr>
 <p>直接与编译器打交道，告诉编译器怎么做。</p>
-<h3>define</h3>
-<h3>lambda</h3>
-<h3>cons</h3>
-<h2>基础数据结构</h2>
+<h3 id="define"><a class="markdownIt-Anchor" href="#define"></a> define</h3>
+<h3 id="lambda"><a class="markdownIt-Anchor" href="#lambda"></a> lambda</h3>
+<h3 id="cons"><a class="markdownIt-Anchor" href="#cons"></a> cons</h3>
+<h2 id="基础数据结构"><a class="markdownIt-Anchor" href="#基础数据结构"></a> 基础数据结构</h2>
 <hr>
 <p>Scheme中的简单数据类型包含 booleans (布尔类型) , number(数字类型), characters(字符类型) 和 symbols(标识符类型)。基础数据结构都是自解释的</p>
-<h3>booleans (布尔类型)</h3>
-<h3>number(数字类型)</h3>
-<h3>characters(字符类型)</h3>
-<h3>symbols(标识符类型)</h3>
-<h2>复合结构</h2>
+<h3 id="booleans-布尔类型"><a class="markdownIt-Anchor" href="#booleans-布尔类型"></a> booleans (布尔类型)</h3>
+<h3 id="number数字类型"><a class="markdownIt-Anchor" href="#number数字类型"></a> number(数字类型)</h3>
+<h3 id="characters字符类型"><a class="markdownIt-Anchor" href="#characters字符类型"></a> characters(字符类型)</h3>
+<h3 id="symbols标识符类型"><a class="markdownIt-Anchor" href="#symbols标识符类型"></a> symbols(标识符类型)</h3>
+<h2 id="复合结构"><a class="markdownIt-Anchor" href="#复合结构"></a> 复合结构</h2>
 <hr>
-<h3>String</h3>
-<p>创建
+<h3 id="string"><a class="markdownIt-Anchor" href="#string"></a> String</h3>
+<p>创建<br>
 表示：”asdf as f”</p>
-<h3>Vector</h3>
-<p>创建：
+<h3 id="vector"><a class="markdownIt-Anchor" href="#vector"></a> Vector</h3>
+<p>创建：<br>
 表示</p>
-<h3>点对 和 list（一定结构的嵌套的点对）</h3>
-<h2>其他数据类型</h2>
+<h3 id="点对-和-list一定结构的嵌套的点对"><a class="markdownIt-Anchor" href="#点对-和-list一定结构的嵌套的点对"></a> 点对 和 list（一定结构的嵌套的点对）</h3>
+<h2 id="其他数据类型"><a class="markdownIt-Anchor" href="#其他数据类型"></a> 其他数据类型</h2>
 <hr>
-<h3>S表达式</h3>
-<p>创建
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">quote</span> S)</span><br><span class="line">`S</span><br></pre></td></tr></table></figure></p>
-<p>操作
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">eval</span> `S)</span><br></pre></td></tr></table></figure></p>
+<h3 id="s表达式"><a class="markdownIt-Anchor" href="#s表达式"></a> S表达式</h3>
+<p>创建</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">quote</span> S)</span><br><span class="line">`S</span><br></pre></td></tr></table></figure>
+<p>操作</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">eval</span> `S)</span><br></pre></td></tr></table></figure>
 <p><a href="http://liyaos.com/blog/common-lisp-notes-1-2/#s-expressions" target="_blank" rel="noopener">Common Lisp学习笔记（1）：语法和语义 | 优哉·幽斋</a></p>
-<h3>过程</h3>
-<h3>端口</h3>
-<h2>宏</h2>
+<h3 id="过程"><a class="markdownIt-Anchor" href="#过程"></a> 过程</h3>
+<h3 id="端口"><a class="markdownIt-Anchor" href="#端口"></a> 端口</h3>
+<h2 id="宏"><a class="markdownIt-Anchor" href="#宏"></a> 宏</h2>
 <hr>
 <p>如果用普通定义来定义则返回一个列表S 表达式，需要用eval对S表达式求值才能完成类似的功能</p>
 
@@ -589,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">基本结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">特殊形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">宏形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">特殊形式（Special Form）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">define</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">lambda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">cons</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">基础数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">booleans (布尔类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">number(数字类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">characters(字符类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.</span> <span class="nav-text">symbols(标识符类型)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">复合结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.2.</span> <span class="nav-text">Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.3.</span> <span class="nav-text">点对 和 list（一定结构的嵌套的点对）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">其他数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.1.</span> <span class="nav-text">S表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.2.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.3.</span> <span class="nav-text">端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">宏</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本结构"><span class="nav-number">1.</span> <span class="nav-text"> 基本结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊形式"><span class="nav-number">1.1.</span> <span class="nav-text"> 特殊形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数调用"><span class="nav-number">1.2.</span> <span class="nav-text"> 函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏形式"><span class="nav-number">1.3.</span> <span class="nav-text"> 宏形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊形式special-form"><span class="nav-number">2.</span> <span class="nav-text"> 特殊形式（Special Form）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#define"><span class="nav-number">2.1.</span> <span class="nav-text"> define</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda"><span class="nav-number">2.2.</span> <span class="nav-text"> lambda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cons"><span class="nav-number">2.3.</span> <span class="nav-text"> cons</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础数据结构"><span class="nav-number">3.</span> <span class="nav-text"> 基础数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#booleans-布尔类型"><span class="nav-number">3.1.</span> <span class="nav-text"> booleans (布尔类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#number数字类型"><span class="nav-number">3.2.</span> <span class="nav-text"> number(数字类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#characters字符类型"><span class="nav-number">3.3.</span> <span class="nav-text"> characters(字符类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#symbols标识符类型"><span class="nav-number">3.4.</span> <span class="nav-text"> symbols(标识符类型)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合结构"><span class="nav-number">4.</span> <span class="nav-text"> 复合结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-number">4.1.</span> <span class="nav-text"> String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-number">4.2.</span> <span class="nav-text"> Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点对-和-list一定结构的嵌套的点对"><span class="nav-number">4.3.</span> <span class="nav-text"> 点对 和 list（一定结构的嵌套的点对）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他数据类型"><span class="nav-number">5.</span> <span class="nav-text"> 其他数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#s表达式"><span class="nav-number">5.1.</span> <span class="nav-text"> S表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">5.2.</span> <span class="nav-text"> 过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口"><span class="nav-number">5.3.</span> <span class="nav-text"> 端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏"><span class="nav-number">6.</span> <span class="nav-text"> 宏</span></a></li></ol></div>
             
 
           </div>
@@ -623,7 +623,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.1k</span>
+    <span title="Site words total count">6.9k</span>
   
 </div>
 
@@ -786,24 +786,7 @@
       }
     })();
     </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
