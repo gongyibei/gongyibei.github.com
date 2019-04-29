@@ -687,16 +687,14 @@
 <p>最小几何间隔：</p>
 <p>$$<br>\gamma=\min_{i=1,\cdots,N}\gamma_i<br>$$</p>
 <h3 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h3><p>线性可分下的原问题</p>
-<p>$$<br>\min_{w,b}\quad \frac12|x|^2\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0</p>
-<p>$$</p>
+<p>$$<br>\min_{w,b}\quad \frac12|x|^2\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)-1\ge0<br>$$</p>
 <p>线性不可分下的原问题：</p>
-<p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\<br>\xi_i\ge0,\quad i=1,2,\cdots,N</p>
-<p>$$</p>
+<p>$$<br>\min_{w,b}\quad \frac12|x|^2+C\sum_{i=1}^N\xi_i\<br>\text{s.t.}\quad y_i(w\cdot x_i+b)\ge1-\xi_i,\quad i=1,2,\cdots,N\<br>\xi_i\ge0,\quad i=1,2,\cdots,N<br>$$</p>
 <p>对应的决策函数为：</p>
 <p>$$<br>f(x)=\text{sign}(w^<em>\cdot x+b^</em>)<br>= \text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b)<br>$$</p>
 <h3 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h3><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
 <p>用对偶问题求一个原问题的下界估计</p>
-<p><img src="./img/KTT.jpg" alt="KTT"></p>
+<p><img src="asset/img/KTT.jpg" alt="KTT"></p>
 <p><strong>强对偶</strong></p>
 <p>原始问题是凸优化问题的情况下，一般都满足强对偶</p>
 <p><strong>Slater条件</strong></p>
@@ -717,9 +715,7 @@
 <p><a href="https://www.hrwhisper.me/" target="_blank" rel="noopener">https://www.hrwhisper.me/</a></p>
 <h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><p>将原问题转换为对偶问题用到了拉格朗日对偶</p>
 <p>线性可分的原问题可转化为对偶问题：</p>
-<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \</p>
-<p>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>\alpha_i\ge0\ ,\quad i=1,2,\cdots,N</p>
-<p>$$</p>
+<p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>\alpha_i\ge0\ ,\quad i=1,2,\cdots,N<br>$$</p>
 <p>线性不可分原问题可转化为对偶问题：</p>
 <p>$$<br>\min_\alpha\quad\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \<br>\text{s.t.}\quad\sum_{i=1}^N\alpha_iy_i=0\<br>0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N<br>$$</p>
 <h3 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h3><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
