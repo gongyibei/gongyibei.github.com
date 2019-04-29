@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="可用于迭代的类型  iterable  集合类 iterator  generator       生成器  创建方法 通过类似列表生成式的方式生成 123456&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]&amp;gt;&amp;gt;&amp;gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&amp;gt;&amp;gt;&amp;gt; g = (x * x f">
+<meta name="description" content="可用于迭代的类型 iterable 集合类 iterator generator      生成器创建方法通过类似列表生成式的方式生成 123456&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]&amp;gt;&amp;gt;&amp;gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in">
 <meta name="keywords" content="python,异步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生成器与协程">
 <meta property="og:url" content="https://gongyibei.github.io/2018/08/07/生成器与协程/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
-<meta property="og:description" content="可用于迭代的类型  iterable  集合类 iterator  generator       生成器  创建方法 通过类似列表生成式的方式生成 123456&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]&amp;gt;&amp;gt;&amp;gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&amp;gt;&amp;gt;&amp;gt; g = (x * x f">
+<meta property="og:description" content="可用于迭代的类型 iterable 集合类 iterator generator      生成器创建方法通过类似列表生成式的方式生成 123456&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]&amp;gt;&amp;gt;&amp;gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T15:11:20.653Z">
+<meta property="og:updated_time" content="2019-04-29T12:29:09.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成器与协程">
-<meta name="twitter:description" content="可用于迭代的类型  iterable  集合类 iterator  generator       生成器  创建方法 通过类似列表生成式的方式生成 123456&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]&amp;gt;&amp;gt;&amp;gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&amp;gt;&amp;gt;&amp;gt; g = (x * x f">
+<meta name="twitter:description" content="可用于迭代的类型 iterable 集合类 iterator generator      生成器创建方法通过类似列表生成式的方式生成 123456&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]&amp;gt;&amp;gt;&amp;gt; L[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in">
 
 
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  638字
+                  637字
                 </span>
               
 
@@ -394,57 +394,40 @@
       
 
       
-        <h2 id="可用于迭代的类型"><a class="markdownIt-Anchor" href="#可用于迭代的类型"></a> 可用于迭代的类型</h2>
-<ul>
-<li>iterable
-<ul>
+        <h2 id="可用于迭代的类型"><a href="#可用于迭代的类型" class="headerlink" title="可用于迭代的类型"></a>可用于迭代的类型</h2><ul>
+<li>iterable<ul>
 <li>集合类</li>
-<li>iterator
-<ul>
+<li>iterator<ul>
 <li>generator</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="生成器"><a class="markdownIt-Anchor" href="#生成器"></a> 生成器</h2>
-<h3 id="创建方法"><a class="markdownIt-Anchor" href="#创建方法"></a> 创建方法</h3>
-<p>通过类似列表生成式的方式生成</p>
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h3 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h3><p>通过类似列表生成式的方式生成</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>L = [x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g</span><br><span class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x1022ef630</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>调用含有<code>yield</code>语句的函数也可以得到</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = fib(<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f</span><br><span class="line">&lt;generator object fib at <span class="number">0x104feaaa0</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="生成器对象的方法"><a class="markdownIt-Anchor" href="#生成器对象的方法"></a> 生成器对象的方法</h3>
-<p><code>next()</code>：从生成器中获取一个值。类似于<code>send(None)</code><br>
-<code>send()</code>：从生气器中获取一个值。并可以传入一个值作为<code>yield</code>语句的返回值</p>
-<h2 id="协程"><a class="markdownIt-Anchor" href="#协程"></a> 协程</h2>
-<h3 id="创建方法-2"><a class="markdownIt-Anchor" href="#创建方法-2"></a> 创建方法</h3>
-<p>使用<code>@asyncio.coroutine</code> 和 <code>yield from</code></p>
+<h3 id="生成器对象的方法"><a href="#生成器对象的方法" class="headerlink" title="生成器对象的方法"></a>生成器对象的方法</h3><p><code>next()</code>：从生成器中获取一个值。类似于<code>send(None)</code><br><code>send()</code>：从生气器中获取一个值。并可以传入一个值作为<code>yield</code>语句的返回值</p>
+<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><h3 id="创建方法-1"><a href="#创建方法-1" class="headerlink" title="创建方法"></a>创建方法</h3><p>使用<a href="mailto:`@asyncio.coroutine" target="_blank" rel="noopener">`@asyncio.coroutine</a><code>和</code>yield from`</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="meta">@asyncio.coroutine</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"Hello world!"</span>)</span><br><span class="line">    r = <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"Hello again!"</span>)</span><br></pre></td></tr></table></figure>
 <p>3.5版本的新语法<code>async</code>和<code>await</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"Hello world!"</span>)</span><br><span class="line">    r = <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"Hello again!"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="yield-from语句分析"><a class="markdownIt-Anchor" href="#yield-from语句分析"></a> <code>yield from</code>语句分析</h3>
-<p>python不是通过<code>@asyncio.coroutine</code>定义协程的，而是看定义的函数里有没有<code>yield</code>语句<br>
-<code>@asyncio.coroutine</code>的作用（《流畅的Python》18.1）</p>
+<h3 id="yield-from语句分析"><a href="#yield-from语句分析" class="headerlink" title="yield from语句分析"></a><code>yield from</code>语句分析</h3><p>python不是通过<a href="mailto:`@asyncio.coroutine" target="_blank" rel="noopener">`@asyncio.coroutine</a><code>定义协程的，而是看定义的函数里有没有</code>yield<code>语句</code>@asyncio.coroutine`的作用（《流畅的Python》18.1）</p>
 <ol>
 <li>后面接可迭代对象，代替<code>for</code></li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]:</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">from</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="async和await分析"><a class="markdownIt-Anchor" href="#async和await分析"></a> <code>async</code>和<code>await</code>分析</h3>
-<p>首先要理解其使用范围，要么在asyncio中使用，要么自己实现even loops。yield from 并没有完全被替代</p>
+<h3 id="async和await分析"><a href="#async和await分析" class="headerlink" title="async和await分析"></a><code>async</code>和<code>await</code>分析</h3><p>首先要理解其使用范围，要么在asyncio中使用，要么自己实现even loops。yield from 并没有完全被替代</p>
 <blockquote>
-<p>async and await are specifically designed for asynchronous programming with event loops<br>
-<a href="https://stackoverflow.com/questions/34469060/python-native-coroutines-and-send" target="_blank" rel="noopener">async await - Python native coroutines and send() - Stack Overflow</a></p>
+<p>async and await are specifically designed for asynchronous programming with event loops<br><a href="https://stackoverflow.com/questions/34469060/python-native-coroutines-and-send" target="_blank" rel="noopener">async await - Python native coroutines and send() - Stack Overflow</a></p>
 </blockquote>
-<h2 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h2>
-<p>通过<code>yield</code>实现的生产者-消费者模型</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>通过<code>yield</code>实现的生产者-消费者模型</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span><span class="params">()</span>:</span></span><br><span class="line">    r = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        n = <span class="keyword">yield</span> r</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> n:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        print(<span class="string">'[CONSUMER] Consuming %s...'</span> % n)</span><br><span class="line">        r = <span class="string">'200 OK'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">produce</span><span class="params">(c)</span>:</span></span><br><span class="line">    c.send(<span class="keyword">None</span>)</span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; <span class="number">5</span>:</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">        print(<span class="string">'[PRODUCER] Producing %s...'</span> % n)</span><br><span class="line">        r = c.send(n)</span><br><span class="line">        print(<span class="string">'[PRODUCER] Consumer return: %s'</span> % r)</span><br><span class="line">    c.close()</span><br><span class="line"></span><br><span class="line">c = consumer()</span><br><span class="line">produce(c)</span><br></pre></td></tr></table></figure>
 <p>调用<code>generator</code>时，通过<code>return</code>拿不到<code>generator</code>的<code>return</code>语句的返回值。如果想要拿到返回值，必须捕获<code>StopIteration</code>错误，返回值包含在<code>StopIteration</code>的<code>value</code>中：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g = fib(<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>        x = next(g)</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">'g:'</span>, x)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">'Generator return value:'</span>, e.value)</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line">...</span><br><span class="line">g: <span class="number">1</span></span><br><span class="line">g: <span class="number">1</span></span><br><span class="line">g: <span class="number">2</span></span><br><span class="line">g: <span class="number">3</span></span><br><span class="line">g: <span class="number">5</span></span><br><span class="line">g: <span class="number">8</span></span><br><span class="line">Generator <span class="keyword">return</span> value: done</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<hr>
-<p><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰Python教程</a><br>
-<a href="https://zhuanlan.zhihu.com/p/25228075" target="_blank" rel="noopener">从0到1，Python异步编程的演进之路</a><br>
-<a href="https://zhuanlan.zhihu.com/p/27258289" target="_blank" rel="noopener">Python Async/Await入门指南</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<p><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰Python教程</a><br><a href="https://zhuanlan.zhihu.com/p/25228075" target="_blank" rel="noopener">从0到1，Python异步编程的演进之路</a><br><a href="https://zhuanlan.zhihu.com/p/27258289" target="_blank" rel="noopener">Python Async/Await入门指南</a></p>
 
       
     </div>
@@ -575,7 +558,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -630,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可用于迭代的类型"><span class="nav-number">1.</span> <span class="nav-text"> 可用于迭代的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">2.</span> <span class="nav-text"> 生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">2.1.</span> <span class="nav-text"> 创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器对象的方法"><span class="nav-number">2.2.</span> <span class="nav-text"> 生成器对象的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协程"><span class="nav-number">3.</span> <span class="nav-text"> 协程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法-2"><span class="nav-number">3.1.</span> <span class="nav-text"> 创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield-from语句分析"><span class="nav-number">3.2.</span> <span class="nav-text"> yield from语句分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async和await分析"><span class="nav-number">3.3.</span> <span class="nav-text"> async和await分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">4.</span> <span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可用于迭代的类型"><span class="nav-number">1.</span> <span class="nav-text">可用于迭代的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">2.</span> <span class="nav-text">生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法"><span class="nav-number">2.1.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器对象的方法"><span class="nav-number">2.2.</span> <span class="nav-text">生成器对象的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协程"><span class="nav-number">3.</span> <span class="nav-text">协程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建方法-1"><span class="nav-number">3.1.</span> <span class="nav-text">创建方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield-from语句分析"><span class="nav-number">3.2.</span> <span class="nav-text">yield from语句分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async和await分析"><span class="nav-number">3.3.</span> <span class="nav-text">async和await分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">4.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -664,7 +647,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.9k</span>
+    <span title="Site words total count">6.4k</span>
   
 </div>
 
@@ -827,9 +810,55 @@
       }
     })();
     </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config("MathJax config");
 </script>
 
 <script type="text/x-mathjax-config">
@@ -841,36 +870,12 @@
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="custom_mathjax_source">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
   
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
 
   
 
