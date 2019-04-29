@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="markdown渲染引擎  hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为markdown-it 修改默认 123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it -">
+<meta name="description" content="markdown渲染引擎  hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为markdown-it 修改默认 123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it --">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo踩坑记录">
 <meta property="og:url" content="https://gongyibei.github.io/2019/04/29/hexo踩坑记录/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
-<meta property="og:description" content="markdown渲染引擎  hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为markdown-it 修改默认 123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it -">
+<meta property="og:description" content="markdown渲染引擎  hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为markdown-it 修改默认 123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it --">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gongyibei.github.io/2019/04/29/hexo踩坑记录/menus.jpg">
-<meta property="og:updated_time" content="2019-04-29T09:11:47.125Z">
+<meta property="og:updated_time" content="2019-04-29T09:18:31.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo踩坑记录">
-<meta name="twitter:description" content="markdown渲染引擎  hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为markdown-it 修改默认 123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it -">
+<meta name="twitter:description" content="markdown渲染引擎  hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为markdown-it 修改默认 123cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎npm i hexo-renderer-markdown-it --">
 <meta name="twitter:image" content="https://gongyibei.github.io/2019/04/29/hexo踩坑记录/menus.jpg">
 
 
@@ -396,14 +396,13 @@
       
 
       
-        <hr>
-<h2>markdown渲染引擎</h2>
+        <h1>markdown渲染引擎</h1>
 <hr>
 <p>hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为<a href="https://markdown-it.github.io/markdown-it/" target="_blank" rel="noopener">markdown-it</a></p>
 <p>修改默认</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录</span><br><span class="line">npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎</span><br><span class="line">npm i hexo-renderer-markdown-it --save # 安装 markdown-it</span><br></pre></td></tr></table></figure></p>
 <h2></h2>
-<h2>文章图片保存</h2>
+<h1>文章图片保存</h1>
 <hr>
 <p>安装插件</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
@@ -412,12 +411,12 @@
 <p>修改后，在用<code>hexo new test</code>创建文章时会生成对应的文件夹<code>test/</code></p>
 <p>把图片放入文件夹下：<code>test/xxx.jpg</code> ，最后在文章中引用</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img xxx.jpg %&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>参考</h3>
+<h2>参考</h2>
 <p><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">https://www.jianshu.com/p/c2ba9533088a</a></p>
 <h2></h2>
-<h2>主题配置</h2>
+<h1>主题配置</h1>
 <hr>
-<h3>页面配置</h3>
+<h2>页面配置</h2>
 <p>在主题<code>next</code>的配置文件<code>_config.yml</code>中修改menu下的设置</p>
 <p>格式为</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">页面名：页面路径 || 页面图标</span><br></pre></td></tr></table></figure></p>
@@ -608,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">markdown渲染引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">文章图片保存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.1.</span> <span class="nav-text">页面配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">markdown渲染引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">文章图片保存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">页面配置</span></a></li></ol></li></ol></div>
             
 
           </div>

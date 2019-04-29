@@ -394,14 +394,13 @@
       
         
           
-            <hr>
-<h2>markdown渲染引擎</h2>
+            <h1>markdown渲染引擎</h1>
 <hr>
 <p>hexo默认的渲染引擎对公式支持不太好，将渲染引擎修改为<a href="https://markdown-it.github.io/markdown-it/" target="_blank" rel="noopener">markdown-it</a></p>
 <p>修改默认</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-blog.github.io/ # 首先进入你的 hexo 的根目录</span><br><span class="line">npm un hexo-renderer-marked --save # 卸载 hexo 默认的 markdown 渲染引擎</span><br><span class="line">npm i hexo-renderer-markdown-it --save # 安装 markdown-it</span><br></pre></td></tr></table></figure></p>
 <h2></h2>
-<h2>文章图片保存</h2>
+<h1>文章图片保存</h1>
 <hr>
 <p>安装插件</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
@@ -410,12 +409,12 @@
 <p>修改后，在用<code>hexo new test</code>创建文章时会生成对应的文件夹<code>test/</code></p>
 <p>把图片放入文件夹下：<code>test/xxx.jpg</code> ，最后在文章中引用</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img xxx.jpg %&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>参考</h3>
+<h2>参考</h2>
 <p><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">https://www.jianshu.com/p/c2ba9533088a</a></p>
 <h2></h2>
-<h2>主题配置</h2>
+<h1>主题配置</h1>
 <hr>
-<h3>页面配置</h3>
+<h2>页面配置</h2>
 <p>在主题<code>next</code>的配置文件<code>_config.yml</code>中修改menu下的设置</p>
 <p>格式为</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">页面名：页面路径 || 页面图标</span><br></pre></td></tr></table></figure></p>
