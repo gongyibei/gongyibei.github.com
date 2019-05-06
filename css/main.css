@@ -225,6 +225,9 @@ h5,
 h6 {
   margin: 20px 0 15px;
 }
+h2 {
+  border-bottom: 1px solod #DDD;
+}
 h1 {
   font-size: 22px;
   border-bottom: 1px solod #DDD;
