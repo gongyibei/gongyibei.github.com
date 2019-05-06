@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="Bias/variance trade-off欠拟合意味着很高的偏差过拟合意味着很高的方差 经验误差最小化非凸优化问题是NP难问题EMR（经验风险最小化） $\mathcal{H}$有限的情况 m\ge\frac1{2\gamma^2}\log\frac{2k}{\delta}\\ =O(\frac1{\gamma^2}\log\frac{k}\delta)$\mathcal{H}$无限的情况模型">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="learning-theory">
 <meta property="og:url" content="https://gongyibei.github.io/2019/04/29/learning-theory/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
+<meta property="og:description" content="Bias/variance trade-off欠拟合意味着很高的偏差过拟合意味着很高的方差 经验误差最小化非凸优化问题是NP难问题EMR（经验风险最小化） $\mathcal{H}$有限的情况 m\ge\frac1{2\gamma^2}\log\frac{2k}{\delta}\\ =O(\frac1{\gamma^2}\log\frac{k}\delta)$\mathcal{H}$无限的情况模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-29T12:32:27.044Z">
+<meta property="og:updated_time" content="2019-05-06T08:14:05.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learning-theory">
+<meta name="twitter:description" content="Bias/variance trade-off欠拟合意味着很高的偏差过拟合意味着很高的方差 经验误差最小化非凸优化问题是NP难问题EMR（经验风险最小化） $\mathcal{H}$有限的情况 m\ge\frac1{2\gamma^2}\log\frac{2k}{\delta}\\ =O(\frac1{\gamma^2}\log\frac{k}\delta)$\mathcal{H}$无限的情况模型">
 
 
 
@@ -299,6 +303,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -320,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0字
+                  1,276字
                 </span>
               
 
@@ -336,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  5min
                 </span>
               
             </div>
@@ -357,7 +383,111 @@
       
 
       
-        
+        <h1 id="Bias-variance-trade-off"><a href="#Bias-variance-trade-off" class="headerlink" title="Bias/variance trade-off"></a>Bias/variance trade-off</h1><p>欠拟合意味着很高的偏差<br>过拟合意味着很高的方差</p>
+<h1 id="经验误差最小化"><a href="#经验误差最小化" class="headerlink" title="经验误差最小化"></a>经验误差最小化</h1><p>非凸优化问题是NP难问题<br>EMR（经验风险最小化）</p>
+<h2 id="mathcal-H-有限的情况"><a href="#mathcal-H-有限的情况" class="headerlink" title="$\mathcal{H}$有限的情况"></a>$\mathcal{H}$有限的情况</h2><script type="math/tex; mode=display">
+m\ge\frac1{2\gamma^2}\log\frac{2k}{\delta}\\
+=O(\frac1{\gamma^2}\log\frac{k}\delta)</script><h2 id="mathcal-H-无限的情况"><a href="#mathcal-H-无限的情况" class="headerlink" title="$\mathcal{H}$无限的情况"></a>$\mathcal{H}$无限的情况</h2><h1 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h1><h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><blockquote>
+<p>从模型集合$\mathcal{H}$中选择出合适的模型</p>
+</blockquote>
+<p>根据所分的数据比例以及策略的差异</p>
+<ul>
+<li>交叉验证</li>
+<li>K重交叉验证</li>
+<li>留1交叉验证<h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2></li>
+</ul>
+<blockquote>
+<p>多次交叉验证，每次,用与确定特征的数量</p>
+</blockquote>
+<h3 id="wrapper-model-feature-selection"><a href="#wrapper-model-feature-selection" class="headerlink" title="wrapper model feature selection"></a>wrapper model feature selection</h3><p>常用的有<strong>前向搜索算法</strong>、<strong>后向搜索算法</strong>等，前向搜索与后向搜索均属于启发式搜索，不能保证找到最好的特征子集合<br>前向搜索算法</p>
+<ol>
+<li>初始化特征集合 $\mathcal{F}=\varnothing$</li>
+<li>Repeat {<br>(a) 现有特征的集合加上剩下的$k$个特征中的一个可以得到一个模型，由此得到的$k$个模型构成模型集合$\mathcal{H}$（$|\mathcal{H}|=k$）。<br>(b) 用特征选择的方法从模型集合中选择出最合适的模型，产生该模型所加入特征即为本次要加入特征。将特征加入特征集合$\mathcal{F}$。<br>}</li>
+</ol>
+<p>后向搜索算法</p>
+<ol>
+<li>初始化特征集合 $\mathcal{F}= \text{所有特征}$</li>
+<li>Repeat {<br>(a) 现有特征的集合的$k$个特征里删除一个特征可以得到一个模型，由此得到的$k$个模型构成模型集合$\mathcal{H}$（$|\mathcal{H}|=k$）。<br>(b) 用特征选择的方法从模型集合中选择出最合适的模型，产生该模型所删除的特征即为本次所要删除的特征。将该特征从特征集合$\mathcal{F}$中删除。<br>}</li>
+</ol>
+<h3 id="filter-feature-selection"><a href="#filter-feature-selection" class="headerlink" title="filter feature selection"></a>filter feature selection</h3><ol>
+<li>求出每个特征$x_i$与y的相关性</li>
+<li>按相关性的大小对特征进行排序</li>
+<li>选择前k个特征，或者用交叉验证来决定选择前几个特征</li>
+</ol>
+<h3 id="两种方法比较"><a href="#两种方法比较" class="headerlink" title="两种方法比较"></a>两种方法比较</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">wrapper model feature selection</td>
+<td style="text-align:center">效果好，运算量大</td>
+</tr>
+<tr>
+<td style="text-align:center">filter feature selection</td>
+<td style="text-align:center">运算量小</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="ML估计（频率学派）"><a href="#ML估计（频率学派）" class="headerlink" title="ML估计（频率学派）"></a>ML估计（频率学派）</h1><blockquote>
+<p>高斯下的ML估计等价于最小二乘,噪声是符合高斯分布，$\theta$是符合高斯分布的</p>
+</blockquote>
+<p>作如下假设</p>
+<ul>
+<li>$p(\varepsilon)$服从高斯分布：$\theta\sim\mathcal{N}(0,\tau^2I)$</li>
+</ul>
+<script type="math/tex; mode=display">
+\theta_{\text{ML}}= \arg \max_\theta\Pi{p(y^{(i)}|x^{(i)};\theta)}</script><h1 id="MAP估计（贝叶斯学派）"><a href="#MAP估计（贝叶斯学派）" class="headerlink" title="MAP估计（贝叶斯学派）"></a>MAP估计（贝叶斯学派）</h1><blockquote>
+<p>高斯环境下的MAP估计等价于L2正则化最小二乘，可以使模型更光滑。这种光滑特性依赖与我们所作的高斯假设。如果我们假设的先验分布大多数概率都接近与零就会有这样的平滑效果， 如拉普拉斯分布</p>
+</blockquote>
+<p>我们希望给定数据集合$S$，对于某一个变量$x_i$,可以求得所$y_i$的概率分布</p>
+<script type="math/tex; mode=display">
+p(y|x,S)=\int_{\theta}p(y|x,\theta)p(\theta|S)\text{d}\theta</script><p>通过概率分布我们就可以求得其期望</p>
+<script type="math/tex; mode=display">
+\mathrm{E}[y|x,S]=\int_yp(y|x,\theta)p(\theta|S)\text{d}y</script><p>然后我们需要知道给定数据集$S$下参数$\theta$的概率分布,可以通过贝叶斯公式计算</p>
+<script type="math/tex; mode=display">
+p(\theta|S)=\frac{p(S|\theta)p(\theta)}{p(S)}</script><p>但是上面关于$\theta$的积分求解是非常困难的，我们可以用概率最大的$\theta_{\text{MAP}}$对应的模型近似代替上面的期望值</p>
+<script type="math/tex; mode=display">
+\mathrm{E}[y|x;\hat\theta] \thickapprox \mathrm{E}[y|x,S]</script><p>$\hat\theta$即为$p(\theta|S)$的极大值点,即MAP估计量</p>
+<script type="math/tex; mode=display">
+\theta_{\text{MAP}}= \arg \max_\theta(\Pi{p(y^{(i)}|x^{(i)};\theta)})p(\theta)</script><p>作如下假设</p>
+<ul>
+<li>误差$\varepsilon$的概率分布$p(\varepsilon)$服从高斯分布：$\theta\sim\mathcal{N}(0,\tau^2I)$</li>
+<li>参数$\theta$的概率分布$p(\theta)$服从高斯分布：$\theta\sim\mathcal{N}(0,\tau^2I)$</li>
+</ul>
+<p>可以求得</p>
+<blockquote>
+<p>可以通过交叉验证来选择$\lambda$的值</p>
+</blockquote>
+<p>&gt;</p>
+<h1 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h1><h1 id="在线学习（Online-learning）"><a href="#在线学习（Online-learning）" class="headerlink" title="在线学习（Online learning）"></a>在线学习（Online learning）</h1><p>之前讲过的算法都被称为batch learning algorithms</p>
+<p>Total online error</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{m}1\{y^{(i)}\neq x^{(i)}\}</script><p>对于感知器学习算法，即使输入向量是无数维的，只要正负样本能够以某个间隔被分隔开，那么感知器算法将收敛</p>
+<p>上面第二个不等式是基于 $u$ 是一个单位长度向量（$z^T u = ||z||\cdot ||u|| cos \phi\le ||z||\cdot ||u||$，其中的$\phi$是向量 $z$ 和向量 $u$ 的夹角）。结果则表明 $k\le (D/\gamma)^2$。因此，如果感知器犯了一个第 $k$ 个错误，则 $k\le (D/\gamma)^2$。</p>
+<h1 id="应用学习算法的建议"><a href="#应用学习算法的建议" class="headerlink" title="应用学习算法的建议"></a>应用学习算法的建议</h1><h2 id="学习算法的调试诊断"><a href="#学习算法的调试诊断" class="headerlink" title="学习算法的调试诊断"></a>学习算法的调试诊断</h2><h2 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h2><h2 id="怎样求解机器学习问题"><a href="#怎样求解机器学习问题" class="headerlink" title="怎样求解机器学习问题"></a>怎样求解机器学习问题</h2><p> 不要进行过早优化<br> 过早统计优化</p>
+<p>改善算法</p>
+<ul>
+<li>获得更多的样本 （修正高方差）</li>
+<li>尝试更少的特征 （修正高方差）</li>
+<li>尝试更多的特征 （修正高偏差） </li>
+<li>比较使用邮件标题或者内容作为特征 （修正高偏差）</li>
+<li>对梯度下降进行更多的迭代  （）</li>
+<li>使用牛顿法</li>
+<li>调整$\lambda$</li>
+<li>使用SVM</li>
+</ul>
+<p>盲目的去优化往往很费时</p>
+<p>不要尝试随机的改变学习算法<br>通过不同的诊断方法来确定问题，然后修正问题</p>
+<p> 高方差：训练误差远小于测试误差<br> 高偏差：训练误差也会很高</p>
+<p> 比较训练误差于测试误差的差距</p>
+<p>诊断是算法收敛问题，还是目标函数的选择</p>
+
       
     </div>
     
@@ -390,6 +520,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
 
       
       
@@ -408,6 +544,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/01/LaTeX语法总结/" rel="prev" title="LaTeX语法总结">
+                LaTeX语法总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -464,8 +604,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -484,7 +633,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -495,7 +644,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -506,7 +655,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -529,6 +678,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bias-variance-trade-off"><span class="nav-number">1.</span> <span class="nav-text">Bias/variance trade-off</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经验误差最小化"><span class="nav-number">2.</span> <span class="nav-text">经验误差最小化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathcal-H-有限的情况"><span class="nav-number">2.1.</span> <span class="nav-text">$\mathcal{H}$有限的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathcal-H-无限的情况"><span class="nav-number">2.2.</span> <span class="nav-text">$\mathcal{H}$无限的情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型选择"><span class="nav-number">3.</span> <span class="nav-text">模型选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证"><span class="nav-number">3.1.</span> <span class="nav-text">交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征选择"><span class="nav-number">3.2.</span> <span class="nav-text">特征选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wrapper-model-feature-selection"><span class="nav-number">3.2.1.</span> <span class="nav-text">wrapper model feature selection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-feature-selection"><span class="nav-number">3.2.2.</span> <span class="nav-text">filter feature selection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两种方法比较"><span class="nav-number">3.2.3.</span> <span class="nav-text">两种方法比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ML估计（频率学派）"><span class="nav-number">4.</span> <span class="nav-text">ML估计（频率学派）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MAP估计（贝叶斯学派）"><span class="nav-number">5.</span> <span class="nav-text">MAP估计（贝叶斯学派）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化"><span class="nav-number">6.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在线学习（Online-learning）"><span class="nav-number">7.</span> <span class="nav-text">在线学习（Online learning）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用学习算法的建议"><span class="nav-number">8.</span> <span class="nav-text">应用学习算法的建议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#学习算法的调试诊断"><span class="nav-number">8.1.</span> <span class="nav-text">学习算法的调试诊断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误差分析"><span class="nav-number">8.2.</span> <span class="nav-text">误差分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样求解机器学习问题"><span class="nav-number">8.3.</span> <span class="nav-text">怎样求解机器学习问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -557,7 +722,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.9k</span>
+    <span title="Site words total count">7.2k</span>
   
 </div>
 
