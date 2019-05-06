@@ -225,12 +225,8 @@ h5,
 h6 {
   margin: 20px 0 15px;
 }
-h2 {
-  border-bottom: 1px solod #DDD;
-}
 h1 {
   font-size: 22px;
-  border-bottom: 1px solod #DDD;
 }
 @media (max-width: 767px) {
   h1 {
@@ -3002,5 +2998,5 @@ pre .javascript .function {
   }
 }
 .post-body h1 {
-  border-bottom: 1px;
+  border-bottom: 2px solid #ddd;
 }
