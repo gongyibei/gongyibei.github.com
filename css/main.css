@@ -227,6 +227,7 @@ h6 {
 }
 h1 {
   font-size: 22px;
+  border-bottom: 1px solod #DDD;
 }
 @media (max-width: 767px) {
   h1 {
