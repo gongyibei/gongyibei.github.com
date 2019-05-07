@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="对齐">
+<meta name="description" content="争做latex写作小能手">
 <meta name="keywords" content="latex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX语法总结">
-<meta property="og:url" content="https://gongyibei.github.io/2019/05/01/LaTeX语法总结/index.html">
+<meta property="og:url" content="https://localhost:4000/2019/05/01/LaTeX语法总结/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
-<meta property="og:description" content="对齐">
+<meta property="og:description" content="争做latex写作小能手">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-03T06:48:34.798Z">
+<meta property="og:updated_time" content="2019-05-07T11:58:07.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX语法总结">
-<meta name="twitter:description" content="对齐">
+<meta name="twitter:description" content="争做latex写作小能手">
 
 
 
@@ -98,7 +98,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://gongyibei.github.io/2019/05/01/LaTeX语法总结/"/>
+  <link rel="canonical" href="https://localhost:4000/2019/05/01/LaTeX语法总结/"/>
 
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/05/01/LaTeX语法总结/">
+    <link itemprop="mainEntityOfPage" href="https://localhost:4000/2019/05/01/LaTeX语法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -315,7 +315,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/latex/" itemprop="url" rel="index">
+                  <a href="/categories/写作工具/" itemprop="url" rel="index">
+                    <span itemprop="name">写作工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/写作工具/latex/" itemprop="url" rel="index">
                     <span itemprop="name">latex</span>
                   </a>
                 </span>
@@ -346,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2字
+                  104字
                 </span>
               
 
@@ -383,7 +394,24 @@
       
 
       
-        <h1 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h1>
+        <p>争做latex写作小能手</p>
+<a id="more"></a>
+<h1 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h1><p>格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">    XXX&amp;XXX</span><br><span class="line">    XXX&amp;XXX</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">    \min_\alpha\quad&amp;\frac12\sum_&#123;i=1&#125;^&#123;N&#125;\sum_&#123;j=1&#125;^&#123;N&#125;\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_&#123;i=1&#125;^&#123;N&#125;\alpha_i \\</span><br><span class="line">    \text&#123;s.t.&#125;\quad&amp;\sum_&#123;i=1&#125;^N\alpha_iy_i=0\\</span><br><span class="line">                    &amp;\alpha_i\ge0\ ,\quad i=1,2,\cdots,N</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \min_\alpha\quad&\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\
+    \text{s.t.}\quad&\sum_{i=1}^N\alpha_iy_i=0\\
+                    &\alpha_i\ge0\ ,\quad i=1,2,\cdots,N
+\end{aligned}</script><h1 id="公式编号"><a href="#公式编号" class="headerlink" title="公式编号"></a>公式编号</h1><p>格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tag&#123;编号&#125;</span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">1+1=2 \tag&#123;2.1&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>示例显示效果</p>
+<script type="math/tex; mode=display">
+1+1=2 \tag{2.1}</script>
       
     </div>
     
@@ -403,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gongyibei.github.io/2019/05/01/LaTeX语法总结/" title="LaTeX语法总结">https://gongyibei.github.io/2019/05/01/LaTeX语法总结/</a>
+    <a href="https://localhost:4000/2019/05/01/LaTeX语法总结/" title="LaTeX语法总结">https://localhost:4000/2019/05/01/LaTeX语法总结/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -440,6 +468,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/07/Numpy使用总结/" rel="prev" title="Numpy使用总结">
+                Numpy使用总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -525,7 +557,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -536,7 +568,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -547,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -580,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对齐"><span class="nav-number">1.</span> <span class="nav-text">对齐</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对齐"><span class="nav-number">1.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公式编号"><span class="nav-number">2.</span> <span class="nav-text">公式编号</span></a></li></ol></div>
             
 
           </div>
@@ -614,7 +646,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.2k</span>
+    <span title="Site words total count">7.9k</span>
   
 </div>
 
@@ -627,7 +659,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -726,13 +758,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
