@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mariana是歌名啊">
-<meta property="og:url" content="https://ukaii.cn/archives/2019/index.html">
+<meta name="description" content="模型总览模型 h_\theta(x)=sigmoid(\theta^Tx)模型的一种解释 假设我们的结果是伯努利分布，我们可以得到y的概率分布  \begin{aligned} p(y;\phi) &amp; = \phi ^y(1-\phi)^{1-y}\\ &amp; = exp(y \log \phi + (1-y)\log(1-\phi))\\ &amp; = exp( (log (\frac {\phi}{1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性模型之逻辑回归">
+<meta property="og:url" content="https://ukaii.cn/2019/05/23/线性模型之逻辑回归/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
+<meta property="og:description" content="模型总览模型 h_\theta(x)=sigmoid(\theta^Tx)模型的一种解释 假设我们的结果是伯努利分布，我们可以得到y的概率分布  \begin{aligned} p(y;\phi) &amp; = \phi ^y(1-\phi)^{1-y}\\ &amp; = exp(y \log \phi + (1-y)\log(1-\phi))\\ &amp; = exp( (log (\frac {\phi}{1">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-24T03:00:37.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mariana是歌名啊">
+<meta name="twitter:title" content="线性模型之逻辑回归">
+<meta name="twitter:description" content="模型总览模型 h_\theta(x)=sigmoid(\theta^Tx)模型的一种解释 假设我们的结果是伯努利分布，我们可以得到y的概率分布  \begin{aligned} p(y;\phi) &amp; = \phi ^y(1-\phi)^{1-y}\\ &amp; = exp(y \log \phi + (1-y)\log(1-\phi))\\ &amp; = exp( (log (\frac {\phi}{1">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://ukaii.cn/archives/2019/"/>
+  <link rel="canonical" href="https://ukaii.cn/2019/05/23/线性模型之逻辑回归/"/>
 
 
 
 
 
-  <title>归档 | Mariana是歌名啊</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>线性模型之逻辑回归 | Mariana是歌名啊</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,411 +248,227 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/23/线性模型之逻辑回归/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mariana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mariana是歌名啊">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">线性模型之逻辑回归</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T20:53:05+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 16 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/充分利用服务器/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">充分利用服务器</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  131字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-06-01T00:14:18+08:00"
-              content="2019-06-01" >
-          06-01
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1min
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/31/深入理解PyTorch/" itemprop="url">
-              
-                <span itemprop="name">深入理解PyTorch</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-31T21:10:18+08:00"
-              content="2019-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/23/线性模型之逻辑回归/" itemprop="url">
-              
-                <span itemprop="name">线性模型之逻辑回归</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-23T20:53:05+08:00"
-              content="2019-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/08/聚类算法之K-means/" itemprop="url">
-              
-                <span itemprop="name">聚类算法之K-means</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-08T14:35:11+08:00"
-              content="2019-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <a id="more"></a>
+<h1 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><script type="math/tex; mode=display">
+h_\theta(x)=sigmoid(\theta^Tx)</script><p>模型的一种解释</p>
+<p>假设我们的结果是伯努利分布，我们可以得到y的概率分布</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+p(y;\phi) & = \phi ^y(1-\phi)^{1-y}\\
+& = exp(y \log \phi + (1-y)\log(1-\phi))\\
+& = exp( (log (\frac {\phi}{1-\phi}))y+\log (1-\phi) )\\
+\end{aligned} \tag{2.2}</script><p>进而可以求得y的期望</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+h_\theta(x)& = E[y|x;\theta] \\
+& = \phi \\
+& = 1/(1+ e^{-\eta}) \\
+& = 1/(1+ e^{-\theta^Tx})\\
+\end{aligned}</script><h1 id="模型的解释"><a href="#模型的解释" class="headerlink" title="模型的解释"></a>模型的解释</h1><h2 id="广义线性模型"><a href="#广义线性模型" class="headerlink" title="广义线性模型"></a>广义线性模型</h2><h2 id="对数几率回归（Logit-Regression）"><a href="#对数几率回归（Logit-Regression）" class="headerlink" title="对数几率回归（Logit Regression）"></a>对数几率回归（Logit Regression）</h2><p>由于</p>
+<script type="math/tex; mode=display">
+p(y=1|x)=h_\theta(x)</script><script type="math/tex; mode=display">
+p(y=0|x)=1-h_\theta(x)</script><p>那么逻辑回归也可以看作预测值为”标签对数几率”的回归模型</p>
+<script type="math/tex; mode=display">
+w^Tx=\log\frac{p(y=1|x)}{p(y=0|x)}</script><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>《神经网络与机器学习》邱锡鹏 3.2节 Logistic回归</p>
+<h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{\text{ML}}&=\arg \max_\theta\Pi{p(y^{(i)}|x^{(i)};\theta)}\\
+&=\sum^m_{i=1} y^{(i)} \log h(x^{(i)})+(1-y^{(i)})\log (1-h(x^{(i)}))
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{\text{MAP}}&=\arg \max_\theta(\Pi{p(y^{(i)}|x^{(i)};\theta)})p(\theta)\\
+&=\sum^m_{i=1} y^{(i)} \log h(x^{(i)})+(1-y^{(i)})\log (1-h(x^{(i)}))+\frac{\lambda}2{\|\theta\|}^2
+\end{aligned}</script><p>优化算法</p>
+<ul>
+<li>梯度下降</li>
+</ul>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/07/Numpy使用总结/" itemprop="url">
-              
-                <span itemprop="name">Numpy使用总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-07T14:23:38+08:00"
-              content="2019-05-07" >
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/01/LaTeX语法总结/" itemprop="url">
-              
-                <span itemprop="name">LaTeX语法总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-01T13:27:36+08:00"
-              content="2019-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/29/learning-theory/" itemprop="url">
-              
-                <span itemprop="name">learning-theory</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-04-29T20:32:27+08:00"
-              content="2019-04-29" >
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/29/Hexo渲染引擎修改/" itemprop="url">
-              
-                <span itemprop="name">Hexo渲染引擎修改</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-04-29T20:03:59+08:00"
-              content="2019-04-29" >
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/29/Hexo踩坑记录/" itemprop="url">
-              
-                <span itemprop="name">Hexo踩坑记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-04-29T16:47:09+08:00"
-              content="2019-04-29" >
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/25/线性分类器/" itemprop="url">
-              
-                <span itemprop="name">线性分类器</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-04-25T23:19:26+08:00"
-              content="2019-04-25" >
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Mariana
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://ukaii.cn/2019/05/23/线性模型之逻辑回归/" title="线性模型之逻辑回归">https://ukaii.cn/2019/05/23/线性模型之逻辑回归/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/08/聚类算法之K-means/" rel="next" title="聚类算法之K-means">
+                <i class="fa fa-chevron-left"></i> 聚类算法之K-means
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/31/深入理解PyTorch/" rel="prev" title="深入理解PyTorch">
+                深入理解PyTorch <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -656,6 +476,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -676,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,6 +579,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型总览"><span class="nav-number">1.</span> <span class="nav-text">模型总览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">1.1.</span> <span class="nav-text">模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型的解释"><span class="nav-number">2.</span> <span class="nav-text">模型的解释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#广义线性模型"><span class="nav-number">2.1.</span> <span class="nav-text">广义线性模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数几率回归（Logit-Regression）"><span class="nav-number">2.2.</span> <span class="nav-text">对数几率回归（Logit Regression）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">2.2.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化目标"><span class="nav-number">3.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化算法"><span class="nav-number">4.</span> <span class="nav-text">优化算法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -883,6 +737,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

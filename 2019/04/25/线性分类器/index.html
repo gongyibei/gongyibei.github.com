@@ -83,14 +83,16 @@
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性分类器">
-<meta property="og:url" content="https://gongyibei.github.io/2019/04/25/线性分类器/index.html">
+<meta property="og:url" content="https://ukaii.cn/2019/04/25/线性分类器/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
 <meta property="og:description" content="Todo.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T11:56:40.341Z">
+<meta property="og:image" content="https://ukaii.cn/2019/04/25/线性分类器/reversibility-proof.jpg">
+<meta property="og:updated_time" content="2019-05-30T07:24:00.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性分类器">
 <meta name="twitter:description" content="Todo.">
+<meta name="twitter:image" content="https://ukaii.cn/2019/04/25/线性分类器/reversibility-proof.jpg">
 
 
 
@@ -120,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://gongyibei.github.io/2019/04/25/线性分类器/"/>
+  <link rel="canonical" href="https://ukaii.cn/2019/04/25/线性分类器/"/>
 
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/25/线性分类器/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/04/25/线性分类器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -357,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  540字
+                  718字
                 </span>
               
 
@@ -373,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2min
+                  3min
                 </span>
               
             </div>
@@ -395,25 +397,48 @@
 
       
         <p>Todo.<br><a id="more"></a></p>
-<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h2><p><strong>模型</strong></p>
-<script type="math/tex; mode=display">
-h_\theta(x)=\theta^Tx</script><p><strong>优化目标</strong></p>
-<script type="math/tex; mode=display">
-J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2</script><p><strong>优化算法</strong></p>
-<ul>
+<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><script type="math/tex; mode=display">
+h_\theta(x)=\theta^Tx</script><h3 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h3><script type="math/tex; mode=display">
+J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2</script><h3 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h3><ul>
 <li><p>梯度下降</p>
 </li>
 <li><p>正规方程</p>
 </li>
 </ul>
 <h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><script type="math/tex; mode=display">
-\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)\qquad(j=0,...,n)</script><h2 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h2><p>根据最小二乘法推倒出，可以直接从训练样本计算出$\theta$，可证明计算出的$\theta$是最优值:</p>
+\theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)\qquad(j=0,...,n)</script><h3 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h3><p>每次从样本集中选取$1$个样本，去更新$\theta_j$的值<br>这种更新规则称为最小二乘规则（LMS rule），或者叫做Widrow-Hoff学习规则。若$x^{(i)}$的选择是随机的，这个方法也叫叫随机梯度下降法（SGD）。</p>
+<script type="math/tex; mode=display">
+\theta_j := \theta_j + \alpha (y^{(i)}-h_\theta (x^{(i)}))x_j^{(i)}</script><h3 id="批量梯度下降"><a href="#批量梯度下降" class="headerlink" title="批量梯度下降"></a>批量梯度下降</h3><p>每次从样本集中选取$m$个样本，去更新$\theta_j$的值</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&重复直到收敛 \{ \\
+&\qquad\theta_j := \theta_j + \alpha \sum^n_{i=1}(y^{(i)}-h_\theta (x^{(i)}))x_j^{(i)}*\red{\frac1m}\quad(对每个j) \\
+&\}
+\end{aligned}</script><p>疑惑点：后面是否要乘以$\frac1m$</p>
+<h3 id="随机梯度下降-1"><a href="#随机梯度下降-1" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h3><script type="math/tex; mode=display">
+\begin{aligned}
+&\text{Loop}：\{ \\
+&\qquad \text{for}\ i=1\ \text{to}\ n,\{   \\
+&\qquad\qquad\theta_j := \theta_j  +\alpha(y^{(i)}-h_{\theta}(x^{(i)}))x_j^{(i)} \qquad(对每个 j) \\
+&\qquad\}  \\
+&\}
+\end{aligned}</script><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>可以把$x_i$做任意映射如：$2^{x_i}$，梯度下降依旧可以进行，</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=\theta_0+\theta_1f_1(x_1)+\theta_2f_2(x_2)</script><p>实际过程如下</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\text{Loop}：\{ \\
+&\qquad \text{for}\ i=1\ \text{to}\ n,\{   \\
+&\qquad\qquad\theta_j := \theta_j  +\alpha(y^{(i)}-h_{\theta}(x^{(i)}))f_j(x_j^{(i)}) \qquad(对每个 j) \\
+&\qquad\}  \\
+&\}
+\end{aligned}</script><h2 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h2><p>根据最小二乘法推倒出，可以直接从训练样本计算出$\theta$，可证明计算出的$\theta$是最优值:</p>
 <script type="math/tex; mode=display">
 \theta=(X^TX)^{-1}X^Ty</script><p>Octove中可如下求解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pinv(X):伪逆</span><br><span class="line">inv(X):可逆</span><br><span class="line">pinv(X&apos;*X)*X&apos;*y</span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pinv(X):伪逆</span><br><span class="line">inv(X):可逆</span><br><span class="line">pinv(X'*X)*X'*y</span><br></pre></td></tr></table></figure>
 <p>一般来说$X^TX$是可逆的。如果不可逆，可能是由于包含了多余的特征</p>
-<p><strong>梯度下降与正规方程比较</strong></p>
-<div class="table-container">
+<p>可逆性的证明如下<br><img src="/2019/04/25/线性分类器/reversibility-proof.jpg"></p>
+<h2 id="梯度下降与正规方程比较"><a href="#梯度下降与正规方程比较" class="headerlink" title="梯度下降与正规方程比较"></a>梯度下降与正规方程比较</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -471,8 +496,7 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12(h_\theta(x^{(i)})-y^{(i)})^2</script><p><
 </li>
 </ul>
 <script type="math/tex; mode=display">
-J(\theta)=\frac1m\sum_{i-1}^{m}\frac12\left[(h_\theta(x^{(i)})-y^{(i)})^2+\lambda\sum_{j=1}^n\theta_j^2\right]</script><h2 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h2><p>增加x^2项，可以看做是增加了一个x^2的特征</p>
-<div class="table-container">
+J(\theta)=\frac1m\sum_{i-1}^{m}\frac12\left[(h_\theta(x^{(i)})-y^{(i)})^2+\lambda\sum_{j=1}^n\theta_j^2\right]</script><h2 id="其他形式"><a href="#其他形式" class="headerlink" title="其他形式"></a>其他形式</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -499,20 +523,33 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\frac12\left[(h_\theta(x^{(i)})-y^{(i)})^2+\lambd
 </tbody>
 </table>
 </div>
-<h1 id="logistic-回归"><a href="#logistic-回归" class="headerlink" title="logistic 回归"></a>logistic 回归</h1><h2 id="模型总览-1"><a href="#模型总览-1" class="headerlink" title="模型总览"></a>模型总览</h2><p><strong>模型</strong></p>
+<h1 id="logistic-回归"><a href="#logistic-回归" class="headerlink" title="logistic 回归"></a>logistic 回归</h1><h2 id="模型总览-1"><a href="#模型总览-1" class="headerlink" title="模型总览"></a>模型总览</h2><h3 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h3><script type="math/tex; mode=display">
+h_\theta(x)=sigmoid(\theta^Tx)</script><p>模型的一种解释</p>
+<p>假设我们的结果是伯努利分布，我们可以得到y的概率分布</p>
 <script type="math/tex; mode=display">
-h_\theta(x)=sigmoid(\theta^TX)</script><p><strong>优化目标</strong></p>
-<p><strong>优化算法</strong></p>
+\begin{aligned}
+p(y;\phi) & = \phi ^y(1-\phi)^{1-y}\\
+& = exp(y \log \phi + (1-y)\log(1-\phi))\\
+& = exp( (log (\frac {\phi}{1-\phi}))y+\log (1-\phi) )\\
+\end{aligned} \tag{2.2}</script><p>进而可以求得y的期望</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+h_\theta(x)& = E[y|x;\theta] \\
+& = \phi \\
+& = 1/(1+ e^{-\eta}) \\
+& = 1/(1+ e^{-\theta^Tx})\\
+\end{aligned}</script><h3 id="优化目标-1"><a href="#优化目标-1" class="headerlink" title="优化目标"></a>优化目标</h3><p><strong>优化算法</strong></p>
 <ul>
 <li>梯度下降</li>
 </ul>
-<h2 id="梯度下降-1"><a href="#梯度下降-1" class="headerlink" title="梯度下降"></a>梯度下降</h2><h1 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h1><h2 id="模型总览："><a href="#模型总览：" class="headerlink" title="模型总览："></a>模型总览：</h2><p><strong>模型</strong></p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="梯度下降-1"><a href="#梯度下降-1" class="headerlink" title="梯度下降"></a>梯度下降</h2><h1 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h1><h2 id="模型总览："><a href="#模型总览：" class="headerlink" title="模型总览："></a>模型总览：</h2><p><strong>模型</strong></p>
 <p><strong>优化目标</strong></p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 J(\theta)&=\text{cost}(h_\theta(x),y)\\
-&=-y\text{log}(h_\theta(x))-(1-y)\text{log}(1-h_\theta(x)) \tag
-\end{aligned}</script><script type="math/tex; mode=display">
+&=-y\text{log}(h_\theta(x))-(1-y)\text{log}(1-h_\theta(x))
+\end{aligned}
+\tag{*}</script><script type="math/tex; mode=display">
 J(\theta)=\frac1m\sum_{i-1}^{m}\left[-y\text{log}(h_\theta(x))-(1-y)\text{log}(1-h_\theta(x))\right]</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set terminal svg</span><br><span class="line">set title &quot;cost plots&quot; font &quot;,20&quot;</span><br><span class="line">set key left box</span><br><span class="line">set samples 100</span><br><span class="line">set style data points</span><br><span class="line"></span><br><span class="line">plot [0:2] [0:4] -log(x),-log(1-x)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set terminal svg</span><br><span class="line">set title &quot;cost plots&quot; font &quot;,20&quot;</span><br><span class="line">set key left box</span><br><span class="line">set samples 100</span><br><span class="line">set style data points</span><br><span class="line"></span><br><span class="line">plot [0:1] (0.3**x)*(0.3**(1-x))</span><br></pre></td></tr></table></figure>
 <p><strong>优化算法</strong></p>
@@ -540,7 +577,7 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\left[-y\text{log}(h_\theta(x))-(1-y)\text{log}(1
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gongyibei.github.io/2019/04/25/线性分类器/" title="线性分类器">https://gongyibei.github.io/2019/04/25/线性分类器/</a>
+    <a href="https://ukaii.cn/2019/04/25/线性分类器/" title="线性分类器">https://ukaii.cn/2019/04/25/线性分类器/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -666,7 +703,7 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\left[-y\text{log}(h_\theta(x))-(1-y)\text{log}(1
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -721,7 +758,7 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\left[-y\text{log}(h_\theta(x))-(1-y)\text{log}(1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型总览"><span class="nav-number">1.1.</span> <span class="nav-text">模型总览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.2.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程"><span class="nav-number">1.3.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免过拟合"><span class="nav-number">1.4.</span> <span class="nav-text">避免过拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数推导"><span class="nav-number">1.5.</span> <span class="nav-text">代价函数推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他形式"><span class="nav-number">1.6.</span> <span class="nav-text">其他形式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logistic-回归"><span class="nav-number">2.</span> <span class="nav-text">logistic 回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型总览-1"><span class="nav-number">2.1.</span> <span class="nav-text">模型总览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降-1"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感知器"><span class="nav-number">3.</span> <span class="nav-text">感知器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型总览："><span class="nav-number">3.1.</span> <span class="nav-text">模型总览：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">3.2.</span> <span class="nav-text">优缺点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型总览"><span class="nav-number">1.1.</span> <span class="nav-text">模型总览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型"><span class="nav-number">1.1.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化目标"><span class="nav-number">1.1.2.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化算法"><span class="nav-number">1.1.3.</span> <span class="nav-text">优化算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.2.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降"><span class="nav-number">1.2.1.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降"><span class="nav-number">1.2.2.</span> <span class="nav-text">批量梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.2.4.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程"><span class="nav-number">1.3.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降与正规方程比较"><span class="nav-number">1.4.</span> <span class="nav-text">梯度下降与正规方程比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免过拟合"><span class="nav-number">1.5.</span> <span class="nav-text">避免过拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数推导"><span class="nav-number">1.6.</span> <span class="nav-text">代价函数推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他形式"><span class="nav-number">1.7.</span> <span class="nav-text">其他形式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logistic-回归"><span class="nav-number">2.</span> <span class="nav-text">logistic 回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型总览-1"><span class="nav-number">2.1.</span> <span class="nav-text">模型总览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化目标-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">优化目标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降-1"><span class="nav-number">2.3.</span> <span class="nav-text">梯度下降</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感知器"><span class="nav-number">3.</span> <span class="nav-text">感知器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型总览："><span class="nav-number">3.1.</span> <span class="nav-text">模型总览：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">3.2.</span> <span class="nav-text">优缺点</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -755,7 +792,7 @@ J(\theta)=\frac1m\sum_{i-1}^{m}\left[-y\text{log}(h_\theta(x))-(1-y)\text{log}(1
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.9k</span>
+    <span title="Site words total count">9.6k</span>
   
 </div>
 

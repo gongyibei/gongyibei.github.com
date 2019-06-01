@@ -83,11 +83,11 @@
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim之normal模式下快捷键">
-<meta property="og:url" content="https://gongyibei.github.io/2018/08/06/Vim之normal模式下快捷键/index.html">
+<meta property="og:url" content="https://ukaii.cn/2018/08/06/Vim之normal模式下快捷键/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
 <meta property="og:description" content="Todo.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T12:18:42.699Z">
+<meta property="og:updated_time" content="2019-05-15T06:47:42.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim之normal模式下快捷键">
 <meta name="twitter:description" content="Todo.">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://gongyibei.github.io/2018/08/06/Vim之normal模式下快捷键/"/>
+  <link rel="canonical" href="https://ukaii.cn/2018/08/06/Vim之normal模式下快捷键/"/>
 
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2018/08/06/Vim之normal模式下快捷键/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2018/08/06/Vim之normal模式下快捷键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  970字
+                  973字
                 </span>
               
 
@@ -395,12 +395,12 @@
 
       
         <p><br>Todo.<br><a id="more"></a></p>
-<h1 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h1><h2 id="左右移动"><a href="#左右移动" class="headerlink" title="左右移动"></a>左右移动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绝对移动</span></span><br><span class="line">0 -- 到行头</span><br><span class="line">^ -- 到本行的第一个非blank字符</span><br><span class="line">$ -- 到行尾</span><br><span class="line">g_ -- 到本行最后一个不是blank字符的位置</span><br><span class="line">f/F&#123;char&#125; -- 到下一个&#123;char&#125;字符的位置 </span><br><span class="line">t/T&#123;char&#125; -- 到下一个&#123;char&#125;字符前的位置</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相对移动</span></span><br><span class="line">h -- 向左移动</span><br><span class="line">l -- 向右移动</span><br></pre></td></tr></table></figure>
+<h1 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h1><h2 id="左右移动"><a href="#左右移动" class="headerlink" title="左右移动"></a>左右移动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绝对移动</span></span><br><span class="line">0 -- 到行头</span><br><span class="line">^ -- 到本行的第一个非blank字符</span><br><span class="line">$ -- 到行尾</span><br><span class="line">g_ -- 到本行最后一个不是blank字符的位置</span><br><span class="line">f/F&#123;char&#125; -- 到下/上一个&#123;char&#125;字符的位置 </span><br><span class="line">t/T&#123;char&#125; -- 到下/上一个&#123;char&#125;字符前/后的位置</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相对移动</span></span><br><span class="line">h -- 向左移动</span><br><span class="line">l -- 向右移动</span><br></pre></td></tr></table></figure>
 <h2 id="上下移动"><a href="#上下移动" class="headerlink" title="上下移动"></a>上下移动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绝对移动</span></span><br><span class="line">&#123;N&#125;G/&#123;N&#125;gg -- 移到第N行</span><br><span class="line">gg -- 移到第一行</span><br><span class="line">G -- 移到最后一行</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相对移动</span></span><br><span class="line">j -- 向下移动</span><br><span class="line">k -- 向上移动</span><br></pre></td></tr></table></figure>
 <h2 id="其他移动"><a href="#其他移动" class="headerlink" title="其他移动"></a>其他移动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% -- 可对括号进行匹配移动</span><br></pre></td></tr></table></figure>
 <h2 id="滚屏"><a href="#滚屏" class="headerlink" title="滚屏"></a>滚屏</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ctrl+f -- 下翻一屏。</span><br><span class="line">ctrl+b -- 上翻一屏。</span><br><span class="line">ctrl+d -- 下翻半屏。</span><br><span class="line">ctrl+u -- 上翻半屏。</span><br><span class="line">ctrl+e -- 向下滚动一行。</span><br><span class="line">ctrl+y -- 向上滚动一行。</span><br><span class="line">n% -- 到文件n%的位置。</span><br><span class="line">zz -- 将当前行移动到屏幕中央。</span><br><span class="line">zt -- 将当前行移动到屏幕顶端。</span><br><span class="line">zb -- 将当前行移动到屏幕底端。</span><br></pre></td></tr></table></figure>
-<h1 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i -- 字母左边插入</span><br><span class="line">I -- 行首插入</span><br><span class="line">a -- 字母右边插入</span><br><span class="line">A -- 行尾插入</span><br><span class="line">o -- 下一行插入</span><br><span class="line">O -- 下一行插入</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d&#123;motion&#125;:删除移动过的范围 </span><br><span class="line">&#123;visual&#125;d -- 删除可视化的范围</span><br><span class="line">dd -- 删除一行</span><br><span class="line">D -- 删除到行尾</span><br><span class="line">x -- 删除一个字母</span><br><span class="line">X -- 往前删除一个字母</span><br></pre></td></tr></table></figure>
+<h1 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i -- 字母左边插入</span><br><span class="line">I -- 行首插入</span><br><span class="line">a -- 字母右边插入</span><br><span class="line">A -- 行尾插入</span><br><span class="line">o -- 下一行插入</span><br><span class="line">O -- 上一行插入</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d&#123;motion&#125; -- 删除移动过的范围 </span><br><span class="line">&#123;visual&#125;d -- 删除可视化的范围</span><br><span class="line">dd -- 删除一行</span><br><span class="line">D -- 删除到行尾</span><br><span class="line">x -- 删除一个字母</span><br><span class="line">X -- 往前删除一个字母</span><br></pre></td></tr></table></figure>
 <h2 id="删除-插入"><a href="#删除-插入" class="headerlink" title="删除+插入"></a>删除+插入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c&#123;motion&#125; -- 删除移动过的范围并插入 </span><br><span class="line">&#123;visual&#125;c -- 删除可视化的范围并插入</span><br><span class="line">cc -- 删除一行并插入</span><br><span class="line">C -- 删除到行尾并插入</span><br><span class="line">s -- 删除一个字母并插入</span><br><span class="line">S -- 删除一行并插入</span><br></pre></td></tr></table></figure>
 <h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r&#123;char&#125; -- 修改掉一个字母</span><br><span class="line">R -- 进入修改模式</span><br></pre></td></tr></table></figure>
 <h2 id="区域选择"><a href="#区域选择" class="headerlink" title="区域选择"></a>区域选择</h2><p>区域选择的格式为：<code>{action}N(i/a){object}</code></p>
@@ -411,7 +411,7 @@
 <h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p>替换的格式为：<code>:{作用范围}s/{目标}/{替换}/{替换标志}</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 作用范围:默认是当前行，以下是示例</span></span><br><span class="line">visual模式选中的范围</span><br><span class="line">% -- 全局 </span><br><span class="line">2,11 -- 2到11行</span><br><span class="line"></span><br><span class="line"><span class="comment"># 目标与替换</span></span><br><span class="line">字符串，支持正则</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换标志</span></span><br><span class="line">g -- 全局</span><br><span class="line">i -- 不区分大小写 </span><br><span class="line">c -- 需要确|CTRL-E</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://harttle.land/2016/08/08/vim-search-in-file.html" target="_blank" rel="noopener">在 Vim 中优雅地查找和替换 | Harttle Land</a></p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="折叠"><a href="#折叠" class="headerlink" title="折叠"></a>折叠</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础</span></span><br><span class="line">zf -- 创建折叠的命令，可以在一个可视区域上使用该命令；</span><br><span class="line">za -- 打开/关闭当前折叠；</span><br><span class="line">zd -- 删除当前行的折叠；</span><br><span class="line">zi -- <span class="built_in">enable</span>/<span class="built_in">disable</span> fold;</span><br><span class="line"></span><br><span class="line">zj -- 跳到下一个折叠处；</span><br><span class="line">zk -- 跳到上一个折叠处；</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局折叠</span></span><br><span class="line">zr -- 打开嵌套的折行；</span><br><span class="line">zm -- 收起嵌套的折行；</span><br><span class="line">zR -- 打开所有折行；</span><br><span class="line">zM -- 收起所有折行；</span><br><span class="line"></span><br><span class="line"><span class="comment"># 所在行的折叠</span></span><br><span class="line">zo -- 打开折叠的文本；</span><br><span class="line">zc -- 收起折叠；</span><br><span class="line">zO -- 打开所有折行；</span><br><span class="line">zC -- 收起所有折行；</span><br></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="折叠"><a href="#折叠" class="headerlink" title="折叠"></a>折叠</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础</span></span><br><span class="line">zf -- 创建折叠的命令，可以在一个可视区域上使用该命令；</span><br><span class="line">za -- 打开/关闭当前折叠；</span><br><span class="line">zd -- 删除当前行的折叠；</span><br><span class="line">zi -- <span class="built_in">enable</span>/<span class="built_in">disable</span> fold;</span><br><span class="line"></span><br><span class="line">zj -- 跳到下一个折叠处；</span><br><span class="line">zk -- 跳到上一个折叠处；</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局折叠</span></span><br><span class="line">zr -- 打开嵌套的折行；</span><br><span class="line">zm -- 收起嵌套的折行；</span><br><span class="line">zR -- 打开所有折行；</span><br><span class="line">zM -- 收起所有折行；</span><br><span class="line"></span><br><span class="line"><span class="comment"># 所在行的折叠</span></span><br><span class="line">zo -- 打开折叠的文本；</span><br><span class="line">zc -- 收起折叠；</span><br><span class="line">zo -- 打开所有折行；</span><br><span class="line">zc -- 收起所有折行；</span><br></pre></td></tr></table></figure>
 <h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctrl+a -- 光标所在的数字+1</span><br><span class="line">ga -- 查看字符ascii码</span><br><span class="line">g8 -- 查看字符utf-8编码</span><br></pre></td></tr></table></figure>
 
       
@@ -433,7 +433,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gongyibei.github.io/2018/08/06/Vim之normal模式下快捷键/" title="Vim之normal模式下快捷键">https://gongyibei.github.io/2018/08/06/Vim之normal模式下快捷键/</a>
+    <a href="https://ukaii.cn/2018/08/06/Vim之normal模式下快捷键/" title="Vim之normal模式下快捷键">https://ukaii.cn/2018/08/06/Vim之normal模式下快捷键/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -555,7 +555,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -644,7 +644,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.9k</span>
+    <span title="Site words total count">9.6k</span>
   
 </div>
 

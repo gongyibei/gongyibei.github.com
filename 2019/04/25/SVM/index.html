@@ -83,16 +83,16 @@
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVM">
-<meta property="og:url" content="https://gongyibei.github.io/2019/04/25/SVM/index.html">
+<meta property="og:url" content="https://ukaii.cn/2019/04/25/SVM/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
 <meta property="og:description" content="Todo.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://gongyibei.github.io/2019/04/25/SVM/KTT.jpg">
-<meta property="og:updated_time" content="2019-05-07T12:38:30.746Z">
+<meta property="og:image" content="https://ukaii.cn/2019/04/25/SVM/KTT.jpg">
+<meta property="og:updated_time" content="2019-05-24T02:15:28.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVM">
 <meta name="twitter:description" content="Todo.">
-<meta name="twitter:image" content="https://gongyibei.github.io/2019/04/25/SVM/KTT.jpg">
+<meta name="twitter:image" content="https://ukaii.cn/2019/04/25/SVM/KTT.jpg">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://gongyibei.github.io/2019/04/25/SVM/"/>
+  <link rel="canonical" href="https://ukaii.cn/2019/04/25/SVM/"/>
 
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/25/SVM/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/04/25/SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,159字
+                  1,231字
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4min
+                  5min
                 </span>
               
             </div>
@@ -421,19 +421,47 @@
 </tbody>
 </table>
 </div>
-<h1 id="理解最大间隔"><a href="#理解最大间隔" class="headerlink" title="理解最大间隔"></a>理解最大间隔</h1><p>函数间隔：</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><script type="math/tex; mode=display">
+f(x)=\text{sign}(w)</script><h1 id="理解最大间隔"><a href="#理解最大间隔" class="headerlink" title="理解最大间隔"></a>理解最大间隔</h1><p>函数间隔：</p>
 <script type="math/tex; mode=display">
-\hat\gamma_i = y_i(w\cdot x_i+b)=|w\cdot x_i+b| \tag{2.1}</script><p>最小函数间隔：</p>
+\begin{aligned}
+\hat\gamma_i&=|w\cdot x_i+b|\\
+            &=y_i(w\cdot x_i+b)
+\end{aligned} \tag{2.1}</script><p>最小函数间隔：</p>
 <script type="math/tex; mode=display">
 \hat\gamma=\min_{i=1,\cdots,N}\hat\gamma_i \tag{2.2}</script><p>几何间隔：</p>
 <script type="math/tex; mode=display">
-\gamma_i = y_i(\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|})=|\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|}| \tag{2.3}</script><p>最小几何间隔：</p>
+\begin{aligned}
+\gamma_i&=|\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|}|\\
+        &=y_i(\frac{w}{\|w\|}\cdot x_i+\frac{b}{\|w\|})
+\end{aligned} \tag{2.3}</script><p>最小几何间隔：</p>
 <script type="math/tex; mode=display">
-\gamma=\min_{i=1,\cdots,N}\gamma_i\tag{2.4}</script><h1 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h1><p>线性可分下的原问题</p>
+\gamma=\min_{i=1,\cdots,N}\gamma_i\tag{2.4}</script><p>函数间隔与几何间隔的关系</p>
+<script type="math/tex; mode=display">
+\gamma_i=\frac{\hat\gamma_i}{\|w\|}</script><script type="math/tex; mode=display">
+\gamma=\frac{\hat\gamma}{\|w\|}</script><p>可以具体化优化问题为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\max_{w,b}\quad&\gamma\\
+\text{s.t.}\quad&\gamma_i\ge\gamma,\quad i=1,2,\cdots,N
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\max_{w,b}\quad&\frac{\hat\gamma}{\|w\|}\\
+\text{s.t.}\quad&\frac{\hat\gamma_i}{\|w\|}\ge\frac{\hat\gamma}{\|w\|},\quad i=1,2,\cdots,N
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\max_{w,b}\quad&\frac{1}{\|w\|}\\
+\text{s.t.}\quad&\hat\gamma_i\ge1,\quad i=1,2,\cdots,N
+\end{aligned}</script><p>最小化</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\max_{w,b}\quad&\frac{2}{\|w\|} \\
+\text{s.t.}\quad&y_i(w\cdot x_i+b)\ge1
+\end{aligned} \tag{2.5}</script><h1 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h1><p>线性可分下的原问题</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \min_{w,b}\quad&\frac12\|x\|^2\\
-\text{s.t.}\quad&y_i(w\cdot x_i+b)-1\ge0
+\text{s.t.}\quad&y_i(w\cdot x_i+b)-1\ge0,\quad i=1,2,\cdots,N
 \end{aligned} \tag{3.1}</script><p>线性不可分下的原问题：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -442,7 +470,8 @@
 &\xi_i\ge0,\quad i=1,2,\cdots,N
 \end{aligned} \tag{3.2}</script><p>对应的决策函数为：</p>
 <script type="math/tex; mode=display">
-f(x)=\text{sign}(w^*\cdot x+b^*)=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b) \tag{3.3}</script><h1 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h1><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
+f(x)=\text{sign}(w^*\cdot x+b^*)=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langle x^{(i)},x\rangle+b) \tag{3.3}</script><script type="math/tex; mode=display">
+\min_{w,b}\quad\frac12\|x\|^2+C \sum_{i=1}^{N}(max(0,1-y_iw^Tx_i)</script><h1 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h1><p>弱对偶对所有的优化问题都成立，无论原问题是什么形式，对偶问题都是凸优化问题</p>
 <p>用对偶问题求一个原问题的下界估计</p>
 <img src="/2019/04/25/SVM/KTT.jpg">
 <p><strong>强对偶</strong></p>
@@ -476,7 +505,7 @@ f(x)=\text{sign}(w^*\cdot x+b^*)=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}\langl
 \min_\alpha\quad&\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\
 \text{s.t.}\quad&\sum_{i=1}^N\alpha_iy_i=0\\
                 &0\le\alpha_i\le C\ ,\quad i=1,2,\cdots,N
-\end{aligned} \tag{5.2}</script><h1 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h1><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
+\end{aligned} \tag{5.2}</script><h1 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h1><h2 id="核技巧-1"><a href="#核技巧-1" class="headerlink" title="核技巧"></a>核技巧</h2><p>定义$\varphi(x)$为映射函数：把点$x$从原空间映射到新空间。通过$\varphi(x)$把数据映射到高维：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \min_\alpha\quad&\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(\varphi(x_i)\cdot\varphi(x_j))-\sum_{i=1}^{N}\alpha_i \\
@@ -496,7 +525,14 @@ K(x_i,x_j)=\varphi(x_i)\cdot\varphi(x_j) \tag{6.2}</script><p>问题可转化为
 f(x)&=\text{sign}(w^*\cdot x+b^*)\\
 &=\text{sign}(\sum_{i=1}^{m}\alpha_iy^{(i)}K(x^{(i)},x)+b)
 \end{aligned}  \tag{6.4}</script><p>一个简单形式的核函数对应的$\varphi(x)$就可能很复杂。因此只需要寻找一个合适的核函数$K(x_i,x_j)$，就可以把数据映射到足够高维。避免了直接去计算$\varphi(x)$，大大减少了数据映射时的运算量。</p>
-<p>常用的核函数有（$K(x,z)$表示核函数，$f(x)$表示对应的判别函数）：</p>
+<h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><script type="math/tex; mode=display">
+\varphi(\mathbf{x})=[1,x_1^2,\sqrt2x_1x_2,x_2^2,\sqrt2x_1,\sqrt2x_2]^T</script><p>$\mathbf{x<em>i}=[x</em>{i1},x<em>{i2}]^T$ $\mathbf{x_i}=[x</em>{j1},x_{j2}]^T$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+K(\mathbf{x_i},\mathbf{x_j})&=\varphi(\mathbf{x_i})\cdot\varphi(\mathbf{x_j})\\
+          &=1+x_{i1}^2x_{j1}^2+2x_{i1}x_{i2}x_{j1}x_{j2}+x_{i2}^2x_{j2}^2+2x_{i1}x_{j1}+2x_{i2}x_{j2}\\
+          &=(1+\mathbf{x_i}^T\mathbf{x_j})^2
+\end{aligned}</script><h2 id="常用核函数"><a href="#常用核函数" class="headerlink" title="常用核函数"></a>常用核函数</h2><p>常用的核函数有（$K(x,z)$表示核函数，$f(x)$表示对应的判别函数）：</p>
 <ul>
 <li><p>多项式核函数：</p>
 <ul>
@@ -561,7 +597,8 @@ f(x)&=\text{sign}(w^*\cdot x+b^*)\\
 <thead>
 <tr>
 <th></th>
-<th>激活函数</th>
+<th>模型</th>
+<th style="text-align:center">学习准则</th>
 <th>损失函数</th>
 <th>优化方法</th>
 </tr>
@@ -569,31 +606,36 @@ f(x)&=\text{sign}(w^*\cdot x+b^*)\\
 <tbody>
 <tr>
 <td>线性回归</td>
-<td>-</td>
+<td>$w^Tx$</td>
+<td style="text-align:center">最小二乘</td>
 <td>$(y-w^Tx)^2$</td>
-<td>最小二乘、梯度下降</td>
+<td>梯度下降、正规方程</td>
 </tr>
 <tr>
 <td>Logistic回归</td>
 <td>$\sigma(w^Tx)$</td>
+<td style="text-align:center">ML估计</td>
 <td>$y\log\sigma(w^Tx)$</td>
 <td>梯度下降</td>
 </tr>
 <tr>
 <td>Softmax回归</td>
 <td>$\text{softmax(}W^Tx)$</td>
+<td style="text-align:center">ML估计</td>
 <td>$y \text{log softmax}(W^Tx)$</td>
 <td>梯度下降</td>
 </tr>
 <tr>
 <td>感知器</td>
 <td>$\text{sgn}(w^Tx)$</td>
+<td style="text-align:center">-</td>
 <td>$\max(0,-yw^Tx)$</td>
 <td>随机梯度下降</td>
 </tr>
 <tr>
 <td>支持向量机</td>
 <td>$\text{sgn}(w^Tx)$</td>
+<td style="text-align:center">最大化间隔</td>
 <td>$\max(0,1-yw^Tx)$</td>
 <td>二次规划、SMO</td>
 </tr>
@@ -621,7 +663,7 @@ f(x)&=\text{sign}(w^*\cdot x+b^*)\\
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gongyibei.github.io/2019/04/25/SVM/" title="SVM">https://gongyibei.github.io/2019/04/25/SVM/</a>
+    <a href="https://ukaii.cn/2019/04/25/SVM/" title="SVM">https://ukaii.cn/2019/04/25/SVM/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -747,7 +789,7 @@ f(x)&=\text{sign}(w^*\cdot x+b^*)\\
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -802,7 +844,7 @@ f(x)&=\text{sign}(w^*\cdot x+b^*)\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型总览"><span class="nav-number">1.</span> <span class="nav-text">模型总览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解最大间隔"><span class="nav-number">2.</span> <span class="nav-text">理解最大间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原问题"><span class="nav-number">3.</span> <span class="nav-text">原问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日对偶"><span class="nav-number">4.</span> <span class="nav-text">拉格朗日对偶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">5.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核技巧"><span class="nav-number">6.</span> <span class="nav-text">核技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SMO算法"><span class="nav-number">7.</span> <span class="nav-text">SMO算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他形式"><span class="nav-number">8.</span> <span class="nav-text">其他形式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性分类器比较"><span class="nav-number">9.</span> <span class="nav-text">线性分类器比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型总览"><span class="nav-number">1.</span> <span class="nav-text">模型总览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">1.1.</span> <span class="nav-text">模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解最大间隔"><span class="nav-number">2.</span> <span class="nav-text">理解最大间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原问题"><span class="nav-number">3.</span> <span class="nav-text">原问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日对偶"><span class="nav-number">4.</span> <span class="nav-text">拉格朗日对偶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">5.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核技巧"><span class="nav-number">6.</span> <span class="nav-text">核技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核技巧-1"><span class="nav-number">6.1.</span> <span class="nav-text">核技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个例子"><span class="nav-number">6.2.</span> <span class="nav-text">一个例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用核函数"><span class="nav-number">6.3.</span> <span class="nav-text">常用核函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SMO算法"><span class="nav-number">7.</span> <span class="nav-text">SMO算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他形式"><span class="nav-number">8.</span> <span class="nav-text">其他形式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性分类器比较"><span class="nav-number">9.</span> <span class="nav-text">线性分类器比较</span></a></li></ol></div>
             
 
           </div>
@@ -836,7 +878,7 @@ f(x)&=\text{sign}(w^*\cdot x+b^*)\\
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.9k</span>
+    <span title="Site words total count">9.6k</span>
   
 </div>
 

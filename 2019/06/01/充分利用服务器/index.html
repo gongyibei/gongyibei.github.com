@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="numpy," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="争做数据处理小能手">
-<meta name="keywords" content="numpy">
+<meta name="description" content="zsh貌似很简单12sudo apt-get install zshchsh -s /bin/zsh 安装oh-my-zsh1sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; Ubuntu 16.04下安装zsh和oh-my-zsh jupyter配置文件生成配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Numpy使用总结">
-<meta property="og:url" content="https://ukaii.cn/2019/05/07/Numpy使用总结/index.html">
+<meta property="og:title" content="充分利用服务器">
+<meta property="og:url" content="https://ukaii.cn/2019/06/01/充分利用服务器/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
-<meta property="og:description" content="争做数据处理小能手">
+<meta property="og:description" content="zsh貌似很简单12sudo apt-get install zshchsh -s /bin/zsh 安装oh-my-zsh1sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; Ubuntu 16.04下安装zsh和oh-my-zsh jupyter配置文件生成配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T12:20:53.972Z">
+<meta property="og:updated_time" content="2019-06-01T01:28:34.054Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Numpy使用总结">
-<meta name="twitter:description" content="争做数据处理小能手">
+<meta name="twitter:title" content="充分利用服务器">
+<meta name="twitter:description" content="zsh貌似很简单12sudo apt-get install zshchsh -s /bin/zsh 安装oh-my-zsh1sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; Ubuntu 16.04下安装zsh和oh-my-zsh jupyter配置文件生成配置">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://ukaii.cn/2019/05/07/Numpy使用总结/"/>
+  <link rel="canonical" href="https://ukaii.cn/2019/06/01/充分利用服务器/"/>
 
 
 
 
 
-  <title>Numpy使用总结 | Mariana是歌名啊</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>充分利用服务器 | Mariana是歌名啊</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/07/Numpy使用总结/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/06/01/充分利用服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Numpy使用总结</h1>
+          <h1 class="post-title" itemprop="name headline">充分利用服务器</h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T14:23:38+08:00">
-                2019-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T00:14:18+08:00">
+                2019-06-01
               </time>
             
 
@@ -302,39 +301,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -357,7 +323,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  379字
+                  297字
                 </span>
               
 
@@ -394,100 +360,27 @@
       
 
       
-        <p>争做数据处理小能手<br><a id="more"></a></p>
-<h1 id="Universal-Function"><a href="#Universal-Function" class="headerlink" title="Universal Function"></a>Universal Function</h1><h2 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h2><h1 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h1><h2 id="从已有数据创建"><a href="#从已有数据创建" class="headerlink" title="从已有数据创建"></a>从已有数据创建</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.array( [ [<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>] ], dtype=complex )</span><br><span class="line">np.asarray()</span><br><span class="line">np.asanyarray()</span><br></pre></td></tr></table></figure>
-<h2 id="创建特殊的数组"><a href="#创建特殊的数组" class="headerlink" title="创建特殊的数组"></a>创建特殊的数组</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 零x</span></span><br><span class="line">np.zeros( (<span class="number">3</span>,<span class="number">4</span>) )</span><br></pre></td></tr></table></figure>
-<h2 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h2><h2 id="创建字符数组"><a href="#创建字符数组" class="headerlink" title="创建字符数组"></a>创建字符数组</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过公差</span></span><br><span class="line">np.arange(<span class="number">1</span>,<span class="number">4</span>,<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 通过数量</span></span><br><span class="line">np.linspace(<span class="number">1.</span>, <span class="number">4.</span>, <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="从硬盘读取"><a href="#从硬盘读取" class="headerlink" title="从硬盘读取"></a>从硬盘读取</h2><p><em>略</em></p>
-<h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><h2 id="特征值"><a href="#特征值" class="headerlink" title="特征值"></a>特征值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x_eig = np.linalg.eig(x)</span><br><span class="line">eig_value = x_eig[<span class="number">0</span>]</span><br><span class="line">eig_vector = x_eig[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_norm=np.linalg.norm(x, ord=<span class="keyword">None</span>, axis=<span class="keyword">None</span>, keepdims=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">功能</th>
-<th style="text-align:center">取值</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ord</td>
-<td style="text-align:center">范数类型</td>
-<td style="text-align:center">2、1、np.inf</td>
-<td>2</td>
-</tr>
-<tr>
-<td>axis</td>
-<td style="text-align:center">处理数据的方式</td>
-<td style="text-align:center">1(行范数)、2（列范数）、None（矩阵范数）</td>
-</tr>
-<tr>
-<td>keepdims</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">True表示保持矩阵的二维特性，False相反</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>ord = 2 二范数$\mathcal{l}_2$</li>
-<li>ord = 1 一范数$l1$</li>
-<li>ord = np.inf 无穷范数</li>
-</ul>
-<p>axis：类型</p>
-<ul>
-<li>axis=1表示按行向量处理，求多个行向量的范数</li>
-<li>axis=0表示按列向量处理，求多个列向量的范数</li>
-<li>axis=None表示矩阵范数。</li>
-</ul>
-<p>keepdims</p>
-<ul>
-<li>True表示保持矩阵的二维特性，False相反</li>
-</ul>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/hqh131360239/article/details/79061535" target="_blank" rel="noopener">https://blog.csdn.net/hqh131360239/article/details/79061535</a></p>
-<h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><h3 id="np-multiply"><a href="#np-multiply" class="headerlink" title="np.multiply"></a><code>np.multiply</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.arange(<span class="number">15</span>)</span><br><span class="line">mat = np.arange(<span class="number">15</span>).reshape(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line">np.multiply(arr)</span><br></pre></td></tr></table></figure>
-<h3 id="与dot"><a href="#与dot" class="headerlink" title="*与dot"></a><code>*</code>与<code>dot</code></h3><h3 id="与-np-matmul"><a href="#与-np-matmul" class="headerlink" title="@ 与 np.matmul"></a><code>@</code> 与 <code>np.matmul</code></h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>对于数组</th>
-<th>对于矩阵</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>np.multiply</code></td>
-<td>对应元素相乘</td>
-<td>对应元素相乘</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>对应元素相乘</td>
-<td>矩阵相乘</td>
-</tr>
-<tr>
-<td><code>dot</code></td>
-<td>？</td>
-<td>？</td>
-</tr>
-<tr>
-<td><code>@</code></td>
-<td>矩阵相乘</td>
-<td>矩阵相乘</td>
-</tr>
-<tr>
-<td><code>np.matmul</code></td>
-<td>矩阵相乘</td>
-<td>矩阵相乘</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u011851421/article/details/83783826" target="_blank" rel="noopener">Python numpy 矩阵乘法multiply()、dot()、 matmul()、’ * ‘、’@’辨析</a></p>
-<h1 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h1>
+        <a id="more"></a>
+<h1 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h1><p>貌似很简单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
+<p>安装oh-my-zsh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://www.cnblogs.com/EasonJim/p/7863099.html" target="_blank" rel="noopener">Ubuntu 16.04下安装zsh和oh-my-zsh</a></p>
+<h1 id="jupyter"><a href="#jupyter" class="headerlink" title="jupyter"></a>jupyter</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>生成配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure></p>
+<p>~/.jupyter/jupyter_notebook_config.py<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">c = get_config()</span><br><span class="line">c.IPKernelApp.pylab = <span class="string">"inline"</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">"0.0.0.0"</span></span><br><span class="line">c.NotebookAPp.open_browser = False</span><br><span class="line"><span class="comment">#c.NotebookApp.password = 'sha1:b39d2445079f:9b9ab99f65150e113265cb99a841a6403aa52647'</span></span><br><span class="line"><span class="comment">#c.NotebookApp.certfile = u'/root/.jupyter/mycert.pem'</span></span><br><span class="line">c.NotebookApp.port= 8888</span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">"/home/ubuntu/jupyter"</span></span><br><span class="line">8 lines yanked</span><br></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --allow-root 2&gt;&amp;1 &gt; my.log &amp;</span><br></pre></td></tr></table></figure>
+<p>可以在my.log文件里查看token</p>
+<p><a href="https://blog.csdn.net/jjwho/article/details/78765352" target="_blank" rel="noopener">Jupyter Notebook（一）安装配置与使用</a></p>
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><h2 id="配置文件-1"><a href="#配置文件-1" class="headerlink" title="配置文件"></a>配置文件</h2><p>.ssh/config</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host            ukaii        </span><br><span class="line">HostName        129.211.66.71       </span><br><span class="line">port            22           </span><br><span class="line">user            ubuntu      </span><br><span class="line">identityfile    ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub root@ip</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/nahancy/article/details/79059135" target="_blank" rel="noopener">Linux安全之SSH 密钥创建及密钥登录</a></p>
+<h1 id="NeoVim"><a href="#NeoVim" class="headerlink" title="NeoVim"></a>NeoVim</h1><h2 id="vim-plug安装"><a href="#vim-plug安装" class="headerlink" title="vim-plug安装"></a>vim-plug安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.config/nvim/<span class="built_in">autoload</span>/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+<p><a href="https://linux.cn/article-9751-1.html" target="_blank" rel="noopener">Vim-plug：极简 Vim 插件管理器</a></p>
+<h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+<p>修改文件内容</p>
+<p>/etc/apache2/sites-available<br>/etc/apache2/apache2.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim /etc/apache2/sites-available</span><br><span class="line">sudo nvim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure></p>
+<h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br><span class="line">service httpd restart</span><br><span class="line">service httpd stop</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/acc560204a4d" target="_blank" rel="noopener">Ubuntu apache2 修改默认站点文件夹</a></p>
+
       
     </div>
     
@@ -507,7 +400,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://ukaii.cn/2019/05/07/Numpy使用总结/" title="Numpy使用总结">https://ukaii.cn/2019/05/07/Numpy使用总结/</a>
+    <a href="https://ukaii.cn/2019/06/01/充分利用服务器/" title="充分利用服务器">https://ukaii.cn/2019/06/01/充分利用服务器/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -520,12 +413,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/numpy/" rel="tag"># numpy</a>
-          
-        </div>
-      
 
       
       
@@ -535,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/01/LaTeX语法总结/" rel="next" title="LaTeX语法总结">
-                <i class="fa fa-chevron-left"></i> LaTeX语法总结
+              <a href="/2019/05/31/深入理解PyTorch/" rel="next" title="深入理解PyTorch">
+                <i class="fa fa-chevron-left"></i> 深入理解PyTorch
               </a>
             
           </div>
@@ -544,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/08/聚类算法之K-means/" rel="prev" title="聚类算法之K-means">
-                聚类算法之K-means <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -688,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Universal-Function"><span class="nav-number">1.</span> <span class="nav-text">Universal Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#广播"><span class="nav-number">1.1.</span> <span class="nav-text">广播</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建数组"><span class="nav-number">2.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从已有数据创建"><span class="nav-number">2.1.</span> <span class="nav-text">从已有数据创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建特殊的数组"><span class="nav-number">2.2.</span> <span class="nav-text">创建特殊的数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值范围"><span class="nav-number">2.3.</span> <span class="nav-text">数值范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建字符数组"><span class="nav-number">2.4.</span> <span class="nav-text">创建字符数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从硬盘读取"><span class="nav-number">2.5.</span> <span class="nav-text">从硬盘读取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-number">3.</span> <span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征值"><span class="nav-number">3.1.</span> <span class="nav-text">特征值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#范数"><span class="nav-number">3.2.</span> <span class="nav-text">范数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.2.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵运算"><span class="nav-number">3.3.</span> <span class="nav-text">矩阵运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#np-multiply"><span class="nav-number">3.3.1.</span> <span class="nav-text">np.multiply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与dot"><span class="nav-number">3.3.2.</span> <span class="nav-text">*与dot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与-np-matmul"><span class="nav-number">3.3.3.</span> <span class="nav-text">@ 与 np.matmul</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.3.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-1"><span class="nav-number">3.3.5.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机数"><span class="nav-number">4.</span> <span class="nav-text">随机数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zsh"><span class="nav-number">1.</span> <span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jupyter"><span class="nav-number">2.</span> <span class="nav-text">jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">2.2.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH"><span class="nav-number">3.</span> <span class="nav-text">SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件-1"><span class="nav-number">3.1.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NeoVim"><span class="nav-number">4.</span> <span class="nav-text">NeoVim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug安装"><span class="nav-number">4.1.</span> <span class="nav-text">vim-plug安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache"><span class="nav-number">5.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-1"><span class="nav-number">5.2.</span> <span class="nav-text">启动</span></a></li></ol></li></ol></div>
             
 
           </div>

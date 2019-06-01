@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mariana是歌名啊">
-<meta property="og:url" content="https://gongyibei.github.io/index.html">
+<meta property="og:url" content="https://ukaii.cn/index.html">
 <meta property="og:site_name" content="Mariana是歌名啊">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -115,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="https://gongyibei.github.io/"/>
+  <link rel="canonical" href="https://ukaii.cn/"/>
 
 
 
@@ -259,7 +259,679 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/05/07/Numpy使用总结/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/06/01/充分利用服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mariana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mariana是歌名啊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/01/充分利用服务器/" itemprop="url">充分利用服务器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T00:14:18+08:00">
+                2019-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  297字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h1 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h1><p>貌似很简单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
+<p>安装oh-my-zsh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://www.cnblogs.com/EasonJim/p/7863099.html" target="_blank" rel="noopener">Ubuntu 16.04下安装zsh和oh-my-zsh</a></p>
+<h1 id="jupyter"><a href="#jupyter" class="headerlink" title="jupyter"></a>jupyter</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>生成配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure></p>
+<p>~/.jupyter/jupyter_notebook_config.py<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">c = get_config()</span><br><span class="line">c.IPKernelApp.pylab = <span class="string">"inline"</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">"0.0.0.0"</span></span><br><span class="line">c.NotebookAPp.open_browser = False</span><br><span class="line"><span class="comment">#c.NotebookApp.password = 'sha1:b39d2445079f:9b9ab99f65150e113265cb99a841a6403aa52647'</span></span><br><span class="line"><span class="comment">#c.NotebookApp.certfile = u'/root/.jupyter/mycert.pem'</span></span><br><span class="line">c.NotebookApp.port= 8888</span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">"/home/ubuntu/jupyter"</span></span><br><span class="line">8 lines yanked</span><br></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --allow-root 2&gt;&amp;1 &gt; my.log &amp;</span><br></pre></td></tr></table></figure>
+<p>可以在my.log文件里查看token</p>
+<p><a href="https://blog.csdn.net/jjwho/article/details/78765352" target="_blank" rel="noopener">Jupyter Notebook（一）安装配置与使用</a></p>
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><h2 id="配置文件-1"><a href="#配置文件-1" class="headerlink" title="配置文件"></a>配置文件</h2><p>.ssh/config</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host            ukaii        </span><br><span class="line">HostName        129.211.66.71       </span><br><span class="line">port            22           </span><br><span class="line">user            ubuntu      </span><br><span class="line">identityfile    ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub root@ip</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/nahancy/article/details/79059135" target="_blank" rel="noopener">Linux安全之SSH 密钥创建及密钥登录</a></p>
+<h1 id="NeoVim"><a href="#NeoVim" class="headerlink" title="NeoVim"></a>NeoVim</h1><h2 id="vim-plug安装"><a href="#vim-plug安装" class="headerlink" title="vim-plug安装"></a>vim-plug安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.config/nvim/<span class="built_in">autoload</span>/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+<p><a href="https://linux.cn/article-9751-1.html" target="_blank" rel="noopener">Vim-plug：极简 Vim 插件管理器</a></p>
+<h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+<p>修改文件内容</p>
+<p>/etc/apache2/sites-available<br>/etc/apache2/apache2.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim /etc/apache2/sites-available</span><br><span class="line">sudo nvim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure></p>
+<h2 id="启动-1"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br><span class="line">service httpd restart</span><br><span class="line">service httpd stop</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/acc560204a4d" target="_blank" rel="noopener">Ubuntu apache2 修改默认站点文件夹</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/31/深入理解PyTorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mariana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mariana是歌名啊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/31/深入理解PyTorch/" itemprop="url">深入理解PyTorch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-31T21:10:18+08:00">
+                2019-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  0字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/23/线性模型之逻辑回归/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mariana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mariana是歌名啊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/23/线性模型之逻辑回归/" itemprop="url">线性模型之逻辑回归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T20:53:05+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  131字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h1 id="模型总览"><a href="#模型总览" class="headerlink" title="模型总览"></a>模型总览</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><script type="math/tex; mode=display">
+h_\theta(x)=sigmoid(\theta^Tx)</script><p>模型的一种解释</p>
+<p>假设我们的结果是伯努利分布，我们可以得到y的概率分布</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+p(y;\phi) & = \phi ^y(1-\phi)^{1-y}\\
+& = exp(y \log \phi + (1-y)\log(1-\phi))\\
+& = exp( (log (\frac {\phi}{1-\phi}))y+\log (1-\phi) )\\
+\end{aligned} \tag{2.2}</script><p>进而可以求得y的期望</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+h_\theta(x)& = E[y|x;\theta] \\
+& = \phi \\
+& = 1/(1+ e^{-\eta}) \\
+& = 1/(1+ e^{-\theta^Tx})\\
+\end{aligned}</script><h1 id="模型的解释"><a href="#模型的解释" class="headerlink" title="模型的解释"></a>模型的解释</h1><h2 id="广义线性模型"><a href="#广义线性模型" class="headerlink" title="广义线性模型"></a>广义线性模型</h2><h2 id="对数几率回归（Logit-Regression）"><a href="#对数几率回归（Logit-Regression）" class="headerlink" title="对数几率回归（Logit Regression）"></a>对数几率回归（Logit Regression）</h2><p>由于</p>
+<script type="math/tex; mode=display">
+p(y=1|x)=h_\theta(x)</script><script type="math/tex; mode=display">
+p(y=0|x)=1-h_\theta(x)</script><p>那么逻辑回归也可以看作预测值为”标签对数几率”的回归模型</p>
+<script type="math/tex; mode=display">
+w^Tx=\log\frac{p(y=1|x)}{p(y=0|x)}</script><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>《神经网络与机器学习》邱锡鹏 3.2节 Logistic回归</p>
+<h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{\text{ML}}&=\arg \max_\theta\Pi{p(y^{(i)}|x^{(i)};\theta)}\\
+&=\sum^m_{i=1} y^{(i)} \log h(x^{(i)})+(1-y^{(i)})\log (1-h(x^{(i)}))
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{\text{MAP}}&=\arg \max_\theta(\Pi{p(y^{(i)}|x^{(i)};\theta)})p(\theta)\\
+&=\sum^m_{i=1} y^{(i)} \log h(x^{(i)})+(1-y^{(i)})\log (1-h(x^{(i)}))+\frac{\lambda}2{\|\theta\|}^2
+\end{aligned}</script><p>优化算法</p>
+<ul>
+<li>梯度下降</li>
+</ul>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/08/聚类算法之K-means/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mariana">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mariana是歌名啊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/08/聚类算法之K-means/" itemprop="url">聚类算法之K-means</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-08T14:35:11+08:00">
+                2019-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  994字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h1 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h1><p>在聚类的问题中，我们得到了一组训练样本集 ${x^{(1)},…,x^{(m)}}$，然后想要把这些样本划分成若干个相关的“类群（clusters）”。其中的 $x^{(i)}\in R^n$，而并未给出分类标签 $y^{(i)}$ 。所以这就是一个无监督学习的问题了。</p>
+<p>$K$ 均值聚类算法如下所示：</p>
+<ol>
+<li>随机初始化（initialize）<strong>聚类重心（cluster centroids）</strong> $\mu_1, \mu_2,…, \mu_k\in R^n$ 。 </li>
+<li>重复下列过程直到收敛（convergence）: {<br> (a) 对每个 $i$，设 <script type="math/tex; mode=display">
+c^{(i)}:=arg\min_j||x^{(i)}-\mu_j||^2</script> (b) 对每个 $j$，设 <script type="math/tex; mode=display">
+\mu_j:=\frac{\sum_{i=1}^m1\{c^{(i)}=j\}x^{(i)}}{\sum_{i=1}^m1\{c^{(i)}=j\}}</script>} </li>
+</ol>
+<p>在上面的算法中，$k$ 是我们这个算法的一个参数，也就是我们要分出来的群组个数（number of clusters）；而聚类重心 $\mu_j$ 表示的是我们对各个聚类的中心位置的当前猜测。在上面算法的第一步当中，需要初始化（initialize）聚类重心（cluster centroids），可以这样实现：随机选择 $k$ 个训练样本，然后设置聚类重心等于这 $k$ 个样本 各自的值。（当然也还有其他的初始化方法。） </p>
+<p>算法的第二步当中，循环体内重复执行两个步骤：（i）将每个训练样本$x^{(i)}$ “分配（assigning）”给距离最近的聚类重心$\mu_j$；（ii）把每个聚类重心$\mu_j$ 移动到所分配的样本点的均值位置。下面的 图1 就展示了运行 $k$均值聚类算法的过程。</p>
+<p><img src="https://raw.githubusercontent.com/Kivy-CN/Stanford-CS-229-CN/master/img/cs229note7af1.png" alt=""></p>
+<p>图1：$k$ 均值聚类算法。图中的圆形点表示的是训练样本，交叉符号表示的是聚类重心。(a) 原始训练样本数据集。 (b) 随机初始化的聚类重心（这里的初始化方法就跟我们上面说的不一样，并没有从训练样本中选择两个点）。(c-f) 运行 $k$ 均值聚类算法中的两步迭代的示意图。在每一次迭代中，我们把每个训练样本分配给距其最近的聚类重心（用同样颜色标识出），然后把聚类重心移动到所分配的样本的均值位置。（用颜色区分效果最好了。）图片引用自 Michael Jordan。</p>
+<p>$K$ 均值聚类算法能保证收敛性么？可以的，至少在一定意义上能这么说。尤其是我们可以定义一个下面这样的函数作为<strong>失真函数（distortion function）：</strong></p>
+<script type="math/tex; mode=display">
+J(c,\mu)=\sum_{i=1}^m ||x^{(i)}-\mu_{c^{(i)}}||^2</script><p>这样就可以用 $J$ 来衡量每个样本 $x^{(i)}$ 和对应的聚类重心$\mu_{c^{(i)}}$之间距离的平方和。很明显能看出 $k$ 均值聚类算法正好就是对 $J$ 的坐标下降过程。尤其是内部的循环体中，$k$ 均值聚类算法重复对 $J$ 进行最小化，当 $\mu$ 固定的时候用 $c$ 来最小化 $J$，当 $c$ 固定的时候则用 $\mu$ 最小化 $J$。这样就保证了 $J$ 是单调降低的（monotonically decrease），它的值也就必然收敛（converge）。（通常这也表明了 $c$ 和 $\mu$ 也收敛。在理论上来讲，$k$均值 可能会在几种不同的聚类之间摆动(oscillate)，也就是说某些组不同值的 $c$ 和/或 $\mu$ 对应有完全相同的 $J$ 值，不过在实践中这种情况几乎不会遇到。）</p>
+<p>失真函数 $J$，是一个非凸函数（non-convex function），所以对 $J$ 进行坐标下降（coordinate descent）并不一定能够收敛到全局最小值（global minimum）。也就是说，$k$ 均值聚类算法可能只是局部最优的（local optima）。通常除了这个问题之外，$k$ 均值聚类效果都不错，能给出很好的聚类。如果你担心陷入到某些比较差的局部最小值，通常可以多次运行 $k$ 均值距离（使用不同的随机值进行来对聚类重心 $\mu_j$ 进行初始化）。然后从所有的不同聚类方案（clusterings）中，选择能提供最小失真（distortion） $J(c,\mu)$ 的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/07/Numpy使用总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -447,7 +1119,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/05/01/LaTeX语法总结/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/05/01/LaTeX语法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -635,7 +1307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/29/learning-theory/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/04/29/learning-theory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -731,7 +1403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,277字
+                  1,287字
                 </span>
               
 
@@ -823,7 +1495,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/29/Hexo渲染引擎修改/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/04/29/Hexo渲染引擎修改/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -1011,7 +1683,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/29/Hexo踩坑记录/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/04/29/Hexo踩坑记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -1199,7 +1871,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/25/线性分类器/">
+    <link itemprop="mainEntityOfPage" href="https://ukaii.cn/2019/04/25/线性分类器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mariana">
@@ -1295,571 +1967,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  540字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Todo.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/25/线性分类器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2019/04/25/SVM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mariana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/img/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mariana是歌名啊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/25/SVM/" itemprop="url">SVM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T21:17:29+08:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/线性分类器/" itemprop="url" rel="index">
-                    <span itemprop="name">线性分类器</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,159字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Todo.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/25/SVM/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2018/08/16/scheme基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mariana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/img/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mariana是歌名啊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/scheme基础/" itemprop="url">scheme基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T02:18:26+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/lisp/" itemprop="url" rel="index">
-                    <span itemprop="name">lisp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  300字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Todo.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/16/scheme基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2018/08/07/生成器与协程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mariana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/img/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mariana是歌名啊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/07/生成器与协程/" itemprop="url">生成器与协程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T03:32:53+08:00">
-                2018-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  639字
+                  718字
                 </span>
               
 
@@ -1900,198 +2008,7 @@
           <p>Todo.<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/07/生成器与协程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gongyibei.github.io/2018/08/07/最少通过几个音可以确定一个调/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mariana">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/img/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mariana是歌名啊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/07/最少通过几个音可以确定一个调/" itemprop="url">最少通过几个音可以确定一个调？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T00:06:53+08:00">
-                2018-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/音乐/" itemprop="url" rel="index">
-                    <span itemprop="name">音乐</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/音乐/吉他/" itemprop="url" rel="index">
-                    <span itemprop="name">吉他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,302字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>平时在练习扒谱的时候有注意到：当你在指板上找出相邻的两个音时，就可以把调的范围从12个缩小到2个。比如：当你找出2弦空弦与2弦1品是这个调的音时，这两个音要么是这个调的Mi-Fa，要么是这个调的Si-Do，当是Mi-Fa时这个调就是G调，当时Si-Do时就是C调。<br>可以猜想：<strong>不必找出这个调的所有音就可以确定这个调</strong>。那么最少找出几个音可以确定一个调呢？要找出哪几个音呢？</p>
-<blockquote>
-<p>注：本文的讨论仅限于自然调式</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/07/最少通过几个音可以确定一个调/#more" rel="contents">
+            <a class="btn" href="/2019/04/25/线性分类器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2183,7 +2100,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2256,7 +2173,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.9k</span>
+    <span title="Site words total count">9.6k</span>
   
 </div>
 
