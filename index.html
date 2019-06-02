@@ -727,7 +727,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  271字
+                  302字
                 </span>
               
 
@@ -765,28 +765,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="字段介绍"><a href="#字段介绍" class="headerlink" title="字段介绍"></a>字段介绍</h1><ul>
-<li>Proto ： 该连接所使用的协议</li>
-<li>Recv-Q ： 接受队列</li>
-<li>Send-Q ： 发送队列</li>
-<li>Local Address： 本地ip:port</li>
-<li>Foreign Address ： 远程主机ip:port</li>
-<li>State ：连接所处的状态</li>
-<li>User ： 用户</li>
-<li>Inode ： Inode</li>
-<li>PID/Program name ：使用该连接的进程id和name</li>
-</ul>
-<h1 id="参数解析"><a href="#参数解析" class="headerlink" title="参数解析"></a>参数解析</h1><h3 id="筛选item"><a href="#筛选item" class="headerlink" title="筛选item"></a>筛选item</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-t  <span class="comment">#筛选Proto TCP</span></span><br><span class="line">-u  <span class="comment">#筛选Proto UDP</span></span><br><span class="line">-a  <span class="comment">#筛选State 显示全部（默认显示已连接的）</span></span><br><span class="line">-l  <span class="comment">#筛选State listening</span></span><br></pre></td></tr></table></figure>
-<h3 id="显示额外字段"><a href="#显示额外字段" class="headerlink" title="显示额外字段"></a>显示额外字段</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-e  <span class="comment">#显示User和Inode</span></span><br><span class="line">-p  <span class="comment">#显示PID</span></span><br></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-vWnN  <span class="comment">#暂时不是很理解。。。</span></span><br><span class="line">-c  <span class="comment">#不断刷新</span></span><br></pre></td></tr></table></figure>
-<h3 id="其他单独使用"><a href="#其他单独使用" class="headerlink" title="其他单独使用"></a>其他单独使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-r  <span class="comment">#显示路由表</span></span><br><span class="line">-l  <span class="comment">#显示接口表</span></span><br><span class="line">-g  <span class="comment">#显示多重广播功能群组组员名单</span></span><br><span class="line">-s  <span class="comment">#显示网络工作信息统计表</span></span><br><span class="line">-M  <span class="comment">#显示伪装的网络连线</span></span><br><span class="line"></span><br><span class="line">--<span class="built_in">help</span>  <span class="comment">#使用帮助</span></span><br></pre></td></tr></table></figure>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>我一般会使用下面这条命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tuple</span><br></pre></td></tr></table></figure></p>
-<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>用筛选item、显示额外字段获取自己想要的信息，根据需要使用其他选项</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/CSDN___LYY/article/details/82912272" target="_blank" rel="noopener">Linux netstat命令结果分析</a></p>
-
-          
+          <p>这个命令我可能查了一千遍吧，每次用完就忘记了。一气之下写了这个总结：）<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/02/Linux常用命令详解-netstat/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -918,7 +904,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  363字
+                  369字
                 </span>
               
 
@@ -956,7 +942,7 @@
 
       
         
-          <p>以下均在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下<br>
+          <p>以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/06/01/Linux服务器常用软件安装/#more" rel="contents">
@@ -1073,7 +1059,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  296字
+                  304字
                 </span>
               
 
@@ -1111,10 +1097,7 @@
 
       
         
-          <h1 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="autograd"><a href="#autograd" class="headerlink" title="autograd"></a>autograd</h2><p>x.grad<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor(<span class="number">1.1</span>,requires_grad=<span class="keyword">True</span>)</span><br><span class="line">f = x**<span class="number">2</span></span><br><span class="line">f.backward()</span><br><span class="line">print(x.grad)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensor(<span class="number">2.2000</span>)</span><br></pre></td></tr></table></figure>
-<p>无归一化<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor([[<span class="number">1000000</span>, <span class="number">0.0001</span>], [<span class="number">2000000</span>, <span class="number">0.0003</span>],</span><br><span class="line">        [<span class="number">3000000</span>, <span class="number">0.0005</span>], [<span class="number">4000000</span>, <span class="number">0.0002</span>], [<span class="number">5000000</span>, <span class="number">0.0004</span>]])</span><br><span class="line">y = torch.tensor([<span class="number">-1000.</span>, <span class="number">1200.</span>, <span class="number">1400.</span>, <span class="number">1600.</span>, <span class="number">1800.</span>]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">fc = torch.nn.Linear(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">criterion = torch.nn.MSELoss()</span><br><span class="line">optimizer = torch.optim.Adam(fc.parameters())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">10001</span>):</span><br><span class="line">    <span class="keyword">if</span> step:</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    pred = fc(x)</span><br><span class="line">    loss = criterion(pred, y)</span><br><span class="line">    <span class="keyword">if</span> step % <span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'step = &#123;&#125;, loss = &#123;:g&#125;'</span>.format(step, loss))</span><br></pre></td></tr></table></figure></p>
-<p>归一化<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor([[<span class="number">1000000</span>, <span class="number">0.0001</span>], [<span class="number">2000000</span>, <span class="number">0.0003</span>],</span><br><span class="line">        [<span class="number">3000000</span>, <span class="number">0.0005</span>], [<span class="number">4000000</span>, <span class="number">0.0002</span>], [<span class="number">5000000</span>, <span class="number">0.0004</span>]])</span><br><span class="line">y = torch.tensor([<span class="number">-1000.</span>, <span class="number">1200.</span>, <span class="number">1400.</span>, <span class="number">1600.</span>, <span class="number">1800.</span>]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">x_mean, x_std = torch.mean(x, dim=<span class="number">0</span>), torch.std(x, dim=<span class="number">0</span>)</span><br><span class="line">x_norm = (x - x_mean) / x_std</span><br><span class="line">y_mean, y_std = torch.mean(y, dim=<span class="number">0</span>), torch.std(y, dim=<span class="number">0</span>)</span><br><span class="line">y_norm = (y - y_mean) / y_std</span><br><span class="line"></span><br><span class="line">fc = torch.nn.Linear(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">criterion = torch.nn.MSELoss()</span><br><span class="line">optimizer = torch.optim.Adam(fc.parameters())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">10001</span>):</span><br><span class="line">    <span class="keyword">if</span> step:</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss_norm.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    pred_norm = fc(x_norm)</span><br><span class="line">    loss_norm = criterion(pred_norm, y_norm)</span><br><span class="line">    pred = pred_norm * y_std + y_mean</span><br><span class="line">    loss = criterion(pred, y)</span><br><span class="line">    <span class="keyword">if</span> step % <span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'step = &#123;&#125;, loss = &#123;:g&#125;'</span>.format(step, loss))</span><br></pre></td></tr></table></figure></p>
+          <p>争做pytorch造轮小能手<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/05/31/深入理解PyTorch/#more" rel="contents">
