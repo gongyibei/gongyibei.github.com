@@ -510,7 +510,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  262字
+                  261字
                 </span>
               
 
@@ -550,7 +550,7 @@
         
           
             <a id="more"></a>
-<h1 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h1><h2 id="字段介绍"><a href="#字段介绍" class="headerlink" title="字段介绍"></a>字段介绍</h2><ul>
+<h1 id="字段介绍"><a href="#字段介绍" class="headerlink" title="字段介绍"></a>字段介绍</h1><ul>
 <li>Proto ： 该连接所使用的协议</li>
 <li>Recv-Q ： 接受队列</li>
 <li>Send-Q ： 发送队列</li>
@@ -561,12 +561,12 @@
 <li>Inode ： Inode</li>
 <li>PID/Program name ：使用该连接的进程id和name</li>
 </ul>
-<h2 id="参数解析"><a href="#参数解析" class="headerlink" title="参数解析"></a>参数解析</h2><h3 id="筛选item"><a href="#筛选item" class="headerlink" title="筛选item"></a>筛选item</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-t  <span class="comment">#筛选Proto TCP</span></span><br><span class="line">-u  <span class="comment">#筛选Proto UDP</span></span><br><span class="line">-a  <span class="comment">#筛选State 显示全部（默认显示已连接的）</span></span><br><span class="line">-l  <span class="comment">#筛选State listening</span></span><br></pre></td></tr></table></figure>
+<h1 id="参数解析"><a href="#参数解析" class="headerlink" title="参数解析"></a>参数解析</h1><h3 id="筛选item"><a href="#筛选item" class="headerlink" title="筛选item"></a>筛选item</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-t  <span class="comment">#筛选Proto TCP</span></span><br><span class="line">-u  <span class="comment">#筛选Proto UDP</span></span><br><span class="line">-a  <span class="comment">#筛选State 显示全部（默认显示已连接的）</span></span><br><span class="line">-l  <span class="comment">#筛选State listening</span></span><br></pre></td></tr></table></figure>
 <h3 id="显示额外字段"><a href="#显示额外字段" class="headerlink" title="显示额外字段"></a>显示额外字段</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-e  <span class="comment">#显示User和Inode</span></span><br><span class="line">-p  <span class="comment">#显示PID</span></span><br></pre></td></tr></table></figure>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-vWnN  <span class="comment">#暂时不是很理解。。。</span></span><br><span class="line">-c  <span class="comment">#不断刷新</span></span><br></pre></td></tr></table></figure>
 <h3 id="其他单独使用"><a href="#其他单独使用" class="headerlink" title="其他单独使用"></a>其他单独使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-r  <span class="comment">#显示路由表</span></span><br><span class="line">-l  <span class="comment">#显示接口表</span></span><br><span class="line">-g  <span class="comment">#显示多重广播功能群组组员名单</span></span><br><span class="line">-s  <span class="comment">#显示网络工作信息统计表</span></span><br><span class="line">-M  <span class="comment">#显示伪装的网络连线</span></span><br><span class="line"></span><br><span class="line">--<span class="built_in">help</span>  <span class="comment">#使用帮助</span></span><br></pre></td></tr></table></figure>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>我一般会使用下面这条命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tuple</span><br></pre></td></tr></table></figure></p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>用筛选item、显示额外字段获取自己想要的信息，根据需要使用其他选项</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>我一般会使用下面这条命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tuple</span><br></pre></td></tr></table></figure></p>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><p>用筛选item、显示额外字段获取自己想要的信息，根据需要使用其他选项</p>
 
           
         
