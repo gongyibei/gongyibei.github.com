@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="markdown-preview1Plug &apos;iamcco/markdown-preview.vim&apos; 自定义样式">
+<meta name="description" content="TODO.">
 <meta name="keywords" content="vim,markdonw">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NeoVim常用插件配置整理">
 <meta property="og:url" content="http://ukaii.cn/2019/06/23/NeoVim常用插件配置整理/index.html">
 <meta property="og:site_name" content="uKaii">
-<meta property="og:description" content="markdown-preview1Plug &apos;iamcco/markdown-preview.vim&apos; 自定义样式">
+<meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-23T07:13:46.931Z">
+<meta property="og:updated_time" content="2019-06-23T08:52:28.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NeoVim常用插件配置整理">
-<meta name="twitter:description" content="markdown-preview1Plug &apos;iamcco/markdown-preview.vim&apos; 自定义样式">
+<meta name="twitter:description" content="TODO.">
 
 
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  13字
+                  218字
                 </span>
               
 
@@ -394,9 +394,22 @@
       
 
       
-        <a id="more"></a>
-<h1 id="markdown-preview"><a href="#markdown-preview" class="headerlink" title="markdown-preview"></a>markdown-preview</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'iamcco/markdown-preview.vim'</span></span><br></pre></td></tr></table></figure>
-<p>自定义样式</p>
+        <p>TODO.</p>
+<a id="more"></a>
+<h1 id="ctrlp"><a href="#ctrlp" class="headerlink" title="ctrlp"></a>ctrlp</h1><blockquote>
+<p>项目地址：<a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="noopener">https://github.com/kien/ctrlp.vim</a></p>
+</blockquote>
+<p>使用快捷键</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+f Ctrl+b --    切换模式</span><br><span class="line">Ctrl+d -- 切换查找模式（是否包含完整路径）</span><br><span class="line">Ctrl+r -- 支持正则</span><br><span class="line">Ctrl+j Ctrl+k -- 选择文件</span><br><span class="line">Ctrl+z -- 多选</span><br><span class="line">Ctrl+t -- tab打开</span><br><span class="line">Ctrl+v -- 垂直打开</span><br><span class="line">Ctrl+x -- 水平打开</span><br><span class="line">Ctrl+y -- 新建文件</span><br><span class="line">Ctrl+n</span><br><span class="line">Ctrl+p</span><br><span class="line">F5</span><br></pre></td></tr></table></figure>
+<h1 id="markdown-preview"><a href="#markdown-preview" class="headerlink" title="markdown-preview"></a>markdown-preview</h1><blockquote>
+<p>用与在NeoVim中实时预览<code>.md</code>文件</p>
+<p>项目地址：<a href="https://github.com/iamcco/markdown-preview.vim" target="_blank" rel="noopener">https://github.com/iamcco/markdown-preview.vim</a></p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在 <code>.vimrc</code> 文件添加该行</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'iamcco/markdown-preview.vim'</span></span><br></pre></td></tr></table></figure>
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><h3 id="编辑css文件自定义样式"><a href="#编辑css文件自定义样式" class="headerlink" title="编辑css文件自定义样式"></a>编辑css文件自定义样式</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~/.<span class="keyword">vim</span>/plugged/markdown-preview.<span class="keyword">vim</span>/autoload/server/static/styles/markdown/markdown.css</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.markdown-content</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义启动快捷键"><a href="#自定义启动快捷键" class="headerlink" title="自定义启动快捷键"></a>自定义启动快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" markdown-preview &#123;&#123;&#123;</span></span><br><span class="line"><span class="string">    noremap &lt;F8&gt; :MarkdownPreview&lt;CR&gt;</span></span><br><span class="line"><span class="string">"</span> &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -596,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview"><span class="nav-number">1.</span> <span class="nav-text">markdown-preview</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ctrlp"><span class="nav-number">1.</span> <span class="nav-text">ctrlp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview"><span class="nav-number">2.</span> <span class="nav-text">markdown-preview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义"><span class="nav-number">2.2.</span> <span class="nav-text">自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑css文件自定义样式"><span class="nav-number">2.2.1.</span> <span class="nav-text">编辑css文件自定义样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义启动快捷键"><span class="nav-number">2.2.2.</span> <span class="nav-text">自定义启动快捷键</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -630,7 +643,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.7k</span>
+    <span title="Site words total count">10.9k</span>
   
 </div>
 
