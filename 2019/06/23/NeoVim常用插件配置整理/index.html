@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-23T09:15:59.265Z">
+<meta property="og:updated_time" content="2019-06-24T05:48:56.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NeoVim常用插件配置整理">
 <meta name="twitter:description" content="TODO.">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  192字
+                  203字
                 </span>
               
 
@@ -455,12 +455,15 @@
 </tr>
 <tr>
 <td style="text-align:center">Ctrl+N</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td style="text-align:center">Ctrl+P</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td style="text-align:center">F5</td>
+<td style="text-align:center">-</td>
 </tr>
 </tbody>
 </table>
@@ -469,7 +472,7 @@
 <p>用于在NeoVim中实时预览<code>.md</code>文件</p>
 <p>项目地址：<a href="https://github.com/iamcco/markdown-preview.vim" target="_blank" rel="noopener">https://github.com/iamcco/markdown-preview.vim</a></p>
 </blockquote>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在 <code>.vimrc</code> 文件添加该行</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在 <code>.vimrc</code> 文件添加该行,并执行<code>:PlugInstall</code>进行安装</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'iamcco/markdown-preview.vim'</span></span><br></pre></td></tr></table></figure>
 <h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><h3 id="编辑css文件自定义样式"><a href="#编辑css文件自定义样式" class="headerlink" title="编辑css文件自定义样式"></a>编辑css文件自定义样式</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~/.<span class="keyword">vim</span>/plugged/markdown-preview.<span class="keyword">vim</span>/autoload/server/static/styles/markdown/markdown.css</span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.markdown-content</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br></pre></td></tr></table></figure>
@@ -618,7 +621,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -707,7 +710,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.9k</span>
+    <span title="Site words total count">9.6k</span>
   
 </div>
 
