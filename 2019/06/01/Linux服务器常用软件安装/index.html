@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T18:02:10.389Z">
+<meta property="og:updated_time" content="2019-06-25T02:31:10.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux服务器常用软件安装">
 <meta name="twitter:description" content="以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作">
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  369字
+                  521字
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2min
+                  3min
                 </span>
               
             </div>
@@ -383,7 +383,8 @@
       
 
       
-        <p>以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作<br><a id="more"></a></p>
+        <p>以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作</p>
+<a id="more"></a>
 <h1 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h1><p>貌似很简单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
 <p>安装oh-my-zsh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p><a href="https://www.cnblogs.com/EasonJim/p/7863099.html" target="_blank" rel="noopener">Ubuntu 16.04下安装zsh和oh-my-zsh</a></p>
@@ -406,6 +407,15 @@
 <p><a href="https://www.jianshu.com/p/acc560204a4d" target="_blank" rel="noopener">Ubuntu apache2 修改默认站点文件夹</a></p>
 <h1 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h1><h2 id="一键安装"><a href="#一键安装" class="headerlink" title="一键安装"></a>一键安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget –no-check-certificate  https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh</span><br></pre></td></tr></table></figure>
+<h1 id="crontab"><a href="#crontab" class="headerlink" title="crontab"></a>crontab</h1><p>主要用来重复定时执行一些程序</p>
+<h3 id="查看运行状态"><a href="#查看运行状态" class="headerlink" title="查看运行状态"></a>查看运行状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pgrep cron</span><br></pre></td></tr></table></figure>
+<h3 id="添加自己的程序"><a href="#添加自己的程序" class="headerlink" title="添加自己的程序"></a>添加自己的程序</h3><p>首先执行下面命令，然后会让你选择一个编辑器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>在打开的文件中添加你所需要的配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* * * * * <span class="built_in">command</span> to be executed</span><br><span class="line">- - - - - -</span><br><span class="line">| | | | | |</span><br><span class="line">| | | | | --- 预执行的命令</span><br><span class="line">| | | | ----- 表示星期0～7（其中星期天可以用0或7表示）</span><br><span class="line">| | | ------- 表示月份1～12</span><br><span class="line">| | --------- 表示日期1～31</span><br><span class="line">| ----------- 表示小时1～23（0表示0点）</span><br><span class="line">------------- 表示分钟1～59 每分钟用*或者 */1表示</span><br></pre></td></tr></table></figure>
+<p>重启服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service cron restart</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -606,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zsh"><span class="nav-number">1.</span> <span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jupyter"><span class="nav-number">2.</span> <span class="nav-text">jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">2.2.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH"><span class="nav-number">3.</span> <span class="nav-text">SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件-1"><span class="nav-number">3.1.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NeoVim"><span class="nav-number">4.</span> <span class="nav-text">NeoVim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug安装"><span class="nav-number">4.1.</span> <span class="nav-text">vim-plug安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache"><span class="nav-number">5.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-1"><span class="nav-number">5.2.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shadowsocks"><span class="nav-number">6.</span> <span class="nav-text">shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一键安装"><span class="nav-number">6.1.</span> <span class="nav-text">一键安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zsh"><span class="nav-number">1.</span> <span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jupyter"><span class="nav-number">2.</span> <span class="nav-text">jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">2.2.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH"><span class="nav-number">3.</span> <span class="nav-text">SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件-1"><span class="nav-number">3.1.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NeoVim"><span class="nav-number">4.</span> <span class="nav-text">NeoVim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug安装"><span class="nav-number">4.1.</span> <span class="nav-text">vim-plug安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache"><span class="nav-number">5.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-1"><span class="nav-number">5.2.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shadowsocks"><span class="nav-number">6.</span> <span class="nav-text">shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一键安装"><span class="nav-number">6.1.</span> <span class="nav-text">一键安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crontab"><span class="nav-number">7.</span> <span class="nav-text">crontab</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看运行状态"><span class="nav-number">7.0.1.</span> <span class="nav-text">查看运行状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加自己的程序"><span class="nav-number">7.0.2.</span> <span class="nav-text">添加自己的程序</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -640,7 +650,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.9k</span>
+    <span title="Site words total count">11.0k</span>
   
 </div>
 
