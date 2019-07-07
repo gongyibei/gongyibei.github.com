@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-24T05:48:56.944Z">
+<meta property="og:updated_time" content="2019-07-07T03:11:25.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NeoVim常用插件配置整理">
 <meta name="twitter:description" content="TODO.">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  203字
+                  359字
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  2min
                 </span>
               
             </div>
@@ -477,6 +477,13 @@
 <h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><h3 id="编辑css文件自定义样式"><a href="#编辑css文件自定义样式" class="headerlink" title="编辑css文件自定义样式"></a>编辑css文件自定义样式</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~/.<span class="keyword">vim</span>/plugged/markdown-preview.<span class="keyword">vim</span>/autoload/server/static/styles/markdown/markdown.css</span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.markdown-content</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="自定义启动快捷键"><a href="#自定义启动快捷键" class="headerlink" title="自定义启动快捷键"></a>自定义启动快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" markdown-preview &#123;&#123;&#123;</span></span><br><span class="line"><span class="string">    noremap &lt;F8&gt; :MarkdownPreview&lt;CR&gt;</span></span><br><span class="line"><span class="string">"</span> &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="vim-commentary"><a href="#vim-commentary" class="headerlink" title="vim-commentary"></a>vim-commentary</h1><p>命令快捷键</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gcc     注释当前行（普通模式）</span><br><span class="line">gc      可视模式下，注释当前选中的部分</span><br><span class="line">gcu     撤销上一次注释的部分，可以是一行也可以是多行</span><br><span class="line">gcgc    撤销注释当前行和邻近的上下两行</span><br></pre></td></tr></table></figure>
+<h1 id="nerdcommenter"><a href="#nerdcommenter" class="headerlink" title="nerdcommenter"></a>nerdcommenter</h1><blockquote>
+<p>项目地址: <a href="https://github.com/scrooloose/nerdcommenter" target="_blank" rel="noopener">https://github.com/scrooloose/nerdcommenter</a></p>
+</blockquote>
+<p>之前用的是vim-commentary，现在换成了nerdcommenter</p>
+<p>下面是常用的快捷键<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;leader&gt;cc -- 注释当前行或可视区域</span><br><span class="line">&lt;leader&gt;cu -- 取消注释</span><br><span class="line">&lt;leader&gt;cA -- 行尾注释</span><br><span class="line">&lt;leader&gt;cs -- 性感注释（不知道怎么翻译）</span><br><span class="line">&lt;leader&gt;ca -- 转换注释样式</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -676,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ctrlp"><span class="nav-number">1.</span> <span class="nav-text">ctrlp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview"><span class="nav-number">2.</span> <span class="nav-text">markdown-preview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义"><span class="nav-number">2.2.</span> <span class="nav-text">自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑css文件自定义样式"><span class="nav-number">2.2.1.</span> <span class="nav-text">编辑css文件自定义样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义启动快捷键"><span class="nav-number">2.2.2.</span> <span class="nav-text">自定义启动快捷键</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ctrlp"><span class="nav-number">1.</span> <span class="nav-text">ctrlp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview"><span class="nav-number">2.</span> <span class="nav-text">markdown-preview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义"><span class="nav-number">2.2.</span> <span class="nav-text">自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑css文件自定义样式"><span class="nav-number">2.2.1.</span> <span class="nav-text">编辑css文件自定义样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义启动快捷键"><span class="nav-number">2.2.2.</span> <span class="nav-text">自定义启动快捷键</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-commentary"><span class="nav-number">3.</span> <span class="nav-text">vim-commentary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nerdcommenter"><span class="nav-number">4.</span> <span class="nav-text">nerdcommenter</span></a></li></ol></div>
             
 
           </div>
@@ -710,7 +717,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.0k</span>
+    <span title="Site words total count">11.3k</span>
   
 </div>
 
