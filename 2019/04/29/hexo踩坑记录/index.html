@@ -88,7 +88,7 @@
 <meta property="og:description" content="Todo.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ukaii.cn/2019/04/29/Hexo踩坑记录/menus.jpg">
-<meta property="og:updated_time" content="2019-06-02T14:44:05.000Z">
+<meta property="og:updated_time" content="2019-07-08T05:33:05.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo踩坑记录">
 <meta name="twitter:description" content="Todo.">
@@ -433,6 +433,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (max-width: <span class="number">991px</span>) &#123;</span><br><span class="line"><span class="selector-class">.post-body</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h2</span>&#123;<span class="attribute">counter-reset</span>:composite&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h3</span>&#123;<span class="attribute">counter-reset</span>:detail&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">" "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">" "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h3</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">"."</span> <span class="built_in">counter</span>(composite) <span class="string">" "</span>;<span class="attribute">counter-increment</span>:composite&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h4</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">"."</span> <span class="built_in">counter</span>(composite) <span class="string">"."</span> <span class="built_in">counter</span>(detail) <span class="string">" "</span>;<span class="attribute">counter-increment</span>:detail&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面代码是针对手机适配，所以我删除了<code>@media</code>，使之在电脑端也有效。上面是会对前四级标题生效，而我一般只会使用前两级标题。修改后代码如下</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.post-body</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -490,8 +491,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/29/Hexo渲染引擎修改/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/29/Hexo渲染引擎修改/" rel="prev" title="Hexo渲染引擎修改">
+                Hexo渲染引擎修改 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
