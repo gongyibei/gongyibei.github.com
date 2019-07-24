@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="争做latex写作小能手">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-06T11:53:45.006Z">
+<meta property="og:updated_time" content="2019-07-15T07:38:24.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX语法总结">
 <meta name="twitter:description" content="争做latex写作小能手">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  143字
+                  204字
                 </span>
               
 
@@ -396,15 +396,18 @@
       
         <p>争做latex写作小能手</p>
 <a id="more"></a>
+<h1 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h1><h2 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\Huge</span><br><span class="line">\huge</span><br><span class="line">\LARGE</span><br><span class="line">\Large</span><br><span class="line">\large</span><br><span class="line">\normalsize (default)</span><br><span class="line">\small</span><br><span class="line">\footnotesize</span><br><span class="line">\scriptsize</span><br><span class="line">\tiny</span><br></pre></td></tr></table></figure>
+<p><a href="https://texblog.org/2012/08/29/changing-the-font-size-in-latex/" target="_blank" rel="noopener">https://texblog.org/2012/08/29/changing-the-font-size-in-latex/</a></p>
 <h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><h2 id="修改字体到表格边距"><a href="#修改字体到表格边距" class="headerlink" title="修改字体到表格边距"></a>修改字体到表格边距</h2><p>可使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\tabcolsep6pt</span><br></pre></td></tr></table></figure></p>
 <p>放置的位置如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;table&#125;</span><br><span class="line">\tabcolsep6pt</span><br><span class="line">\begin&#123;tabular&#125;</span><br><span class="line">\end&#123;tabular&#125;</span><br><span class="line">\end&#123;table&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置表格行间距"><a href="#设置表格行间距" class="headerlink" title="设置表格行间距"></a>设置表格行间距</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\renewcommand\arraystretch&#123;1.2&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="设置表格左右间隔"><a href="#设置表格左右间隔" class="headerlink" title="设置表格左右间隔"></a>设置表格左右间隔</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\tabcolsep6pt</span><br></pre></td></tr></table></figure>
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">    xxx&amp;xxx</span><br><span class="line">    xxx&amp;xxx</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
 <p>示例</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">    \min_\alpha\quad&amp;\frac12\sum_&#123;i=1&#125;^&#123;N&#125;\sum_&#123;j=1&#125;^&#123;N&#125;\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_&#123;i=1&#125;^&#123;N&#125;\alpha_i \\</span><br><span class="line">    \text&#123;s.t.&#125;\quad&amp;\sum_&#123;i=1&#125;^N\alpha_iy_i=0\\</span><br><span class="line">                    &amp;\alpha_i\ge0\ ,\quad i=1,2,\cdots,N</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \begin{aligned}
-    \min_\alpha\quad&\frac12\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)-\sum_{i=1}^{N}\alpha_i \\
     \text{s.t.}\quad&\sum_{i=1}^N\alpha_iy_i=0\\
                     &\alpha_i\ge0\ ,\quad i=1,2,\cdots,N
 \end{aligned}</script><h2 id="公式编号"><a href="#公式编号" class="headerlink" title="公式编号"></a>公式编号</h2><p>格式</p>
@@ -614,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表格"><span class="nav-number">1.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改字体到表格边距"><span class="nav-number">1.1.</span> <span class="nav-text">修改字体到表格边距</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公式"><span class="nav-number">2.</span> <span class="nav-text">公式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐"><span class="nav-number">2.1.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公式编号"><span class="nav-number">2.2.</span> <span class="nav-text">公式编号</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常规"><span class="nav-number">1.</span> <span class="nav-text">常规</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字体大小"><span class="nav-number">1.1.</span> <span class="nav-text">字体大小</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表格"><span class="nav-number">2.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改字体到表格边距"><span class="nav-number">2.1.</span> <span class="nav-text">修改字体到表格边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置表格行间距"><span class="nav-number">2.2.</span> <span class="nav-text">设置表格行间距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置表格左右间隔"><span class="nav-number">2.3.</span> <span class="nav-text">设置表格左右间隔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公式"><span class="nav-number">3.</span> <span class="nav-text">公式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐"><span class="nav-number">3.1.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公式编号"><span class="nav-number">3.2.</span> <span class="nav-text">公式编号</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -648,7 +651,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.3k</span>
+    <span title="Site words total count">10.4k</span>
   
 </div>
 
