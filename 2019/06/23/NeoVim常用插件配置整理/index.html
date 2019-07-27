@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-07T03:11:25.283Z">
+<meta property="og:updated_time" content="2019-07-27T14:21:49.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NeoVim常用插件配置整理">
 <meta name="twitter:description" content="TODO.">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  359字
+                  394字
                 </span>
               
 
@@ -400,90 +400,23 @@
 <p>项目地址：<a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="noopener">https://github.com/kien/ctrlp.vim</a></p>
 </blockquote>
 <p>使用快捷键</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:center">功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Ctrl+F</td>
-<td style="text-align:center">切换模式</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+B</td>
-<td style="text-align:center">同上</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+D</td>
-<td style="text-align:center">切换查找模式</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+R</td>
-<td style="text-align:center">支持正则</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+J</td>
-<td style="text-align:center">移动光标</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+K</td>
-<td style="text-align:center">同上</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+Z</td>
-<td style="text-align:center">多选</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+T</td>
-<td style="text-align:center">tab打开</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+V</td>
-<td style="text-align:center">垂直打开</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+X</td>
-<td style="text-align:center">水平打开</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+Y</td>
-<td style="text-align:center">新建文件</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+N</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+P</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:center">F5</td>
-<td style="text-align:center">-</td>
-</tr>
-</tbody>
-</table>
-</div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+F __  切换模式</span><br><span class="line">Ctrl+B __  同上</span><br><span class="line">Ctrl+D __  切换查找模式</span><br><span class="line">Ctrl+R __  支持正则</span><br><span class="line">Ctrl+J __  移动光标</span><br><span class="line">Ctrl+K __  同上</span><br><span class="line">Ctrl+Z __  多选</span><br><span class="line">Ctrl+T __  tab打开</span><br><span class="line">Ctrl+V __  垂直打开</span><br><span class="line">Ctrl+X/S __  水平打开</span><br><span class="line">Ctrl+Y __  新建文件</span><br><span class="line">Ctrl+N __ </span><br><span class="line">Ctrl+P __ </span><br><span class="line">F5</span><br></pre></td></tr></table></figure>
 <h1 id="markdown-preview"><a href="#markdown-preview" class="headerlink" title="markdown-preview"></a>markdown-preview</h1><blockquote>
 <p>用于在NeoVim中实时预览<code>.md</code>文件</p>
 <p>项目地址：<a href="https://github.com/iamcco/markdown-preview.vim" target="_blank" rel="noopener">https://github.com/iamcco/markdown-preview.vim</a></p>
 </blockquote>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在 <code>.vimrc</code> 文件添加该行,并执行<code>:PlugInstall</code>进行安装</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'iamcco/markdown-preview.vim'</span></span><br></pre></td></tr></table></figure>
-<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><h3 id="编辑css文件自定义样式"><a href="#编辑css文件自定义样式" class="headerlink" title="编辑css文件自定义样式"></a>编辑css文件自定义样式</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~/.<span class="keyword">vim</span>/plugged/markdown-preview.<span class="keyword">vim</span>/autoload/server/static/styles/markdown/markdown.css</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug &apos;iamcco/markdown-preview.vim&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><h3 id="编辑css文件自定义样式"><a href="#编辑css文件自定义样式" class="headerlink" title="编辑css文件自定义样式"></a>编辑css文件自定义样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~/.vim/plugged/markdown-preview.vim/autoload/server/static/styles/markdown/markdown.css</span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.markdown-content</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="自定义启动快捷键"><a href="#自定义启动快捷键" class="headerlink" title="自定义启动快捷键"></a>自定义启动快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" markdown-preview &#123;&#123;&#123;</span></span><br><span class="line"><span class="string">    noremap &lt;F8&gt; :MarkdownPreview&lt;CR&gt;</span></span><br><span class="line"><span class="string">"</span> &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义启动快捷键"><a href="#自定义启动快捷键" class="headerlink" title="自定义启动快捷键"></a>自定义启动快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot; markdown-preview &#123;&#123;&#123;</span><br><span class="line">    noremap &lt;F8&gt; :MarkdownPreview&lt;CR&gt;</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="vim-commentary"><a href="#vim-commentary" class="headerlink" title="vim-commentary"></a>vim-commentary</h1><p>命令快捷键</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gcc     注释当前行（普通模式）</span><br><span class="line">gc      可视模式下，注释当前选中的部分</span><br><span class="line">gcu     撤销上一次注释的部分，可以是一行也可以是多行</span><br><span class="line">gcgc    撤销注释当前行和邻近的上下两行</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gcc     注释当前行（普通模式）</span><br><span class="line">gc      可视模式下，注释当前选中的部分</span><br><span class="line">gcu     撤销上一次注释的部分，可以是一行也可以是多行</span><br><span class="line">gcgc    撤销注释当前行和邻近的上下两行</span><br></pre></td></tr></table></figure>
 <h1 id="nerdcommenter"><a href="#nerdcommenter" class="headerlink" title="nerdcommenter"></a>nerdcommenter</h1><blockquote>
 <p>项目地址: <a href="https://github.com/scrooloose/nerdcommenter" target="_blank" rel="noopener">https://github.com/scrooloose/nerdcommenter</a></p>
 </blockquote>
 <p>之前用的是vim-commentary，现在换成了nerdcommenter</p>
-<p>下面是常用的快捷键<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;leader&gt;cc -- 注释当前行或可视区域</span><br><span class="line">&lt;leader&gt;cu -- 取消注释</span><br><span class="line">&lt;leader&gt;cA -- 行尾注释</span><br><span class="line">&lt;leader&gt;cs -- 性感注释（不知道怎么翻译）</span><br><span class="line">&lt;leader&gt;ca -- 转换注释样式</span><br></pre></td></tr></table></figure></p>
+<p>下面是常用的快捷键<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;leader&gt;cc -- 注释当前行或可视区域</span><br><span class="line">&lt;leader&gt;cu -- 取消注释</span><br><span class="line">&lt;leader&gt;cA -- 行尾注释</span><br><span class="line">&lt;leader&gt;cs -- 性感注释（不知道怎么翻译）</span><br><span class="line">&lt;leader&gt;ca -- 转换注释样式</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -543,6 +476,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/24/超好用的终端文件管理系统ranger/" rel="prev" title="超好用的终端文件管理系统ranger">
+                超好用的终端文件管理系统ranger <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -628,7 +565,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -639,7 +576,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -650,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -717,7 +654,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.4k</span>
+    <span title="Site words total count">10.6k</span>
   
 </div>
 
