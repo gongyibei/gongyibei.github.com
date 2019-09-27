@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-18T11:07:53.227Z">
+<meta property="og:updated_time" content="2019-08-23T14:14:05.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式总结">
 <meta name="twitter:description" content="TODO.">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  367字
+                  471字
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1min
+                  2min
                 </span>
               
             </div>
@@ -400,46 +400,60 @@
 <table>
 <thead>
 <tr>
-<th>格式</th>
+<th>python</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>.</td>
+<td>.</td>
 <td>任意字符除了换行符</td>
 </tr>
 <tr>
-<td>[…]</td>
-<td>在括号内(){}等特殊字符都回归正常但是[]要用\[\]</td>
+<td>[abc]</td>
+<td>[abc]</td>
+<td>匹配方括号中的任意一个字符，可用-表示字符范围。如[a-z0-9]匹配小写字母和数字<paste></paste></td>
 </tr>
 <tr>
+<td><sup><a href="#fn_abc" id="reffn_abc">abc</a></sup></td>
+<td><sup><a href="#fn_abc" id="reffn_abc">abc</a></sup></td>
+<td>匹配除方括号中字符之外的任意字</td>
+</tr>
+<tr>
+<td>\w</td>
 <td>\w</td>
 <td>匹配字母数字及下划线</td>
 </tr>
 <tr>
 <td>\W</td>
+<td>\W</td>
 <td>匹配非字母数字及下划线</td>
 </tr>
 <tr>
+<td>\s</td>
 <td>\s</td>
 <td>匹配任意空白字符，等价于 [\t\n\r\f].</td>
 </tr>
 <tr>
 <td>\S</td>
+<td>\S</td>
 <td>匹配任意非空字符</td>
 </tr>
 <tr>
 <td>\d</td>
+<td>\d</td>
 <td>匹配任意数字，等价于 [0-9].</td>
 </tr>
 <tr>
+<td>\D</td>
 <td>\D</td>
 <td>匹配任意非数字</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>[abc]<br>在括号内(){}等特殊字符都回归正常但是[]要用加反斜杠|</p>
 <h1 id="表示次数"><a href="#表示次数" class="headerlink" title="表示次数"></a>表示次数</h1><div class="table-container">
 <table>
 <thead>
@@ -515,7 +529,7 @@
 </tr>
 <tr>
 <td>(?&lt;!re)</td>
-<td>同上，满足</td>
+<td>同上，单不满足</td>
 </tr>
 <tr>
 <td>\A</td>
@@ -544,7 +558,7 @@
 </tbody>
 </table>
 </div>
-<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(?=hopeful)hope 表示匹配hopeful前面的hope``</span><br><span class="line">hope(?=ful)</span><br></pre></td></tr></table></figure></p>
+<h1 id="关于flag"><a href="#关于flag" class="headerlink" title="关于flag"></a>关于flag</h1><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">两者等价，表示匹配hopeful前面的hope，推荐都用后者</span><br><span class="line">(?=hopeful)hope </span><br><span class="line">hope(?=ful)</span><br><span class="line"></span><br><span class="line">两者等价，表示匹配hopeful后面的ful，推荐都用后者</span><br><span class="line">(?&lt;=hope)ful</span><br><span class="line">ful(?&lt;=hopeful)</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/" target="_blank" rel="noopener">https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/</a><br><a href="https://blog.csdn.net/Raynaing/article/details/79140018" target="_blank" rel="noopener">https://blog.csdn.net/Raynaing/article/details/79140018</a></p>
 
       
@@ -747,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表示集合"><span class="nav-number">1.</span> <span class="nav-text">表示集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表示次数"><span class="nav-number">2.</span> <span class="nav-text">表示次数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对匹配的边界进行限制限制"><span class="nav-number">3.</span> <span class="nav-text">对匹配的边界进行限制限制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表示集合"><span class="nav-number">1.</span> <span class="nav-text">表示集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表示次数"><span class="nav-number">2.</span> <span class="nav-text">表示次数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对匹配的边界进行限制限制"><span class="nav-number">3.</span> <span class="nav-text">对匹配的边界进行限制限制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于flag"><span class="nav-number">4.</span> <span class="nav-text">关于flag</span></a></li></ol></div>
             
 
           </div>
@@ -781,7 +795,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.4k</span>
+    <span title="Site words total count">11.8k</span>
   
 </div>
 
