@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-23T14:14:05.329Z">
+<meta property="og:updated_time" content="2019-12-23T02:06:15.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式总结">
 <meta name="twitter:description" content="TODO.">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  471字
+                  462字
                 </span>
               
 
@@ -402,18 +402,15 @@
 <tr>
 <th>python</th>
 <th>描述</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>.</td>
-<td>.</td>
-<td>任意字符除了换行符</td>
-</tr>
-<tr>
 <td>[abc]</td>
 <td>[abc]</td>
-<td>匹配方括号中的任意一个字符，可用-表示字符范围。如[a-z0-9]匹配小写字母和数字<paste></paste></td>
+<td>匹配方括号中的任意一个字符，可用-表示字符范围。如[a-z0-9]匹配小写字母</td>
+<td>和数字</td>
 </tr>
 <tr>
 <td><sup><a href="#fn_abc" id="reffn_abc">abc</a></sup></td>
@@ -502,58 +499,58 @@
 <table>
 <thead>
 <tr>
-<th>格式</th>
-<th>描述</th>
+<th style="text-align:left">格式</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>^</td>
-<td>行首</td>
+<td style="text-align:left">^</td>
+<td style="text-align:left">行首</td>
 </tr>
 <tr>
-<td>$</td>
-<td>行尾</td>
+<td style="text-align:left">$</td>
+<td style="text-align:left">行尾</td>
 </tr>
 <tr>
-<td>(?=re)</td>
-<td>从该位置起右边的字符需要满足的</td>
+<td style="text-align:left">(?=re)</td>
+<td style="text-align:left">从该位置起右边的字符需要满足的</td>
 </tr>
 <tr>
-<td>(?!re)</td>
-<td>同上，但不满足</td>
+<td style="text-align:left">(?!re)</td>
+<td style="text-align:left">同上，但不满足</td>
 </tr>
 <tr>
-<td>(?&lt;=re)</td>
-<td>该位置左边的字符需要满足的</td>
+<td style="text-align:left">(? &lt;=re)</td>
+<td style="text-align:left">该位置左边的字符需要满足的</td>
 </tr>
 <tr>
-<td>(?&lt;!re)</td>
-<td>同上，单不满足</td>
+<td style="text-align:left">(?&lt;!re)</td>
+<td style="text-align:left">同上，<strong>但不满足</strong></td>
 </tr>
 <tr>
-<td>\A</td>
-<td>匹配字符串开始</td>
+<td style="text-align:left">\A</td>
+<td style="text-align:left">匹配字符串开始</td>
 </tr>
 <tr>
-<td>\Z</td>
-<td>匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串。</td>
+<td style="text-align:left">\Z</td>
+<td style="text-align:left">匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串。</td>
 </tr>
 <tr>
-<td>\z</td>
-<td>匹配字符串结束</td>
+<td style="text-align:left">\z</td>
+<td style="text-align:left">匹配字符串结束</td>
 </tr>
 <tr>
-<td>\G</td>
-<td>匹配最后匹配完成的位置。</td>
+<td style="text-align:left">\G</td>
+<td style="text-align:left">匹配最后匹配完成的位置。</td>
 </tr>
 <tr>
-<td>\b</td>
-<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
 </tr>
 <tr>
-<td>\B</td>
-<td>匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
+<td style="text-align:left">\B</td>
+<td style="text-align:left">匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
 </tr>
 </tbody>
 </table>
@@ -621,6 +618,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/29/Anaconda的安装使用踩坑/" rel="prev" title="Anaconda的安装使用踩坑">
+                Anaconda的安装使用踩坑 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -706,7 +707,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -795,7 +796,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.8k</span>
+    <span title="Site words total count">11.9k</span>
   
 </div>
 

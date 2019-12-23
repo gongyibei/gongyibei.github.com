@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="争做pytorch造轮小能手">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T18:02:08.000Z">
+<meta property="og:updated_time" content="2019-12-23T00:16:19.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解PyTorch">
 <meta name="twitter:description" content="争做pytorch造轮小能手">
@@ -367,7 +367,7 @@
 <p>归一化<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor([[<span class="number">1000000</span>, <span class="number">0.0001</span>], [<span class="number">2000000</span>, <span class="number">0.0003</span>],</span><br><span class="line">        [<span class="number">3000000</span>, <span class="number">0.0005</span>], [<span class="number">4000000</span>, <span class="number">0.0002</span>], [<span class="number">5000000</span>, <span class="number">0.0004</span>]])</span><br><span class="line">y = torch.tensor([<span class="number">-1000.</span>, <span class="number">1200.</span>, <span class="number">1400.</span>, <span class="number">1600.</span>, <span class="number">1800.</span>]).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">x_mean, x_std = torch.mean(x, dim=<span class="number">0</span>), torch.std(x, dim=<span class="number">0</span>)</span><br><span class="line">x_norm = (x - x_mean) / x_std</span><br><span class="line">y_mean, y_std = torch.mean(y, dim=<span class="number">0</span>), torch.std(y, dim=<span class="number">0</span>)</span><br><span class="line">y_norm = (y - y_mean) / y_std</span><br><span class="line"></span><br><span class="line">fc = torch.nn.Linear(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">criterion = torch.nn.MSELoss()</span><br><span class="line">optimizer = torch.optim.Adam(fc.parameters())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">10001</span>):</span><br><span class="line">    <span class="keyword">if</span> step:</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss_norm.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    pred_norm = fc(x_norm)</span><br><span class="line">    loss_norm = criterion(pred_norm, y_norm)</span><br><span class="line">    pred = pred_norm * y_std + y_mean</span><br><span class="line">    loss = criterion(pred, y)</span><br><span class="line">    <span class="keyword">if</span> step % <span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">'step = &#123;&#125;, loss = &#123;:g&#125;'</span>.format(step, loss))</span><br></pre></td></tr></table></figure></p>
 <!-- more -->
 <h1 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h1><h2 id="optim-与-loss如何交互"><a href="#optim-与-loss如何交互" class="headerlink" title="optim 与 loss如何交互"></a>optim 与 loss如何交互</h2><p>梯度更新的标准三步<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">optimizer.zero_grad()</span><br><span class="line">f.backward()</span><br><span class="line">optimizer.step()</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net(x)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -507,7 +507,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -596,7 +596,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.8k</span>
+    <span title="Site words total count">11.9k</span>
   
 </div>
 

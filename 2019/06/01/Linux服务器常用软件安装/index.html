@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-11T14:14:45.652Z">
+<meta property="og:updated_time" content="2019-12-23T00:36:31.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux服务器常用软件安装">
 <meta name="twitter:description" content="以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作">
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  768字
+                  784字
                 </span>
               
 
@@ -385,12 +385,35 @@
       
         <p>以下均时在腾讯云的Ubuntu Server 16.04.1 LTS 64位系统下进行的操作</p>
 <a id="more"></a>
-<h1 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h1><p>貌似很简单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
+<h1 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h1><p><em>貌似很简单</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
 <p>安装oh-my-zsh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p><a href="https://www.cnblogs.com/EasonJim/p/7863099.html" target="_blank" rel="noopener">Ubuntu 16.04下安装zsh和oh-my-zsh</a></p>
 <h1 id="jupyter"><a href="#jupyter" class="headerlink" title="jupyter"></a>jupyter</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>生成配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure></p>
 <p>~/.jupyter/jupyter_notebook_config.py<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">c = get_config()</span><br><span class="line">c.IPKernelApp.pylab = <span class="string">"inline"</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">"0.0.0.0"</span></span><br><span class="line">c.NotebookAPp.open_browser = False</span><br><span class="line"><span class="comment">#c.NotebookApp.password = 'sha1:b39d2445079f:9b9ab99f65150e113265cb99a841a6403aa52647'</span></span><br><span class="line"><span class="comment">#c.NotebookApp.certfile = u'/root/.jupyter/mycert.pem'</span></span><br><span class="line">c.NotebookApp.port= 8888</span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">"/home/ubuntu/jupyter"</span></span><br><span class="line">8 lines yanked</span><br></pre></td></tr></table></figure></p>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --allow-root 2&gt;&amp;1 &gt; my.log &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">wc</td>
+<td style="text-align:center">统计文件行数、字数、字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">file</td>
+<td style="text-align:center">查看文件类型    a</td>
+</tr>
+<tr>
+<td style="text-align:center">grep</td>
+<td style="text-align:center">过滤行</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>可以在my.log文件里查看token</p>
 <p><a href="https://blog.csdn.net/jjwho/article/details/78765352" target="_blank" rel="noopener">Jupyter Notebook（一）安装配置与使用</a></p>
 <h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><h2 id="配置文件-1"><a href="#配置文件-1" class="headerlink" title="配置文件"></a>配置文件</h2><p>通过配置文件可以来快速访问目标服务器,而不需要每次都输密码</p>
@@ -564,7 +587,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -653,7 +676,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.8k</span>
+    <span title="Site words total count">11.9k</span>
   
 </div>
 
