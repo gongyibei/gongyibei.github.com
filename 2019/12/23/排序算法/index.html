@@ -88,7 +88,7 @@
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ukaii.cn/2019/12/23/排序算法/排序算法/format,png-7069750.png">
-<meta property="og:updated_time" content="2019-12-23T04:34:48.794Z">
+<meta property="og:updated_time" content="2019-12-23T09:15:56.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10大排序算法（Python版）">
 <meta name="twitter:description" content="TODO.">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  926字
+                  992字
                 </span>
               
 
@@ -388,10 +388,105 @@
         <p>TODO.</p>
 <a id="more"></a>
 <p><img src="排序算法/format,png-7069750.png" alt="img"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">排序算法</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">最好情况</th>
+<th style="text-align:center">最坏情况</th>
+<th style="text-align:center">空间复杂度</th>
+<th style="text-align:center">排序方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">冒泡排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">选择排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">插入排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">希尔排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">归并排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">快速排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">堆排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">计数排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">桶排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">基数排序</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>|</p>
 <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    N = len(arr)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,N<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,N-i<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> arr[j]&gt;arr[j+<span class="number">1</span>]:</span><br><span class="line">                arr[j], arr[j+<span class="number">1</span>] = arr[j+<span class="number">1</span>], arr[j]</span><br></pre></td></tr></table></figure>
 <h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selection_sort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    N = len(arr)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,N<span class="number">-1</span>):</span><br><span class="line">        key = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,N):</span><br><span class="line">            <span class="keyword">if</span> arr[key]&gt;arr[j]:</span><br><span class="line">                key = j</span><br><span class="line">        arr[key], arr[i] = arr[i], arr[key]</span><br></pre></td></tr></table></figure>
 <h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    N = len(arr)</span><br><span class="line">    <span class="comment"># 从1开始</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,N):</span><br><span class="line">        key = i</span><br><span class="line">        tmp = arr[i]</span><br><span class="line">        <span class="keyword">while</span> key&gt;<span class="number">0</span> <span class="keyword">and</span> tmp&lt;arr[key<span class="number">-1</span>]:</span><br><span class="line">            arr[key] = arr[key<span class="number">-1</span>]</span><br><span class="line">            key -= <span class="number">1</span></span><br><span class="line">        arr[key] = tmp</span><br></pre></td></tr></table></figure>
-<p>​    </p>
 <h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_sort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    N = len(arr)</span><br><span class="line">    gap = N//<span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> gap&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="comment"># 会分成gap组</span></span><br><span class="line">        <span class="comment"># 插入排序每一组第0个元素可以不用考虑，所以从gap开始</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(gap,N):</span><br><span class="line">            key = i </span><br><span class="line">            tmp = arr[i]</span><br><span class="line">            <span class="keyword">while</span> key&gt;<span class="number">0</span> <span class="keyword">and</span> tmp&lt;arr[key-gap]:</span><br><span class="line">                arr[key] = arr[key-gap]</span><br><span class="line">                key -= gap</span><br><span class="line">            arr[key] = tmp</span><br><span class="line">        gap //= <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>​    </p>
 <h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(left, right)</span>:</span></span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">while</span> left <span class="keyword">and</span> right:</span><br><span class="line">            <span class="keyword">if</span> left[<span class="number">0</span>]&lt;right[<span class="number">0</span>]:</span><br><span class="line">                ans.append(left.pop(<span class="number">0</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans.append(right.pop(<span class="number">0</span>))</span><br><span class="line">        <span class="keyword">return</span> ans + left + right</span><br><span class="line"></span><br><span class="line">    N = len(arr)</span><br><span class="line">    <span class="keyword">if</span> N &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> arr</span><br><span class="line">    mid = N//<span class="number">2</span></span><br><span class="line">    left = arr[:mid]</span><br><span class="line">    right = arr[mid:]</span><br><span class="line">    <span class="keyword">return</span> merge(merge_sort(left), merge_sort(right))</span><br></pre></td></tr></table></figure>
@@ -463,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/23/test/" rel="prev" title="排序算法">
-                排序算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/23/文本处理三剑客之sed/" rel="prev" title="文本处理三剑客之sed">
+                文本处理三剑客之sed <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +721,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -640,7 +735,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.8k</span>
+    <span title="Site words total count">12.9k</span>
   
 </div>
 

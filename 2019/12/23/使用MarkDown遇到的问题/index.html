@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vim,markdonw," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -80,16 +80,15 @@
 
 
 <meta name="description" content="TODO.">
-<meta name="keywords" content="vim,markdonw">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NeoVim常用插件配置整理">
-<meta property="og:url" content="http://ukaii.cn/2019/06/23/NeoVim常用插件配置整理/index.html">
+<meta property="og:title" content="使用MarkDown遇到的问题">
+<meta property="og:url" content="http://ukaii.cn/2019/12/23/使用MarkDown遇到的问题/index.html">
 <meta property="og:site_name" content="uKaii">
 <meta property="og:description" content="TODO.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-23T14:00:34.577Z">
+<meta property="og:updated_time" content="2019-12-23T14:05:41.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NeoVim常用插件配置整理">
+<meta name="twitter:title" content="使用MarkDown遇到的问题">
 <meta name="twitter:description" content="TODO.">
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://ukaii.cn/2019/06/23/NeoVim常用插件配置整理/"/>
+  <link rel="canonical" href="http://ukaii.cn/2019/12/23/使用MarkDown遇到的问题/"/>
 
 
 
 
 
-  <title>NeoVim常用插件配置整理 | uKaii</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>使用MarkDown遇到的问题 | uKaii</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ukaii.cn/2019/06/23/NeoVim常用插件配置整理/">
+    <link itemprop="mainEntityOfPage" href="http://ukaii.cn/2019/12/23/使用MarkDown遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="uKaii">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NeoVim常用插件配置整理</h1>
+          <h1 class="post-title" itemprop="name headline">使用MarkDown遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-23T15:07:17+08:00">
-                2019-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T22:02:54+08:00">
+                2019-12-23
               </time>
             
 
@@ -317,17 +316,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/软件工具/" itemprop="url" rel="index">
                     <span itemprop="name">软件工具</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件工具/vim/" itemprop="url" rel="index">
-                    <span itemprop="name">vim</span>
                   </a>
                 </span>
 
@@ -357,7 +345,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  357字
+                  33字
                 </span>
               
 
@@ -373,7 +361,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2min
+                  1min
                 </span>
               
             </div>
@@ -396,95 +384,8 @@
       
         <p>TODO.</p>
 <a id="more"></a>
-<h1 id="ctrlp"><a href="#ctrlp" class="headerlink" title="ctrlp"></a>ctrlp</h1><blockquote>
-<p>项目地址：<a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="noopener">https://github.com/kien/ctrlp.vim</a></p>
-</blockquote>
-<p>使用快捷键</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:center">功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Ctrl+F</td>
-<td style="text-align:center">切换模式</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+B</td>
-<td style="text-align:center">同上</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+D</td>
-<td style="text-align:center">切换查找模式</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+R</td>
-<td style="text-align:center">支持正则</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+J</td>
-<td style="text-align:center">移动光标</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+K</td>
-<td style="text-align:center">同上</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+Z</td>
-<td style="text-align:center">多选</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+T</td>
-<td style="text-align:center">tab打开</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+V</td>
-<td style="text-align:center">垂直打开</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+X/S</td>
-<td style="text-align:center">水平打开</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+Y</td>
-<td style="text-align:center">新建文件</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+N</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+P</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">F5</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="page-break-after: always;"></div>
-
-<h1 id="markdown-preview"><a href="#markdown-preview" class="headerlink" title="markdown-preview"></a>markdown-preview</h1><blockquote>
-<p>用于在NeoVim中实时预览<code>.md</code>文件</p>
-<p>项目地址：<a href="https://github.com/iamcco/markdown-preview.vim" target="_blank" rel="noopener">https://github.com/iamcco/markdown-preview.vim</a></p>
-</blockquote>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在 <code>.vimrc</code> 文件添加该行,并执行<code>:PlugInstall</code>进行安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug &apos;iamcco/markdown-preview.vim&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><h3 id="编辑css文件自定义样式"><a href="#编辑css文件自定义样式" class="headerlink" title="编辑css文件自定义样式"></a>编辑css文件自定义样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~/.vim/plugged/markdown-preview.vim/autoload/server/static/styles/markdown/markdown.css</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.markdown-content</span> &#123;<span class="attribute">counter-reset</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">counter-reset</span>:sub-section&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:section&#125;</span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span>&#123;<span class="attribute">content</span>:<span class="built_in">counter</span>(section) <span class="string">"."</span> <span class="built_in">counter</span>(sub-section) <span class="string">". "</span>;<span class="attribute">counter-increment</span>:sub-section&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="自定义启动快捷键"><a href="#自定义启动快捷键" class="headerlink" title="自定义启动快捷键"></a>自定义启动快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot; markdown-preview &#123;&#123;&#123;</span><br><span class="line">    noremap &lt;F8&gt; :MarkdownPreview&lt;CR&gt;</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="vim-commentary"><a href="#vim-commentary" class="headerlink" title="vim-commentary"></a>vim-commentary</h1><p>命令快捷键</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gcc     注释当前行（普通模式）</span><br><span class="line">gc      可视模式下，注释当前选中的部分</span><br><span class="line">gcu     撤销上一次注释的部分，可以是一行也可以是多行</span><br><span class="line">gcgc    撤销注释当前行和邻近的上下两行</span><br></pre></td></tr></table></figure>
-<h1 id="nerdcommenter"><a href="#nerdcommenter" class="headerlink" title="nerdcommenter"></a>nerdcommenter</h1><blockquote>
-<p>项目地址: <a href="https://github.com/scrooloose/nerdcommenter" target="_blank" rel="noopener">https://github.com/scrooloose/nerdcommenter</a></p>
-</blockquote>
-<p>之前用的是vim-commentary，现在换成了nerdcommenter</p>
-<p>下面是常用的快捷键<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;leader&gt;cc -- 注释当前行或可视区域</span><br><span class="line">&lt;leader&gt;cu -- 取消注释</span><br><span class="line">&lt;leader&gt;cA -- 行尾注释</span><br><span class="line">&lt;leader&gt;cs -- 性感注释（不知道怎么翻译）</span><br><span class="line">&lt;leader&gt;ca -- 转换注释样式</span><br></pre></td></tr></table></figure></p>
+<h1 id="转换成PDF时的分页问题"><a href="#转换成PDF时的分页问题" class="headerlink" title="转换成PDF时的分页问题"></a>转换成PDF时的分页问题</h1><p>在想要分页的地方前面加上该行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">STYLE</span>=<span class="string">"page-break-after: always;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -505,7 +406,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://ukaii.cn/2019/06/23/NeoVim常用插件配置整理/" title="NeoVim常用插件配置整理">http://ukaii.cn/2019/06/23/NeoVim常用插件配置整理/</a>
+    <a href="http://ukaii.cn/2019/12/23/使用MarkDown遇到的问题/" title="使用MarkDown遇到的问题">http://ukaii.cn/2019/12/23/使用MarkDown遇到的问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -518,14 +419,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/vim/" rel="tag"># vim</a>
-          
-            <a href="/tags/markdonw/" rel="tag"># markdonw</a>
-          
-        </div>
-      
 
       
       
@@ -535,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/17/电子音乐编曲常用效果器/" rel="next" title="电子音乐编曲常用效果器">
-                <i class="fa fa-chevron-left"></i> 电子音乐编曲常用效果器
+              <a href="/2019/12/23/文本处理三剑客之sed/" rel="next" title="文本处理三剑客之sed">
+                <i class="fa fa-chevron-left"></i> 文本处理三剑客之sed
               </a>
             
           </div>
@@ -544,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/24/超好用的终端文件管理系统ranger/" rel="prev" title="超好用的终端文件管理系统ranger">
-                超好用的终端文件管理系统ranger <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -688,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ctrlp"><span class="nav-number">1.</span> <span class="nav-text">ctrlp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview"><span class="nav-number">2.</span> <span class="nav-text">markdown-preview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义"><span class="nav-number">2.2.</span> <span class="nav-text">自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑css文件自定义样式"><span class="nav-number">2.2.1.</span> <span class="nav-text">编辑css文件自定义样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义启动快捷键"><span class="nav-number">2.2.2.</span> <span class="nav-text">自定义启动快捷键</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-commentary"><span class="nav-number">3.</span> <span class="nav-text">vim-commentary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nerdcommenter"><span class="nav-number">4.</span> <span class="nav-text">nerdcommenter</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#转换成PDF时的分页问题"><span class="nav-number">1.</span> <span class="nav-text">转换成PDF时的分页问题</span></a></li></ol></div>
             
 
           </div>
